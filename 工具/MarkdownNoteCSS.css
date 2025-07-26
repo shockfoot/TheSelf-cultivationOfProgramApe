@@ -1,0 +1,13 @@
+/* 标签 */
+span.Tag {
+    margin: 0px 4px;
+    padding: 6px 10px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+}
+span.OrangeTag {
+    color: #dd6126;
+}
+span.YellowTag {
+    color: #aba809;
+}

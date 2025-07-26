@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>标题</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <header>
+      <h1>标题</h1>
+      <nav>
+        <a class="fl" href="">上一篇</a>
+        <a class="fr" href="">下一篇</a>
+      </nav>
+      <hr />
+    </header>
+    <article>
+      <section>
+        <h2>定义</h2>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>public class Object</pre>
+        </div>
+        <p>命名空间：<a href="../System.html">System</a></p>
+        <p>程序集：System.Runtime.dll</p>
+        <p><span class="tag classTag">类</span></p>
+      </section>
+      <section>
+        <h2>说明</h2>
+        <p><span class="inlineCode">Object</span>是.NET类型系统中所有类的基类，是类型结构中的根（<strong>隐式继承</strong>）。</p>
+      </section>
+      <section>
+        <h2>目录</h2>
+        <ol>
+          <li><a href="#Constructor">构造函数</a></li>
+          <li>
+            <ol>
+              <li><a href="#Constructor1">Object()</a></li>
+            </ol>
+          </li>
+          <li><a href="#Destructor">析构函数</a></li>
+          <li>
+            <ol>
+              <li><a href="#Destructor1">Finalize()</a></li>
+            </ol>
+          </li>
+          <li><a href="#StaticField">静态字段</a></li>
+          <li>
+            <ol>
+              <li><a href="#StaticField1">Equals(Object, Object)</a></li>
+            </ol>
+          </li>
+          <li><a href="#StaticMethod">静态方法</a></li>
+          <li>
+            <ol>
+              <li><a href="#StaticMethod1">Equals(Object, Object)</a></li>
+            </ol>
+          </li>
+          <li><a href="#Field">字段</a></li>
+          <li>
+            <ol>
+              <li><a href="#Field1">Equals(Object, Object)</a></li>
+            </ol>
+          </li>
+          <li><a href="#Property">属性</a></li>
+          <li>
+            <ol>
+              <li><a href="#Property">Equals(Object, Object)</a></li>
+            </ol>
+          </li>
+          <li><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li><a href="#Method1">Equals(Object)</a></li>
+            </ol>
+          </li>
+          <li>重写</li>
+          <li>
+            <ol>
+              <li><a href="#Method1">Equals(Object)</a></li>
+            </ol>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h2 id="Constructor">构造函数</h2>
+        <h3 id="Constructor1">Object()</h3>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>public Object()</pre>
+        </div>
+        <p>初始化<span class="inlineCode">Object</span>实例。</p>
+      </section>
+      <section>
+        <h2 id="Destructor">析构函数</h2>
+        <h3 id="Destructor1">Finalize()</h3>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>~Object()</pre>
+        </div>
+        <p>允许<span class="inlineCode">Object</span>在被垃圾收集器回收之前释放资源或执行其他清理操作。</p>
+      </section>
+      <section>
+        <h2 id="StaticMethod">静态方法</h2>
+        <h3 id="StaticMethod1">Equals(Object, Object)</h3>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>public static bool Equals(Objet? objA, Object? objB)</pre>
+        </div>
+        <p>判断两<span class="inlineCode">Object</span>是否相同，其判断过程如下：先判断两个实例是否为同一个引用，如果是或者二者都为<span class="inlineCode">null</span>则返回<span class="inlineCode">true</span>（等价于<span class="inlineCode">ReferenceEquals(Object, Object)</span>）；然后判断二者是否为<span class="inlineCode">null</span>，如果有一个为<span class="inlineCode">null</span>则返回<span class="inlineCode">false</span>；如果二者都不为<span class="inlineCode">null</span>则返回<span class="inlineCode">objA.Equals(objB)</span>的结果。</p>
+      </section>
+      <section>
+        <h2 id="Method">方法</h2>
+        <h3 id="Method1">Equials(Object)</h3>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>public virtual bool Equals(Objet? obj)</pre>
+        </div>
+        <p>判断目标实例是否等于当前实例。对于引用类型，进行引用相等性判断（等价于<span class="inlineCode">ReferenceEquals(Object, Object)</span>）；对于值类型，进行值相等性判断：先判断是否为相同类型，然后判断每个公共和私有字段的值是否相等。</p>
+      </section>
+      <section><hr /></section>
+    </article>
+    <footer>
+      <nav>
+        <a class="fl" href="">上一篇</a>
+        <a class="fr" href="">下一篇</a>
+      </nav>
+    </footer>
+  </body>
+</html>

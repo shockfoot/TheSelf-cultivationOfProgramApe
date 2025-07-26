@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AggregateException</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <header>
+      <h1>AggregateException</h1>
+      <nav>
+        <a class="fl" href="./003003AccessViolationException.html">上一篇</a>
+        <a class="fr" href="">下一篇</a>
+      </nav>
+      <hr />
+    </header>
+    <article>
+      <section>
+        <h2>定义</h2>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>public class AggregateException : Exception</pre>
+        </div>
+        <p>命名空间：<a href="../System.html">System</a></p>
+        <p>程序集：System.Runtime.dll</p>
+        <p><span class="tag classTag">类</span></p>
+      </section>
+      <section>
+        <h2>说明</h2>
+        <p><span class="inlineCode">AggregateException</span>表示在程序执行期间抛出的一个或多个异常。<span class="inlineCode">AggregateException</span>用于将多个异常合并为单个可抛出的异常对象，在任务并行库（Task Parallel Library，TPL）和并行LINQ （Parallel LINQ，PLINQ）中被广泛使用。</p>
+      </section>
+      <section>
+        <h2>目录</h2>
+        <ol>
+          <li><a href="#Constructor">构造函数</a></li>
+          <li>
+            <ol>
+              <li><a href="#Constructor">AggregateException()</a>&nbsp;<span class="tag overloadTag">重载</span></li>
+            </ol>
+          </li>
+          <li><a href="#Property">属性</a></li>
+          <li>
+            <ol>
+              <li><a href="#PropertyInnerExceptions">InnerExceptions</a></li>
+            </ol>
+          </li>
+          <li><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li><a href="#MethodFlatten">Flatten()</a></li>
+              <li><a href="#MethodHandle">Handle(Func&lt;Exception, Boolean&gt;)</a></li>
+            </ol>
+          </li>
+          <li>重写</li>
+          <li>
+            <ol>
+              <li><a href="./003001Exception.html#PropertyMessage">Message</a></li>
+              <li><a href="./003001Exception.html#MethodGetBaseException">GetBaseException()</a></li>
+              <li><a href="../001DataType/001001Object.html#MethodToString">ToString()</a></li>
+            </ol>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h2 id="Constructor">构造函数</h2>
+        <h3 id="Constructor">AggregateException()</h3>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>public AggregateException()
+public AggregateException(System.Collections.Generic.IEnumerable&lt;Exception&gt; innerExceptions)
+public AggregateException(Exception[] innerExceptions)
+public AggregateException(string? message)
+public AggregateException(string? message, System.Collections.Generic.IEnumerable&lt;Exception&gt; innerExceptions)
+public AggregateException(string? message, Exception? innerException)
+public AggregateException(string? message, Exception[] innerExceptions)</pre>
+        </div>
+        <p>以当前系统区域下系统提供的错误描述或传入参数初始化实例的<span class="inlineCode">Message</span>、<span class="inlineCode">InnerException</span>或<span class="inlineCode">InnerExceptions</span>属性。</p>
+      </section>
+      <section>
+        <h2 id="Property">属性</h2>
+        <h3 id="PropertyInnerExceptions">InnerExceptions</h3>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>public System.Collections.ObjectModel.ReadOnlyCollection&lt;Exception&gt; InnerExceptions { get; }</pre>
+        </div>
+        <p>获取导致当前异常的异常实例的只读集合。</p>
+      </section>
+      <section>
+        <h2 id="Method">方法</h2>
+        <h3 id="MethodFlatten">Flatten()</h3>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>public AggregateException Flatten()</pre>
+        </div>
+        <p>将当前实例<strong>扁平化（Flatten）</strong>为一个新实例。</p>
+        <p>如果任务具有引发异常的附属子任务，则该异常在传播到父任务之前被包装在<span class="inlineCode">AggregateException</span>中，父任务在将该异常传播回调用线程之前将其包装在自己的<span class="inlineCode">AggregateException</span>中。在这种情况下，由<span class="inlineCode">Task.Wait()</span>、<span class="inlineCode">Wait()</span>、<span class="inlineCode">Task.WaitAny()</span>或<span class="inlineCode">Task.WaitAll()</span>捕获的异常的<span class="inlineCode">InnerExceptions</span>属性包含一个或多个<span class="inlineCode">AggregateException</span>实例，而不是导致故障的原始异常实例。为了避免必须遍历嵌套的<span class="inlineCode">AggregateException</span>实例，可以使用<span class="inlineCode">Flatten</span>方法删除所有嵌套的<span class="inlineCode">AggregateException</span>实例，以使返回的<span class="inlineCode">AggregateException</span>实例的<span class="inlineCode">InnerExceptions</span>属性包含原始的<span class="inlineCode">AggregateException</span>实例。此方法递归地扁平化所有实例，这些实例是当前实例的内部异常。在新的实例中返回的<span class="inlineCode">InnerExceptions</span>是以当前实例为根的异常树中所有内部异常的合集。</p>
+        <h3 id="MethodHandle">Handle(Func&lt;Exception, Boolean&gt;)</h3>
+        <div class="blockCode">
+          <p>C#</p>
+          <pre>public viud Handle(Func&lt;Exception, bool&gt; predicate)</pre>
+        </div>
+        <p>处理当前实例中每一个异常，并返回一个<span class="inlineCode">bool</span>表示是否处理成功。最终没有处理的异常将被放入一个新的<span class="inlineCode">AggregateException</span>实例并抛出。如果处理过程中抛出异常，则将停止处理并立即按原样传播抛出的异常。</p>
+      </section>
+      <section><hr /></section>
+    </article>
+    <footer>
+      <nav>
+        <a class="fl" href="./003003AccessViolationException.html">上一篇</a>
+        <a class="fr" href="">下一篇</a>
+      </nav>
+    </footer>
+  </body>
+</html>

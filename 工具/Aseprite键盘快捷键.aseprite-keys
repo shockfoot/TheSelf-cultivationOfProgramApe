@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<keyboard version="1">
+    <commands>
+        <key command="ReopenClosedFile" shortcut="Ctrl+Shift+T" removed="true"/>
+        <key command="SaveFileAs" shortcut="Ctrl+Shift+S" removed="true"/>
+        <key command="SaveFileCopyAs" shortcut="Ctrl+Alt+Shift+S" removed="true"/>
+        <key command="CloseFile" shortcut="Ctrl+W" removed="true"/>
+        <key command="CloseAllFiles" shortcut="Ctrl+Shift+W" removed="true"/>
+        <key command="ImportSpriteSheet" shortcut="Ctrl+I" removed="true"/>
+        <key command="ExportSpriteSheet" shortcut="Ctrl+E" removed="true"/>
+        <key command="RepeatLastExport" shortcut="Ctrl+Shift+X" removed="true"/>
+        <key command="Exit" shortcut="Ctrl+Q" removed="true"/>
+        <key command="Exit" shortcut="Alt+F4" removed="true"/>
+        <key command="Redo" shortcut="Ctrl+R" removed="true"/>
+        <key command="Redo" shortcut="Ctrl+Shift+Z" removed="true"/>
+        <key command="Cut" shortcut="Shift+Del" removed="true"/>
+        <key command="Copy" shortcut="Ctrl+Ins" removed="true"/>
+        <key command="CopyMerged" shortcut="Ctrl+Shift+C" removed="true"/>
+        <key command="Paste" shortcut="Shift+Ins" removed="true"/>
+        <key command="Stroke" shortcut="S" removed="true"/>
+        <key command="ReplaceColor" shortcut="Shift+R" removed="true"/>
+        <key command="HueSaturation" shortcut="Ctrl+U" removed="true"/>
+        <key command="ConvolutionMatrix" shortcut="F9" removed="true"/>
+        <key command="PasteText" shortcut="T" removed="true"/>
+        <key command="PasteText" shortcut="J"/>
+        <key command="KeyboardShortcuts" shortcut="Ctrl+Alt+Shift+K" removed="true"/>
+        <key command="KeyboardShortcuts" shortcut="Ctrl+L"/>
+        <key command="LayerProperties" shortcut="Shift+P" removed="true"/>
+        <key command="LayerProperties" context="Normal" shortcut="F2" removed="true"/>
+        <key command="LayerVisibility" shortcut="Shift+X" removed="true"/>
+        <key command="NewLayer" shortcut="Ctrl+Shift+V" removed="true">
+            <param name="fromClipboard" value="true"/>
+        </key>
+        <key command="NewFrame" shortcut="Alt+Shift+D" removed="true">
+            <param name="content" value="cellinked"/>
+        </key>
+        <key command="NewFrame" shortcut="Alt+M" removed="true">
+            <param name="content" value="cellinked"/>
+        </key>
+        <key command="NewFrame" shortcut="Alt+D" removed="true">
+            <param name="content" value="celcopies"/>
+        </key>
+        <key command="RemoveFrame" shortcut="Alt+C" removed="true"/>
+        <key command="FrameProperties" shortcut="P" removed="true">
+            <param name="frame" value="current"/>
+        </key>
+        <key command="Refresh" shortcut="F5" removed="true"/>
+        <key command="Zoom" shortcut="~" removed="true">
+            <param name="percentage" value="50"/>
+        </key>
+        <key command="Zoom" shortcut="`" removed="true">
+            <param name="percentage" value="50"/>
+        </key>
+        <key command="Zoom" shortcut="1" removed="true">
+            <param name="percentage" value="100"/>
+        </key>
+        <key command="Zoom" shortcut="2" removed="true">
+            <param name="percentage" value="200"/>
+        </key>
+        <key command="Zoom" shortcut="3" removed="true">
+            <param name="percentage" value="400"/>
+        </key>
+        <key command="Zoom" shortcut="4" removed="true">
+            <param name="percentage" value="800"/>
+        </key>
+        <key command="Zoom" shortcut="5" removed="true">
+            <param name="percentage" value="1600"/>
+        </key>
+        <key command="Zoom" shortcut="6" removed="true">
+            <param name="percentage" value="3200"/>
+        </key>
+        <key command="Zoom" shortcut="Ctrl++" removed="true">
+            <param name="action" value="in"/>
+        </key>
+        <key command="Zoom" shortcut="Ctrl+=" removed="true">
+            <param name="action" value="in"/>
+        </key>
+        <key command="Zoom" shortcut="Ctrl+Shift+=" removed="true">
+            <param name="action" value="in"/>
+        </key>
+        <key command="Zoom" shortcut="Ctrl+-" removed="true">
+            <param name="action" value="out"/>
+        </key>
+        <key command="SetInkType" shortcut="S">
+            <param name="type" value="simple"/>
+        </key>
+        <key command="SetInkType" shortcut="D">
+            <param name="type" value="shading"/>
+        </key>
+        <key command="Screenshot" shortcut="F12" removed="true">
+            <param name="steam" value="true"/>
+        </key>
+    </commands>
+    <tools>
+        <key tool="rectangular_marquee" shortcut="M" removed="true"/>
+        <key tool="rectangular_marquee" shortcut="Q"/>
+        <key tool="elliptical_marquee" shortcut="Shift+M" removed="true"/>
+        <key tool="lasso" shortcut="Q" removed="true"/>
+        <key tool="polygonal_lasso" shortcut="Shift+Q" removed="true"/>
+        <key tool="magic_wand" shortcut="W" removed="true"/>
+        <key tool="pencil" shortcut="B" removed="true"/>
+        <key tool="pencil" shortcut="W"/>
+        <key tool="spray" shortcut="Shift+B" removed="true"/>
+        <key tool="eraser" shortcut="E"/>
+        <key tool="eyedropper" shortcut="I" removed="true"/>
+        <key tool="eyedropper" shortcut="R"/>
+        <key tool="hand" shortcut="H" removed="true"/>
+        <key tool="move" shortcut="V" removed="true"/>
+        <key tool="move" shortcut="Y" removed="true"/>
+        <key tool="slice" shortcut="Shift+C" removed="true"/>
+        <key tool="zoom" shortcut="T" removed="true"/>
+        <key tool="zoom" shortcut="Z"/>
+        <key tool="paint_bucket" shortcut="G" removed="true"/>
+        <key tool="paint_bucket" shortcut="U" removed="true"/>
+        <key tool="paint_bucket" shortcut="T"/>
+        <key tool="gradient" shortcut="Shift+G" removed="true"/>
+        <key tool="line" shortcut="L" removed="true"/>
+        <key tool="line" shortcut="I" removed="true"/>
+        <key tool="line" shortcut="Y"/>
+        <key tool="curve" shortcut="Shift+L" removed="true"/>
+        <key tool="curve" shortcut="O" removed="true"/>
+        <key tool="curve" shortcut="U"/>
+        <key tool="rectangle" shortcut="U" removed="true"/>
+        <key tool="rectangle" shortcut="P" removed="true"/>
+        <key tool="rectangle" shortcut="I"/>
+        <key tool="filled_rectangle" shortcut="U" removed="true"/>
+        <key tool="ellipse" shortcut="Shift+U" removed="true"/>
+        <key tool="ellipse" shortcut="O"/>
+        <key tool="filled_ellipse" shortcut="Shift+U" removed="true"/>
+        <key tool="contour" shortcut="D" removed="true"/>
+        <key tool="polygon" shortcut="Shift+D" removed="true"/>
+        <key tool="blur" shortcut="R" removed="true"/>
+        <key tool="jumble" shortcut="R" removed="true"/>
+    </tools>
+    <quicktools>
+        <key tool="hand" shortcut="Space" removed="true"/>
+    </quicktools>
+    <actions/>
+    <wheel/>
+    <drag/>
+</keyboard>

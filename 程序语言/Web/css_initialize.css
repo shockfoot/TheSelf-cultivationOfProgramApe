@@ -1,0 +1,100 @@
+html {
+  color: #222;
+  overflow-y: scroll;
+  font-family: "微软雅黑", Arial;
+  font-size: 16px;
+}
+
+body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,th,header,article,footer,section,nav,pre {
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+ul,ol {
+  list-style: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+table,td,tr,th {
+  font-size: 1rem;
+}
+
+b,strong {
+  font-weight: 400;
+}
+
+i,em {
+  font-style: normal;
+}
+
+s,del,u,ins {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+  border: none;
+}
+
+a {
+  color: #006699;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 公共类 */
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.al {
+  text-align: left;
+}
+
+.ac {
+  text-align: center;
+}
+
+.ar {
+  text-align: right;
+}
+
+.hide {
+  display: none;
+}
+
+.blod {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}

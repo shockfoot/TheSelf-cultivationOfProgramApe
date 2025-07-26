@@ -1,0 +1,108 @@
+body {
+  padding: 0 2rem 2rem 2rem;
+  line-height: 2rem;
+}
+
+h1,h2,h3 {
+    font-weight: 700;
+}
+
+h1 {
+  font-size: 1.4rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2rem;
+  line-height: 3rem;
+  height: 3rem;
+}
+
+h3 {
+  height: 2rem;
+}
+
+nav {
+  height: 2rem;
+}
+
+ul,ol {
+  padding-left: 2rem;
+}
+
+span.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  line-height: 1.6rem;
+  margin: 0.2rem 0.6rem 0.2rem 0;
+  border-radius: 0.8rem;
+  color: #ffffff;
+}
+
+/* 标签 */
+
+span.classTag {
+  background-color: #0099cc;
+}
+
+span.structTag {
+  background-color: #ff6666;
+}
+
+span.interfaceTag {
+  background-color: #339933;
+}
+
+span.enumTag {
+  background-color: #cc6699;
+}
+
+span.delegateTag {
+  background-color: #ff9966;
+}
+
+span.staticTag {
+  background-color: #336699;
+}
+
+span.sealedTag {
+  background-color: #cc3333;
+}
+
+span.overloadTag {
+  padding: 0 0.6rem;
+  line-height: 1.4rem;
+  margin: 0.3rem 0.6rem 0.3rem 0;
+  background-color: #aaa;
+}
+
+/* 代码 */
+
+span.inlineCode {
+  display: inline-block;
+  background-color: #ddd;
+  font-family: Consolas;
+  border-radius: 0.4rem;
+  padding: 0 0.2rem;
+  line-height: 1.4rem;
+  margin: 0.3rem 0.2rem;
+}
+
+div.blockCode p {
+  font-family: Consolas;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem 0.4rem 0 0;
+  margin: 0.5rem 0 0 0;
+  background-color: #ccc;
+}
+
+div.blockCode pre {
+  background-color: #ddd;
+  font-family: Consolas;
+  border-radius: 0 0 0.4rem 0.4rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0 1rem 0;
+}

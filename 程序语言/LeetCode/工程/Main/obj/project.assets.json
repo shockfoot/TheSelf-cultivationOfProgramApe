@@ -1,0 +1,113 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
+      "LeetCode/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LeetCode.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LeetCode.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
+    "LeetCode/1.0.0": {
+      "type": "project",
+      "path": "../LeetCode/LeetCode.csproj",
+      "msbuildProject": "../LeetCode/LeetCode.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "Common >= 1.0.0",
+      "LeetCode >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\JM\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "E:\\PersonalFiles\\程序猿的自我修养\\程序语言\\CSharp工程\\Main\\Main.csproj",
+      "projectName": "Main",
+      "projectPath": "E:\\PersonalFiles\\程序猿的自我修养\\程序语言\\CSharp工程\\Main\\Main.csproj",
+      "packagesPath": "C:\\Users\\JM\\.nuget\\packages\\",
+      "outputPath": "E:\\PersonalFiles\\程序猿的自我修养\\程序语言\\CSharp工程\\Main\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\JM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "E:\\PersonalFiles\\程序猿的自我修养\\程序语言\\CSharp工程\\Common\\Common.csproj": {
+              "projectPath": "E:\\PersonalFiles\\程序猿的自我修养\\程序语言\\CSharp工程\\Common\\Common.csproj"
+            },
+            "E:\\PersonalFiles\\程序猿的自我修养\\程序语言\\CSharp工程\\LeetCode\\LeetCode.csproj": {
+              "projectPath": "E:\\PersonalFiles\\程序猿的自我修养\\程序语言\\CSharp工程\\LeetCode\\LeetCode.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

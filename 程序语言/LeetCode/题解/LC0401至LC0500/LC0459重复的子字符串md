@@ -1,0 +1,202 @@
+# LC0459重复的子字符串
+
+难度：中等
+数据结构：字符串
+算法：暴力枚举、KMP
+
+## 题目
+
+给定一个非空的字符串s，检查是否可以通过由它的一个子串重复多次构成。
+
+示例：
+
+> 输入：s = "abab"
+> 输出：true
+> 解释：可由子串"ab"重复两次构成。
+
+> 输入：s = "aba"
+> 输出：false
+
+提示：
+
+- 1 <= .length <= 10^4^
+- s由小写英文字母构成
+
+## 题解
+
+### 暴力枚举
+
+分析可知，如果一个长度为n字符串s可以由一个长度为n\`的子串s\`重复构成，那么n一定是n\`的整数倍，s\`一定是s的前缀并且在这之后的每一个字符s[i]都要与它之前的第n\`个字符s[i - n\`]相同。
+
+因此可以在遍历s过程中，对s的每一个前缀进行判断。需要注意的是，由于子串至少重复一次，所以只需要遍历到n / 2处即可。
+
+``` csharp
+public bool RepeatedSubstringPattern(string s)
+{
+    if (string.IsNullOrEmpty(s))
+    {
+        return false;
+    }
+
+    int n = s.Length;
+    bool isMatch = false;
+    for (int i = 1; i * 2 <= n; i++)
+    {
+        // n是当前前缀的长度的整数倍
+        if (n % i == 0)
+        {
+            isMatch = true;
+            for (int j = i; j < n; j++)
+            {
+                if (s[j] != s[j - i])
+                {
+                    isMatch = false;
+                    break;
+                }
+            }
+
+            if (isMatch)
+            {
+                break;
+            }
+        }
+    }
+
+    return isMatch;
+}
+```
+
+时间复杂度：时间复杂度为O(n^2^)，n为数组长度。
+
+空间复杂度：空间复杂度为O(1)。
+
+### 字符串匹配
+
+根据上述分析可以将字符串s表示为s\`s\`...s\`s\`的形式，总计n / n\`个s\`。此时，思考如何在不枚举s\`的情况下，判断s是否可以表示为上述形式。
+
+如果将第一个s\`添加到末尾，那么得到的字符串仍然是其本身。
+
+因此，可以考虑将两个s连在一起，并移除第一个和最后一个字符。如果s是该字符串的子串，那么s就满足题目要求。
+
+> 需要注意的是，如果s满足题目要求，那么s有这样的性质，而此处使用的方法却是如果s有这样的性质，那么s满足题目要求。因此，只证明了充分性是远远不够的，还需要证明必要性。
+
+称字符串t = s + s。设s在t中的起始位置i，i属于(0, n)，即t中从位置i开始的n个连续字符为s，有：s[0:n - 1] = t[i:n + i - 1]。
+
+由于t是由两个s拼接而成，那么可以将t[i:n + i - 1]分为n - 1的左右两部分：
+
+- s[0:n − i − 1] = t[i:n − 1]
+- s[n − i:n − 1] = t[n:n + i − 1] = t[0:i − 1]
+​
+每个部分都可以对应回s：
+
+- s[0:n − i − 1] = s[i:n − 1]
+- s[n − i:n − 1] = s[0:i − 1]
+
+这说明s是一个可旋转的字符串，即将s的前i个字符保持顺序，移动到s的末尾，得到的新字符串与s相同。也就是说，在模n的意义下，s[j] = s[j + i]对于任意的j恒成立。
+
+> 在模n的意义下可以理解为，所有的加法运算的结果都需要对n取模，使得结果保持在[0,n)中，这样加法就自带了**旋转**的效果。
+
+如果不断的连写，s[j] = s[j + i] = s[j + 2i]...，那么所有满足j~0~ = j + ki的位置j~0~都有s[j] = s[j~0~]，j和j~0~在模i的意义下等价。因此，j和j~0~在gcd(n, i)的意义下等价，其中gcd表示最大公约数。也就是说，字符串s中的两个位置如果在gcd(n, i)的意义下等价，那么它们对应的字符必须相同。
+
+由于gcd(n, i)一定是n的约数，那么字符串s一定可以由其长度为gcd(n, i)的前缀重复  
+n / gcd(n, i)次构成。
+
+另一方面，如果s满足题目的要求，那么s包含若干个*部分*，t = s + s则包含两倍数量的*部分*，因此s显然是t的子串，并且起始位置可以不为0或n。
+
+``` csharp
+public bool RepeatedSubstringPattern(string s)
+{
+    if (string.IsNullOrEmpty(s))
+    {
+        return false;
+    }
+
+    return ($"{s}{s}").IndexOf(s, 1, StringComparison.Ordinal) != s.Length;
+}
+```
+
+由于使用了语言自带的字符串查找函数，因此不深入分析其时空复杂度。
+
+### KMP
+
+可以使用KMP算法实现字符串查找函数。
+
+``` csharp
+public bool RepeatedSubstringPattern(string s)
+{
+    if (string.IsNullOrEmpty(s))
+    {
+        return false;
+    }
+
+    return Contains($"{s}{s}", s);
+}
+
+private bool Contains(string main, string pattern)
+{
+    int[] next = BuildNext(pattern);
+    int n = main.Length, m = pattern.Length;
+    for (int i = 1, j = 0; i < n;)
+    {
+        if (main[i] == pattern[j])
+        {
+            i++;
+            j++;
+        }
+        else if (j > 0)
+        {
+            j = next[j - 1];
+        }
+        else
+        {
+            i++;
+        }
+
+        if (j == m)
+        {
+            return true;
+        }
+
+        if (m - j > n - i)
+        {
+            break;
+        }
+    }
+
+    return false;
+}
+
+private int[] BuildNext(string s)
+{
+    int n = s.Length, prefixLength = 0;
+    int[] next = new int[n];
+    next[0] = prefixLength;
+    for (int i = 1; i < n;)
+    {
+        if (s[prefixLength] == s[i])
+        {
+            prefixLength++;
+            next[i] = prefixLength;
+            i++;
+        }
+        else
+        {
+            if (prefixLength == 0)
+            {
+                next[i] = prefixLength;
+                i++;
+            }
+            else
+            {
+                prefixLength = next[prefixLength - 1];
+            }
+        }
+    }
+
+    return next;
+}
+```
+
+时间复杂度：时间复杂度为O(n)，其中n为字符串s的长度。
+
+空间复杂度：需要存储一个next数组，空间复杂度为O(n)。

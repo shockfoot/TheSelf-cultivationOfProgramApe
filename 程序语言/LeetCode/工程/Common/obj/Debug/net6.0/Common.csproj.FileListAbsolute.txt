@@ -1,0 +1,11 @@
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\bin\Debug\net6.0\Common.deps.json
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\bin\Debug\net6.0\Common.dll
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\bin\Debug\net6.0\Common.pdb
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\obj\Debug\net6.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\obj\Debug\net6.0\Common.AssemblyInfoInputs.cache
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\obj\Debug\net6.0\Common.AssemblyInfo.cs
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\obj\Debug\net6.0\Common.csproj.CoreCompileInputs.cache
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\obj\Debug\net6.0\Common.dll
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\obj\Debug\net6.0\refint\Common.dll
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\obj\Debug\net6.0\Common.pdb
+E:\PersonalFiles\程序猿的自我修养\程序语言\CSharp工程\Common\obj\Debug\net6.0\ref\Common.dll
