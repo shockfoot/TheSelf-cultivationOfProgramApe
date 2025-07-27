@@ -1,6 +1,6 @@
 body {
   padding: 0 2rem 2rem 2rem;
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 
 h1,h2,h3 {
@@ -105,4 +105,9 @@ div.blockCode pre {
   border-radius: 0 0 0.4rem 0.4rem;
   padding: 0.5rem 1rem;
   margin: 0 0 1rem 0;
+  /*white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;*/
+  overflow-x: auto;
 }

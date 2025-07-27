@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>标题</title>
+    <title>Activator</title>
     <link rel="stylesheet" href="../../CSS/css_initialize.css" />
     <link rel="stylesheet" href="../../CSS/css_common.css" />
   </head>
   <body>
     <header>
-      <h1>标题</h1>
+      <h1>Activator</h1>
       <nav>
         <a class="fl" href="">上一篇</a>
         <a class="fr" href="">下一篇</a>
@@ -21,104 +21,57 @@
         <h2>定义</h2>
         <div class="blockCode">
           <p>C#</p>
-          <pre>public class Object</pre>
+          <pre>public static class Activator</pre>
         </div>
         <p>命名空间：<a href="../System.html">System</a></p>
         <p>程序集：System.Runtime.dll</p>
-        <p><span class="tag classTag">类</span></p>
+        <p><span class="tag staticTag">静态</span><span class="tag classTag">类</span></p>
       </section>
       <section>
         <h2>说明</h2>
-        <p><span class="inlineCode">Object</span>是.NET类型系统中所有类的基类，是类型结构中的根（<strong>隐式继承</strong>）。</p>
+        <p><span class="inlineCode">Activator</span>是提供在本地或远程创建对象类型或获取对现有远程对象的引用的方法的静态类。</p>
       </section>
       <section>
         <h2>目录</h2>
         <ol>
-          <li><a href="#Constructor">构造函数</a></li>
-          <li>
-            <ol>
-              <li><a href="#Constructor1">Object()</a></li>
-            </ol>
-          </li>
-          <li><a href="#Destructor">析构函数</a></li>
-          <li>
-            <ol>
-              <li><a href="#Destructor1">Finalize()</a></li>
-            </ol>
-          </li>
-          <li><a href="#StaticField">静态字段</a></li>
-          <li>
-            <ol>
-              <li><a href="#StaticField1">Equals(Object, Object)</a></li>
-            </ol>
-          </li>
           <li><a href="#StaticMethod">静态方法</a></li>
           <li>
             <ol>
-              <li><a href="#StaticMethod1">Equals(Object, Object)</a></li>
-            </ol>
-          </li>
-          <li><a href="#Field">字段</a></li>
-          <li>
-            <ol>
-              <li><a href="#Field1">Equals(Object, Object)</a></li>
-            </ol>
-          </li>
-          <li><a href="#Property">属性</a></li>
-          <li>
-            <ol>
-              <li><a href="#Property">Equals(Object, Object)</a></li>
-            </ol>
-          </li>
-          <li><a href="#Method">方法</a></li>
-          <li>
-            <ol>
-              <li><a href="#Method1">Equals(Object)</a></li>
-            </ol>
-          </li>
-          <li>重写</li>
-          <li>
-            <ol>
-              <li><a href="#Method1">Equals(Object)</a></li>
+              <li><a href="#StaticMethodCreateInstance">CreateInstance()</a>&nbsp;<span class="tag overloadTag">重载</span></li>
+              <li><a href="#StaticMethodCreateInstanceFrom">CreateInstanceFrom()</a>&nbsp;<span class="tag overloadTag">重载</span></li>
             </ol>
           </li>
         </ol>
       </section>
       <section>
-        <h2 id="Constructor">构造函数</h2>
-        <h3 id="Constructor1">Object()</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public Object()</pre>
-        </div>
-        <p>初始化<span class="inlineCode">Object</span>实例。</p>
-      </section>
-      <section>
-        <h2 id="Destructor">析构函数</h2>
-        <h3 id="Destructor1">Finalize()</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>~Object()</pre>
-        </div>
-        <p>允许<span class="inlineCode">Object</span>在被垃圾收集器回收之前释放资源或执行其他清理操作。</p>
-      </section>
-      <section>
         <h2 id="StaticMethod">静态方法</h2>
-        <h3 id="StaticMethod1">Equals(Object, Object)</h3>
+        <h3 id="StaticMethodCreateInstance">CreateInstance()</h3>
         <div class="blockCode">
           <p>C#</p>
-          <pre>public static bool Equals(Objet? objA, Object? objB)</pre>
+          <pre>public static T CreateInstance&lt;T&gt;() where T : allows ref struct
+public static object? CreateInstance(Type type)
+public static object? CreateInstance(Type type, bool nonPublic)
+public static object? CreateInstance(Type type, params object?[]? args)
+public static object? CreateInstance(Type type, object?[]? args, object?[]? activationAttributes)
+public static object? CreateInstance(Type type, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder? binder, object?[]? args, System.Globalization.CultureInfo? culture)
+public static object? CreateInstance(Type type, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder? binder, object?[]? args, System.Globalization.CultureInfo? culture, object?[]? activationAttributes)
+public static System.Runtime.Remoting.ObjectHandle? CreateInstance(string assemblyName, string typeName)
+public static System.Runtime.Remoting.ObjectHandle? CreateInstance(string assemblyName, string typeName, object?[]? activationAttributes)
+public static System.Runtime.Remoting.ObjectHandle? CreateInstance(string assemblyName, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder? binder, object?[]? args, System.Globalization.CultureInfo? culture, object?[]? activationAttributes)</pre>
         </div>
-        <p>判断两<span class="inlineCode">Object</span>是否相同，其判断过程如下：先判断两个实例是否为同一个引用，如果是或者二者都为<span class="inlineCode">null</span>则返回<span class="inlineCode">true</span>（等价于<span class="inlineCode">ReferenceEquals(Object, Object)</span>）；然后判断二者是否为<span class="inlineCode">null</span>，如果有一个为<span class="inlineCode">null</span>则返回<span class="inlineCode">false</span>；如果二者都不为<span class="inlineCode">null</span>则返回<span class="inlineCode">objA.Equals(objB)</span>的结果。</p>
-      </section>
-      <section>
-        <h2 id="Method">方法</h2>
-        <h3 id="Method1">Equials(Object)</h3>
+        <p><span class="inlineCode">CreateInstance()</span>方法通过调用与指定参数最匹配的构造函数来创建程序集中定义的类型的实例。如果没有指定参数，则调用无参数构造函数。</p>
+        <p>必须有足够的权限来搜索和调用构造函数，否则将抛出异常。默认情况下，在搜索构造函数时只考虑公共构造函数。如果找不到构造函数或无参数构造函数，则会抛出异常。</p>
+        <p>绑定参数指定了在程序集中如何搜索合适的构造函数的条件。如果没有指定绑定参数，则使用默认绑定参数。</p>
+        <p>可以在本地或远程站点创建类型的实例。如果类型是远程创建的，则激活属性参数指定远程站点的URI。创建实例的调用可能会在到达远程站点之前通过中间站点。其他激活属性可以修改调用在远程和中间站点运行的环境或上下文。</p>
+        <p>如果实例是在本地创建的，则返回对该对象的引用。如果实例是远程创建的，则返回对代理的引用。远程对象通过代理进行操作，就像它是本地对象一样。</p>        
+        <h3 id="StaticMethodCreateInstanceFrom">CreateInstanceFrom()</h3>
         <div class="blockCode">
           <p>C#</p>
-          <pre>public virtual bool Equals(Objet? obj)</pre>
+          <pre>public static System.Runtime.Remoting.ObjectHandle? CreateInstance(string assemblyFile, string typeName)
+public static System.Runtime.Remoting.ObjectHandle? CreateInstance(string assemblyFile, string typeName, object?[]? activationAttributes)
+public static System.Runtime.Remoting.ObjectHandle? CreateInstance(string assemblyName, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder? binder, object?[]? args, System.Globalization.CultureInfo? culture, object?[]? activationAttributes)</pre>
         </div>
-        <p>判断目标实例是否等于当前实例。对于引用类型，进行引用相等性判断（等价于<span class="inlineCode">ReferenceEquals(Object, Object)</span>）；对于值类型，进行值相等性判断：先判断是否为相同类型，然后判断每个公共和私有字段的值是否相等。</p>
+        <p>使用指定的程序集文件和与指定参数最匹配的构造函数，创建指定名称的类型的实例。</p>
       </section>
       <section><hr /></section>
     </article>
