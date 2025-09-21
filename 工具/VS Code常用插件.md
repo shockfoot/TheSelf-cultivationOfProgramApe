@@ -21,3 +21,9 @@
 - HTML CSS Support by *ecmel*：基础工具。
 - Prettier - Code formatter by *Prettier*：格式化代码。
 - JavaScript (ES6) code snippets by *charalampos karypidis：ES6语法智能提示及快速输入。
+
+## C Sharp
+
+- C# by *Microsoft*：C#基础支持。
+- C# Dev Kit by *Microsoft*：C#开发工具包（自动包含C#和.Net Install Tool）。
+- IntelliCode for C# Dev Kit：AI。
