@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>页面标题</title>
+    <link rel="stylesheet" href="../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../CSS/css_common.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">页面标题</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Constructor">构造函数</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Constructor">Object()</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Destructor">析构函数</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Destructor">Finalize()</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Field">字段</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Field">Equals(Object, Object)</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Property">属性</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Property">Equals(Object, Object)</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Event">事件</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Event">Equals(Object)</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#StaticMethod">静态方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#StaticMethod">Equals(Object, Object)</a></li>
+            </ol>
+          </li>
+          <li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method">Equals(Object)</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Override">重写</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Override">Equals(Object)</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <h1 id="Title">页面标题</h1>
+        <nav class="head-nav"><a class="fl" href="#替换链接">上一篇</a><a class="fr" href="#替换链接">下一篇</a></nav>
+        <h2 id="Dfinition">定义</h2>
+        <div class="block-code">
+          <p>C#</p>
+          <pre>public class Object</pre>
+        </div>
+        <p>命名空间：<a href="#替换链接">System</a></p>
+        <p>程序集：System.Runtime.dll</p>
+        <p><span class="tag class-tag">类</span></p>
+        <h2 id="Instruction">说明</h2>
+        <p><span class="inline-code">Object</span>是.NET类型系统中所有类的基类，是类型结构中的根（<strong>隐式继承</strong>）。</p>
+        <h2 id="Constructor">构造函数</h2>
+        <h3 id="Constructor1">Object()</h3>
+        <div class="block-code">
+          <p>C#</p>
+          <pre>public Object()</pre>
+        </div>
+        <p>初始化<span class="inline-code">Object</span>实例。</p>
+        <h2 id="StaticMethod">静态方法</h2>
+        <h3 id="StaticMethod1">Equals(Object, Object)</h3>
+        <div class="block-code">
+          <p>C#</p>
+          <pre>public static bool Equals(Objet? objA, Object? objB)</pre>
+        </div>
+        <p>判断两<span class="inline-code">Object</span>是否相同，其判断过程如下：先判断两个实例是否为同一个引用，如果是或者二者都为<span class="inline-code">null</span>则返回<span class="inline-code">true</span>（等价于<span class="inline-code">ReferenceEquals(Object, Object)</span>）；然后判断二者是否为<span class="inline-code">null</span>，如果有一个为<span class="inline-code">null</span>则返回<span class="inline-code">false</span>；如果二者都不为<span class="inline-code">null</span>则返回<span class="inline-code">objA.Equals(objB)</span>的结果。</p>
+        <h3 id="StaticMethod2">ReferenceEquals(Object, Object)</h3>
+        <div class="block-code">
+          <p>C#</p>
+          <pre>public static bool ReferenceEquals(Objet? objA, Object? objB)</pre>
+        </div>
+        <p>判断两<span class="inline-code">Object</span>是否为同一实例。</p>
+        <p>值得注意的是，对于值类型，由于装箱，即使二者值相同，<span class="inline-code">ReferenceEquals(Object, Object)</span>也返回<span class="inline-code">false</span>；对于字符串，不执行值相等性判断，因此只有当两个字符串都被拘禁（interned）才可能返回<span class="inline-code">true</span>。</p>
+        <nav class="foot-nav"><a class="fl" href="#替换链接">上一篇</a><a class="fr" href="#替换链接">下一篇</a></nav>
+      </div>
+    </div>
+  </body>
+</html>

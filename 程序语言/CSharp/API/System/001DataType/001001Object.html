@@ -8,143 +8,122 @@
     <link rel="stylesheet" href="../../CSS/css_common.css" />
   </head>
   <body>
-    <header>
-      <h1>Object</h1>
-      <nav>
-        <a class="fl" href="../System.html">上一篇</a>
-        <a class="fr" href="./001002ValueType.html">下一篇</a>
-      </nav>
-      <hr />
-    </header>
-    <article>
-      <section>
-        <h2>定义</h2>
-        <div class="blockCode">
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">Object</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Constructor">构造函数</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Constructor01">Object()</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Destructor">析构函数</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Destructor01">Finalize()</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#StaticMethod">静态方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#StaticMethod01">Equals(Object, Object)</a></li>
+              <li class="sidebar-item-h2"><a href="#StaticMethod02">ReferenceEquals(Object, Object)</a></li>
+            </ol>
+          </li>
+          <li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method01">Equals(Object)</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">GetHashCode()</a></li>
+              <li class="sidebar-item-h2"><a href="#Method03">GetType()</a></li>
+              <li class="sidebar-item-h2"><a href="#Method04">MemberwiseClone()</a></li>
+              <li class="sidebar-item-h2"><a href="#Method05">ToString()</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <h1 id="Title">Object</h1>
+        <nav class="head-nav"><a class="fl" href="../System.html">上一篇</a><a class="fr" href="./001002ValueType.html">下一篇</a></nav>
+        <h2 id="Dfinition">定义</h2>
+        <div class="block-code">
           <p>C#</p>
           <pre>public class Object</pre>
         </div>
         <p>命名空间：<a href="../System.html">System</a></p>
         <p>程序集：System.Runtime.dll</p>
-        <p><span class="tag classTag">类</span></p>
-      </section>
-      <section>
-        <h2>说明</h2>
-        <p>
-          <span class="inlineCode">Object</span>是.NET类型系统中所有类的基类，是类型结构中的根（<strong>隐式继承</strong>）。
-        </p>
-      </section>
-      <section>
-        <h2>目录</h2>
-        <ol>
-          <li><a href="#Constructor">构造函数</a></li>
-          <li>
-            <ol>
-              <li><a href="#Constructor">Object()</a></li>
-            </ol>
-          </li>
-          <li><a href="#Destructor">析构函数</a></li>
-          <li>
-            <ol>
-              <li><a href="#Destructor">Finalize()</a></li>
-            </ol>
-          </li>
-          <li><a href="#StaticMethod">静态方法</a></li>
-          <li>
-            <ol>
-              <li><a href="#StaticMethodEquals">Equals(Object, Object)</a></li>
-              <li><a href="#StaticMethodReferenceEquals">ReferenceEquals(Object, Object)</a></li>
-            </ol>
-          </li>
-          <li><a href="#Method">方法</a></li>
-          <li>
-            <ol>
-              <li><a href="#MethodEquals">Equals(Object)</a></li>
-              <li><a href="#MethodGetHashCode">GetHashCode()</a></li>
-              <li><a href="#MethodGetType">GetType()</a></li>
-              <li><a href="#MethodMemberwiseClone">MemberwiseClone()</a></li>
-              <li><a href="#MethodToString">ToString()</a></li>
-            </ol>
-          </li>
-        </ol>
-      </section>
-      <section>
+        <p><span class="tag class-tag">类</span></p>
+        <h2 id="Instruction">说明</h2>
+        <p><span class="inline-code">Object</span>是.NET类型系统中所有类的基类，是类型结构中的根（<strong>隐式继承</strong>）。</p>
         <h2 id="Constructor">构造函数</h2>
-        <h3 id="Constructor">Object()</h3>
-        <div class="blockCode">
+        <h3 id="Constructor01">Object()</h3>
+        <div class="block-code">
           <p>C#</p>
           <pre>public Object()</pre>
         </div>
-        <p>初始化<span class="inlineCode">Object</span>实例。</p>
-      </section>
-      <section>
+        <p>初始化<span class="inline-code">Object</span>实例。</p>
         <h2 id="Destructor">析构函数</h2>
-        <h3 id="Destructor">Finalize()</h3>
-        <div class="blockCode">
+        <h3 id="Destructor01">Finalize()</h3>
+        <div class="block-code">
           <p>C#</p>
           <pre>~Object()</pre>
         </div>
-        <p>允许<span class="inlineCode">Object</span>实例在被垃圾收集器回收之前释放资源或执行其他清理操作。</p>
-        <p><span class="inlineCode">Object</span>没有提供<span class="inlineCode">Finalize()</span>方法的实现，并且垃圾收集器只会标记重写了<span class="inlineCode">Finalize()</span>方法的类型。如果一个类型重写了<span class="inlineCode">Finalize()</span>方法，垃圾收集器会将该类型的每个实例添加到内部的<strong>终结队列</strong>中。终结队列中的所有实例的<span class="inlineCode">Finalize()</span>方法必须在其从内存中清除之前执行。垃圾收集器会在以下条件下执行此操作：垃圾收集器发现该对象不可访问后；在.NET框架中关闭程序域（即使可访问实例也会执行其<span class="inlineCode">Finalize()</span>方法）<span class="inlineCode">Finalize()</span>方法只会自动调用一次。</p>
-        </p><span class="inlineCode">Finalize()</span>方法有以下限制：执行时机不确定；两个对象的<span class="inlineCode">Finalize()</span>方法执行顺序无法保证，即使A的<span class="inlineCode">Finalize()</span>方法中引用了B；<span class="inlineCode">Finalize()</span>方法运行的线程不确定；当某个实例的<span class="inlineCode">Finalize()</span>方法阻塞或进程终止时没有给运行时执行清理的机会，<span class="inlineCode">Finalize()</span>方法可能不会运行完成或根本不会运行；在关闭期间，只有可终结实例数量持续减少时，运行时才会持续终结实例；如果<span class="inlineCode">Finalize()</span>方法抛出异常，并且运行时是默认策略的托管应用程序，则运行时将终止进程，并且不会继续执行<span class="inlineCode">try/finally</span>块或<span class="inlineCode">Finalize()</span>方法（确保终结器不能释放或销毁资源是进程的完整性）。</p>
-      </section>
-      <section>
+        <p>允许<span class="inline-code">Object</span>实例在被垃圾收集器回收之前释放资源或执行其他清理操作。</p>
+        <p><span class="inline-code">Object</span>没有提供<span class="inline-code">Finalize()</span>方法的实现，并且垃圾收集器只会标记重写了<span class="inline-code">Finalize()</span>方法的类型。如果一个类型重写了<span class="inline-code">Finalize()</span>方法，垃圾收集器会将该类型的每个实例添加到内部的<strong>终结队列</strong>中。终结队列中的所有实例的<span class="inline-code">Finalize()</span>方法必须在其从内存中清除之前执行。垃圾收集器会在以下条件下执行此操作：垃圾收集器发现该对象不可访问后；在.NET框架中关闭程序域（即使可访问实例也会执行其<span class="inline-code">Finalize()</span>方法）<span class="inline-code">Finalize()</span>方法只会自动调用一次。</p>
+        </p><span class="inline-code">Finalize()</span>方法有以下限制：执行时机不确定；两个对象的<span class="inline-code">Finalize()</span>方法执行顺序无法保证，即使A的<span class="inline-code">Finalize()</span>方法中引用了B；<span class="inline-code">Finalize()</span>方法运行的线程不确定；当某个实例的<span class="inline-code">Finalize()</span>方法阻塞或进程终止时没有给运行时执行清理的机会，<span class="inline-code">Finalize()</span>方法可能不会运行完成或根本不会运行；在关闭期间，只有可终结实例数量持续减少时，运行时才会持续终结实例；如果<span class="inline-code">Finalize()</span>方法抛出异常，并且运行时是默认策略的托管应用程序，则运行时将终止进程，并且不会继续执行<span class="inline-code">try/finally</span>块或<span class="inline-code">Finalize()</span>方法（确保终结器不能释放或销毁资源是进程的完整性）。</p>
         <h2 id="StaticMethod">静态方法</h2>
-        <h3 id="StaticMethodEquals">Equals(Object, Object)</h3>
-        <div class="blockCode">
+        <h3 id="StaticMethod01">Equals(Object, Object)</h3>
+        <div class="block-code">
           <p>C#</p>
           <pre>public static bool Equals(Objet? objA, Object? objB)</pre>
         </div>
-        <p>判断两<span class="inlineCode">Object</span>是否相同，其判断过程如下：先判断两个实例是否为同一个引用，如果是或者二者都为<span class="inlineCode">null</span>则返回<span class="inlineCode">true</span>（等价于<span class="inlineCode">ReferenceEquals(Object, Object)</span>）；然后判断二者是否为<span class="inlineCode">null</span>，如果有一个为<span class="inlineCode">null</span>则返回<span class="inlineCode">false</span>；如果二者都不为<span class="inlineCode">null</span>则返回<span class="inlineCode">objA.Equals(objB)</span>的结果。</p>
-        <h3 id="StaticMethodReferenceEquals">ReferenceEquals(Object, Object)</h3>
-        <div class="blockCode">
+        <p>判断两<span class="inline-code">Object</span>是否相同，其判断过程如下：先判断两个实例是否为同一个引用，如果是或者二者都为<span class="inline-code">null</span>则返回<span class="inline-code">true</span>（等价于<span class="inline-code">ReferenceEquals(Object, Object)</span>）；然后判断二者是否为<span class="inline-code">null</span>，如果有一个为<span class="inline-code">null</span>则返回<span class="inline-code">false</span>；如果二者都不为<span class="inline-code">null</span>则返回<span class="inline-code">objA.Equals(objB)</span>的结果。</p>
+        <h3 id="StaticMethod02">ReferenceEquals(Object, Object)</h3>
+        <div class="block-code">
           <p>C#</p>
           <pre>public static bool ReferenceEquals(Objet? objA, Object? objB)</pre>
         </div>
-        <p>判断两<span class="inlineCode">Object</span>是否为同一实例。</p>
-        <p>值得注意的是，对于值类型，由于装箱，即使二者值相同，<span class="inlineCode">ReferenceEquals(Object, Object)</span>也返回<span class="inlineCode">false</span>；对于字符串，不执行值相等性判断，因此只有当两个字符串都被拘禁（interned）才可能返回<span class="inlineCode">true</span>。</p>
-      </section>
-      <section>
+        <p>判断两<span class="inline-code">Object</span>是否为同一实例。</p>
+        <p>值得注意的是，对于值类型，由于装箱，即使二者值相同，<span class="inline-code">ReferenceEquals(Object, Object)</span>也返回<span class="inline-code">false</span>；对于字符串，不执行值相等性判断，因此只有当两个字符串都被拘禁（interned）才可能返回<span class="inline-code">true</span>。</p>
         <h2 id="Method">方法</h2>
-        <h3 id="MethodEquals">Equials(Object)</h3>
-        <div class="blockCode">
+        <h3 id="Method01">Equials(Object)</h3>
+        <div class="block-code">
           <p>C#</p>
           <pre>public virtual bool Equals(Objet? obj)</pre>
         </div>
-        <p>判断目标实例是否等于当前实例。对于引用类型，进行引用相等性判断（等价于<span class="inlineCode">ReferenceEquals(Object, Object)</span>）；对于值类型，进行值相等性判断：先判断是否为相同类型，然后判断每个公共和私有字段的值是否相等。</p>
-        <h3 id="MethodGetHashCode">GetHashCode()</h3>
-        <div class="blockCode">
+        <p>判断目标实例是否等于当前实例。对于引用类型，进行引用相等性判断（等价于<span class="inline-code">ReferenceEquals(Object, Object)</span>）；对于值类型，进行值相等性判断：先判断是否为相同类型，然后判断每个公共和私有字段的值是否相等。</p>
+        <h3 id="Method02">GetHashCode()</h3>
+        <div class="block-code">
           <p>C#</p>
           <pre>public virtual int GetHashCode()</pre>
         </div>
         <p>获取当前实例的哈希值。</p>
         <p>此方法为需要快速检查对象相等性的算法提供哈希值。两个相等的实例应该返回相同的哈希值，而两个不同的对象可以拥有相同的哈希值。</p>
         <p>需要注意，哈希值旨在提高基于哈希表的集合中插入和查找的效率。哈希值不是一个永久值，因此不要序列化哈希值或将其存储在数据库中，不要使用哈希值作为键来检索对象，不要跨程序域或进程传递哈希值，如果需要加密强度高的哈希值应使用加密哈希函数，不要通过测试哈希值相等性确定两个对象是否相等。</p>
-        <h3 id="MethodGetType">GetType()</h3>
-        <div class="blockCode">
+        <h3 id="#Method03">GetType()</h3>
+        <div class="block-code">
           <p>C#</p>
           <pre>public Type GetType()</pre>
         </div>
-        <p>获取当前实例的<span class="inlineCode">Type</span>对象。相同类型的实例返回同一个<span class="inlineCode">Type</span>对象。<span class="inlineCode">Type</span>对象公开了当前实例类型的元数据。</p>
-        <h3 id="MethodMemberwiseClone">MemberwiseClone()</h3>
-        <div class="blockCode">
+        <p>获取当前实例的<span class="inline-code">Type</span>对象。相同类型的实例返回同一个<span class="inline-code">Type</span>对象。<span class="inline-code">Type</span>对象公开了当前实例类型的元数据。</p>
+        <h3 id="Method04">MemberwiseClone()</h3>
+        <div class="block-code">
           <p>C#</p>
           <pre>protected object MemberwiseClone()</pre>
         </div>
         <p>获取当前实例的<strong>浅拷贝</strong>。对于值类型，复制值；对于引用类型，复制引用，但不复制实例。因此，源对象和克隆对象指向同一个实例。</p>
-        <h3 id="MethodToString">ToString()</h3>
-        <div class="blockCode">
+        <h3 id="Method05">ToString()</h3>
+        <div class="block-code">
           <p>C#</p>
           <pre>public virtual string? ToString()</pre>
         </div>
-        <p>获取表示当前实例的字符串。</p>
-      </section>
-      <section><hr /></section>
-    </article>
-    <footer>
-      <nav>
-        <a class="fl" href="../System.html">上一篇</a>
-        <a class="fr" href="./001002ValueType.html">下一篇</a>
-      </nav>
-    </footer>
+        <p>获取表示当前实例的字符串。</p>        
+        <nav class="foot-nav"><a class="fl" href="../System.html">上一篇</a><a class="fr" href="./001002ValueType.html">下一篇</a></nav>
+      </div>
+    </div>
   </body>
 </html>

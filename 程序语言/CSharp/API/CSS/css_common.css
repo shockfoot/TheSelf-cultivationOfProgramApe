@@ -1,6 +1,58 @@
 body {
-  padding: 0 2rem 2rem 2rem;
-  line-height: 1.5rem;
+  padding: 0 2rem;
+  min-width: 1384px;
+}
+
+.flex-row {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+/* 左边栏目录 */
+
+.sidebar {
+  width: 300px;
+}
+
+.sidebar-content {
+  position: fixed;
+  top: 0px;
+  max-height: 100%;
+  overflow: hidden auto;
+  padding: 60px 0 60px 8px;
+  width: inherit;
+}
+
+.catalogue-item-h1 a, .catalogue-item-h2 a, .catalogue-item-h3 a {
+  color: #336699;
+}
+
+.sidebar-item-h2, .catalogue-item-h2 {
+  padding-left: 1rem;
+}
+
+.sidebar-item-h3, .catalogue-item-h3 {
+  padding-left: 2rem;
+}
+
+.siderbar-item-active {
+  font-weight: 700;
+}
+
+/* 正文内容 */
+
+.content {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 30px;
+  height: auto;
+  width: inherit;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
+  overflow-x: visible;
 }
 
 h1,h2,h3 {
@@ -8,29 +60,51 @@ h1,h2,h3 {
 }
 
 h1 {
-  font-size: 1.4rem;
-  height: 4rem;
-  line-height: 4rem;
+  margin: 1.5rem 0;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  height: 2rem;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.2rem;
-  line-height: 3rem;
-  height: 3rem;
+  margin: 1.25rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  height: 1.75rem;
 }
 
 h3 {
-  height: 2rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  height: 1.5rem;
 }
 
 nav {
   height: 2rem;
 }
 
-ul,ol {
-  padding-left: 2rem;
+nav.head-nav {
+  border-bottom: 1px solid #222;
 }
+
+nav.foot-nav {
+  border-top: 1px solid #222;
+}
+
+p, blockquote {
+  margin: 0.8rem 0;
+}
+
+blockquote {
+  border-left: 4px solid #dfe2e5;
+  padding: 0 15px;
+  color: #777;
+}
+
+/* 标签 */
 
 span.tag {
   display: inline-block;
@@ -42,37 +116,35 @@ span.tag {
   color: #ffffff;
 }
 
-/* 标签 */
-
-span.classTag {
+span.class-tag {
   background-color: #0099cc;
 }
 
-span.structTag {
+span.struct-tag {
   background-color: #ff6666;
 }
 
-span.interfaceTag {
+span.interface-tag {
   background-color: #339933;
 }
 
-span.enumTag {
+span.enum-tag {
   background-color: #cc6699;
 }
 
-span.delegateTag {
+span.delegate-tag {
   background-color: #ff9966;
 }
 
-span.staticTag {
+span.static-tag {
   background-color: #336699;
 }
 
-span.sealedTag {
+span.sealed-tag {
   background-color: #cc3333;
 }
 
-span.overloadTag {
+span.overload-tag {
   padding: 0 0.6rem;
   line-height: 1.4rem;
   margin: 0.3rem 0.6rem 0.3rem 0;
@@ -81,9 +153,9 @@ span.overloadTag {
 
 /* 代码 */
 
-span.inlineCode {
+span.inline-code {
   display: inline-block;
-  background-color: #ddd;
+  background-color: #eee;
   font-family: Consolas;
   border-radius: 0.4rem;
   padding: 0 0.2rem;
@@ -91,16 +163,16 @@ span.inlineCode {
   margin: 0.3rem 0.2rem;
 }
 
-div.blockCode p {
+div.block-code p {
   font-family: Consolas;
   padding: 0.5rem 1rem;
   border-radius: 0.4rem 0.4rem 0 0;
   margin: 0.5rem 0 0 0;
-  background-color: #ccc;
+  background-color: #dfe2e5;
 }
 
-div.blockCode pre {
-  background-color: #ddd;
+div.block-code pre {
+  background-color: #eee;
   font-family: Consolas;
   border-radius: 0 0 0.4rem 0.4rem;
   padding: 0.5rem 1rem;

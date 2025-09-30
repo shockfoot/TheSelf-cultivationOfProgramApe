@@ -3,6 +3,7 @@ html {
   overflow-y: scroll;
   font-family: "微软雅黑", Arial;
   font-size: 16px;
+  line-height: 1.75rem;
 }
 
 body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,th,header,article,footer,section,nav,pre {
@@ -15,12 +16,9 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 400;
 }
 
-p {
-  margin: 0.5rem 0;
-}
-
 ul,ol {
   list-style: none;
+  padding-inline-start: 0;;
 }
 
 li {
@@ -37,7 +35,7 @@ img {
 }
 
 a {
-  color: #006699;
+  color: #222;
   text-decoration: none;
 }
 
@@ -88,11 +86,11 @@ a:hover {
 }
 
 .smallText {
-  font-size: 14px;
+  font-size: 0.75rem;
 }
 
 .bigText {
-  font-size: 18px;
+  font-size: 1.25rem;
 }
 
 .clearfix {
