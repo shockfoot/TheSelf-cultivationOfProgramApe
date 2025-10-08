@@ -8,153 +8,141 @@
     <link rel="stylesheet" href="../../CSS/css_common.css" />
   </head>
   <body>
-    <header>
-      <h1>Exception</h1>
-      <nav>
-        <a class="fl" href="">上一篇</a>
-        <a class="fr" href="./003002SystemException.html">下一篇</a>
-      </nav>
-      <hr />
-    </header>
-    <article>
-      <section>
-        <h2>定义</h2>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public class Exception : System.Runtime.Serialization.ISerializable</pre>
-        </div>
-        <p>命名空间：<a href="../System.html">System</a></p>
-        <p>程序集：System.Runtime.dll</p>
-        <p><span class="tag classTag">类</span></p>
-      </section>
-      <section>
-        <h2>说明</h2>
-        <p><span class="inlineCode">Exception</span>表示应用程序执行期间发生的错误。</p>
-      </section>
-      <section>
-        <h2>目录</h2>
-        <ol>
-          <li><a href="#Constructor">构造函数</a></li>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">Exception</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Constructor">构造函数</a></li>
+          <li class="sidebar-item-h1"><a href="#Property">属性</a></li>
           <li>
             <ol>
-              <li><a href="#Constructor">Exception()</a>&nbsp;<span class="tag overloadTag">重载</span></li>
+              <li class="sidebar-item-h2"><a href="#Property01">Data</a></li>
+              <li class="sidebar-item-h2"><a href="#Property02">HelpLink</a></li>
+              <li class="sidebar-item-h2"><a href="#Property03">HResult</a></li>
+              <li class="sidebar-item-h2"><a href="#Property04">InnerException</a></li>
+              <li class="sidebar-item-h2"><a href="#Property05">Message</a></li>
             </ol>
           </li>
-          <li><a href="#Property">属性</a></li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
           <li>
             <ol>
-              <li><a href="#PropertyData">Data</a></li>
-              <li><a href="#PropertyHelpLink">HelpLink</a></li>
-              <li><a href="#PropertyHResult">HResult</a></li>
-              <li><a href="#PropertyInnerException">InnerException</a></li>
-              <li><a href="#PropertyMessage">Message</a></li>
-              <li><a href="#PropertySource">Source</a></li>
-              <li><a href="#PropertyStackTrace">StackTrace</a></li>
-              <li><a href="#PropertyTargetSite">TargetSite</a></li>
-            </ol>
-          </li>
-          <li><a href="#Method">方法</a></li>
-          <li>
-            <ol>
-              <li><a href="#MethodGetBaseException">GetBaseException()</a></li>
-              <li><a href="#MethodGetType">GetType()</a></li>
-            </ol>
-          </li>
-          <li>重写</li>
-          <li>
-            <ol>
-              <li><a href="../001DataType/001001Object.html#MethodToString">ToString()</a></li>
+              <li class="sidebar-item-h2"><a href="#Method01">GetBaseException</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">GetType</a></li>
             </ol>
           </li>
         </ol>
-      </section>
-      <section>
-        <h2 id="Constructor">构造函数</h2>
-        <h3 id="Constructor">Exception()</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public Exception()
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">Exception</h1>
+          <nav class="head-nav"><a class="fl" href="../001DataType/001019Decimal.html">上一篇</a><a class="fr" href="./003002SystemException.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public class Exception</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag class-tag">类</span></p>
+        </section>
+        <section>
+          <h2 id="Instruction">说明</h2>
+          <p><span class="inline-code">Exception</span>表示应用程序执行期间发生的错误，是所有异常的基类。</p>
+          <p>运行时错误可能由多种原因引起。然而，并非所有错误都应在代码中作为异常处理。</p>
+        </section>
+        <section>
+          <h2 id="Constructor">构造函数</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public Exception()
 public Exception(string? message)
 public Exception(string? message, Exception? innerException)</pre>
-        </div>
-        <p>以当前系统区域下系统提供的错误描述或传入参数初始化实例的<span class="inlineCode">Message</span>或<span class="inlineCode">InnerException</span>属性。</p>
-      </section>
-      <section>
-        <h2 id="Property">属性</h2>
-        <h3 id="PropertyData">Data</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public virtual System.Collections.IDictionary Data { get; }</pre>
-        </div>
-        <p>获取与当前异常有关的用户定义的键值对数据。</p>
-        <h3 id="PropertyHelpLink">HelpLink</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public virtual string? HelpLink { get; set; }</pre>
-        </div>
-        <p>获取和设置与当前异常关联的帮助文件的链接。</p>
-        <h3 id="PropertyHResult">HResult</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public int HResult { get; set; }</pre>
-        </div>
-        <p>获取和设置HRESULT。</p>
-        <p>HRESULT是一个分配给特定异常的编码，共32位，分为三个不同的字段：严重性编码、系统区域编码和错误编码。严重性编码表示信息、警告还是错误。系统区域编码标识了导致错误的系统区域。错误编码是一个唯一的数字，用来表示异常。每个异常都映射到一个不同的HRESULT。</p>
-        <p>当托管代码抛出异常时，运行时将HRESULT传递给COM客户端。当非托管代码返回错误时，HRESULT被转换为异常，然后由运行时抛出。</p>
-        <h3 id="PropertyInnerException">InnerException</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public Exception? InnerException { get; }</pre>
-        </div>
-        <p>获取抛出当前异常的异常实例。</p>
-        <h3 id="PropertyMessage">Message</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public virtual string Message { get; }</pre>
-        </div>
-        <p>获取当前异常的错误描述。</p>
-        <h3 id="PropertySource">Source</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public virtual string? Source { get; set; }</pre>
-        </div>
-        <p>获取和设置抛出当前异常的应用程序或实例的名称。如果未显式设置此属性，则运行时将自动将其设置为异常产生的程序集的名称。</p>
-        <h3 id="PropertyStackTrace">StackTrace</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public virtual string? StackTrace { get; }</pre>
-        </div>
-        <p>获取抛出当前异常的帧的调用堆栈。</p>
-        <h3 id="PropertyTargetSite">TargetSite</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public System.Reflection.MethodBase? TargetSite { get; }</pre>
-        </div>
-        <p>获取抛出当前异常的方法。</p>
-      </section>
-      <section>
-        <h2 id="Method">方法</h2>
-        <h3 id="MethodGetBaseException">GetBaseException()</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public virtual Exception GetBaseException()</pre>
-        </div>
-        <p>获取抛出当前异常的根本的异常实例。</p>
-        <p><strong>异常链</strong>由一组异常组成，这样链中的每个异常都是作为其<span class="inlineCode">InnerException</span>属性中引用的异常的直接结果抛出的。对于给定的链，可能只有一个异常是链中所有其他异常的根本原因。这个异常被称为基异常，它的<span class="inlineCode">InnerException</span>属性总是包含一个空引用。对于异常链中的所有异常，此方法返回相同的实例。</p>
-        <h3 id="MethodGetType">GetType()</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public Type GetType()</pre>
-        </div>
-        <p>获取当前实例的<span class="inlineCode">Type</span>对象。此方法的存在是为了支持.NET框架基础结构，其内部调用<span class="inlineCode">Object.GetType()</span>方法。</p>
-      </section>
-      <section><hr /></section>
-    </article>
-    <footer>
-      <nav>
-        <a class="fl" href="">上一篇</a>
-        <a class="fr" href="./003002SystemException.html">下一篇</a>
-      </nav>
-    </footer>
+          </div>
+          <p>以当前系统区域下系统提供的错误描述或传入参数初始化实例的<span class="inline-code">Message</span>或<span class="inline-code">InnerException</span>属性。</p>
+        </section>
+        <section>
+          <h2 id="Property">属性</h2>
+          <h3 id="Property01">Data</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public virtual System.Collections.IDictionary Data { get; }</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚函数</span></p>
+          <p>获取与当前异常有关的用户定义的键值对数据。</p>
+          <h3 id="Property02">HelpLink</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public virtual string? HelpLink { get; set; }</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚函数</span></p>
+          <p>获取和设置与当前异常关联的帮助文件的链接。</p>
+          <h3 id="Property03">HResult</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public int HResult { get; set; }</pre>
+          </div>
+          <p>获取和设置HRESULT。</p>
+          <p>HRESULT是一个分配给特定异常的编码，共32位，分为三个不同的字段：严重性编码、系统区域编码和错误编码。严重性编码表示信息、警告还是错误。系统区域编码标识了导致错误的系统区域。错误编码是一个唯一的数字，用来表示异常。每个异常都映射到一个不同的HRESULT。</p>
+          <p>当托管代码抛出异常时，运行时将HRESULT传递给COM客户端。当非托管代码返回错误时，HRESULT被转换为异常，然后由运行时抛出。</p>
+          <h3 id="Property04">InnerException</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public Exception? InnerException { get; }</pre>
+          </div>
+          <p>获取抛出当前异常的异常实例。</p>
+          <h3 id="Property05">Message</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public virtual string Message { get; }</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚函数</span></p>
+          <p>获取当前异常的错误描述。</p>
+          <h3 id="Property06">Source</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public virtual string? Source { get; set; }</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚函数</span></p>
+          <p>获取和设置抛出当前异常的应用程序或实例的名称。如果未显式设置此属性，则运行时将自动将其设置为异常产生的程序集的名称。</p>
+          <h3 id="Property07">StackTrace</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public virtual string? StackTrace { get; }</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚函数</span></p>
+          <p>获取抛出当前异常的帧的调用堆栈。</p>
+          <h3 id="Property08">TargetSite</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public System.Reflection.MethodBase? TargetSite { get; }</pre>
+          </div>
+          <p>获取抛出当前异常的方法。</p>
+        </section>
+        <section>
+          <h2 id="Method">方法</h2>
+          <h3 id="Method01">GetBaseException</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public virtual Exception GetBaseException()</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚函数</span></p>
+          <p>获取抛出当前异常的根本的异常实例。</p>
+          <p><strong>异常链</strong>由一组异常组成，这样链中的每个异常都是作为其<span class="inline-code">InnerException</span>属性中引用的异常的直接结果抛出的。对于给定的链，可能只有一个异常是链中所有其他异常的根本原因。这个异常被称为基异常，它的<span class="inline-code">InnerException</span>属性总是包含一个空引用。对于异常链中的所有异常，此方法返回相同的实例。</p>
+          <h3 id="Method02">GetType</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public Type GetType()</pre>
+          </div>
+          <p>获取当前实例的<span class="inline-code">Type</span>对象。此方法的存在是为了支持.NET框架基础结构，其内部调用<span class="inline-code">Object.GetType()</span>方法。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="../001DataType/001019Decimal.html">上一篇</a><a class="fr" href="./003002SystemException.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>

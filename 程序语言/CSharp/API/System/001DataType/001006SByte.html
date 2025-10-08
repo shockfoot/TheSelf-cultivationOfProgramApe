@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SByte</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">SByte</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Field">字段</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Field01">MinValue</a></li>
+              <li class="sidebar-item-h2"><a href="#Field02">MaxValue</a></li>
+            </ol>
+          </li>
+          <li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method01">Parse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">TryParse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method03">DivRem</a></li>
+              <li class="sidebar-item-h2"><a href="#Method04">Log2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method05">Abs</a></li>
+              <li class="sidebar-item-h2"><a href="#Method06">Clamp</a></li>
+              <li class="sidebar-item-h2"><a href="#Method07">Min</a></li>
+              <li class="sidebar-item-h2"><a href="#Method08">MinMagnitude</a></li>
+              <li class="sidebar-item-h2"><a href="#Method09">Max</a></li>
+              <li class="sidebar-item-h2"><a href="#Method10">MaxMagnitude</a></li>
+              <li class="sidebar-item-h2"><a href="#Method11">LeadingZeroCount</a></li>
+              <li class="sidebar-item-h2"><a href="#Method12">TrailingZeroCount</a></li>
+              <li class="sidebar-item-h2"><a href="#Method13">PopCount</a></li>
+              <li class="sidebar-item-h2"><a href="#Method14">RotateLeft</a></li>
+              <li class="sidebar-item-h2"><a href="#Method15">RotateRight</a></li>
+              <li class="sidebar-item-h2"><a href="#Method16">Sign</a></li>
+              <li class="sidebar-item-h2"><a href="#Method17">CopySign</a></li>
+              <li class="sidebar-item-h2"><a href="#Method18">IsEvenInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method19">IsOddInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method20">IsPositive</a></li>
+              <li class="sidebar-item-h2"><a href="#Method21">IsNegative</a></li>
+              <li class="sidebar-item-h2"><a href="#Method22">IsPow2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method23">CreateChecked</a></li>
+              <li class="sidebar-item-h2"><a href="#Method24">CreateSaturating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method25">CreateTruncating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method26">CompareTo</a></li>
+              <li class="sidebar-item-h2"><a href="#Method27">Equals</a></li>
+              <li class="sidebar-item-h2"><a href="#Method28">GetTypeCode</a></li>
+              <li class="sidebar-item-h2"><a href="#Method29">ToString</a></li>
+              <li class="sidebar-item-h2"><a href="#Method30">TryFormat</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Override">重写</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="./001001Object.html#Method04">GetHashCode</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">SByte</h1>
+          <nav class="head-nav"><a class="fl" href="./001005Byte.html">上一篇</a><a class="fr" href="./001007UInt16.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public readonly struct SByte</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag struct-tag">结构体</span><span class="tag readonly-tag">只读</span></p>
+        </section>
+        <section>
+          <h2 id="Instruction">说明</h2>
+          <p><span class="inline-code">SByte</span>（别名<span class="inline-code">sbyte</span>）表示8位带符号整数，默认值为0，1字节，范围为-128（-2<sup>8</sup>）到127（2<sup>7</sup>-1）。</p>
+        </section>
+        <section>
+          <h2 id="Field">字段</h2>
+          <h3 id="Field01">MinValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const sbyte MinValue;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p><span class="inline-code">SByte</span>类型的最小值-128（-2<sup>8</sup>）。</p>
+          <h3 id="Field02">MaxValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const sbyte MaxValue;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p><span class="inline-code">SByte</span>类型的最大值127（2<sup>7</sup>-1）。</p>
+        </section>
+        <section>
+          <h2 id="Method">方法</h2>
+          <h3 id="Method01">Parse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte Parse(string s)
+public static sbyte Parse(string s, IFormatProvider? provider)
+public static sbyte Parse(string s, System.Globalization.NumberStyles style)
+public static sbyte Parse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider)
+public static sbyte Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
+public static sbyte Parse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)
+public static sbyte Parse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider)
+public static sbyte Parse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将字符串（前面和后面可以有空格）转化为<span class="inline-code">SByte</span>，转换失败时会抛出异常。</p>
+          <h3 id="Method02">TryParse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool TryParse(string s, out sbyte result)
+public static bool TryParse(string s, IFormatProvider? provider, out sbyte resul)
+public static bool TryParse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider, out sbyte resul)
+public static bool TryParse(ReadOnlySpan<char> s, out sbyte result)
+public static bool TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, out sbyte resul)
+public static bool TryParse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style, IFormatProvider? provider, out sbyte resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, out sbyte result)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider, out sbyte resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style, IFormatProvider? provider, out sbyte resul)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>与<span class="inline-code">Parse</span>方法类型，将字符串（前面和后面可以有空格）转化为<span class="inline-code">SByte</span>，但不会抛出异常。</p>
+          <h3 id="Method03">DivRem</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static (sbyte Quotient, sbyte Remainder) DivRem(sbyte left, sbyte right)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取左数除以右数的商和余数。</p>
+          <h3 id="Method04">Log2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte Log2(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的Log2。</p>
+          <h3 id="Method05">Abs</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte Abs(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的绝对值。</p>
+          <h3 id="Method06">Clamp</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte Clamp(sbyte value, sbyte min, sbyte max)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象钳制到指定的最小值（可及）和最大值之间（可及）。</p>
+          <h3 id="Method07">Min</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte Min(sbyte x, sbyte y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method08">MinMagnitude</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte MinMagnitude(sbyte x, sbyte y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method09">Max</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte Max(sbyte x, sbyte y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method10">MaxMagnitude</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte MaxMagnitude(sbyte x, sbyte y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method11">LeadingZeroCount</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte LeadingZeroCount(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的前导0数量。</p>
+          <h3 id="Method12">TrailingZeroCount</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte TrailingZeroCount(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的后置0数量。</p>
+          <h3 id="Method13">PopCount</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte PopCount(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的位数。</p>
+          <h3 id="Method14">RotateLeft</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte RotateLeft(sbyte value, int rotateAmount)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象向左旋转指定位数。</p>
+          <h3 id="Method15">RotateRight</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte RotateRight(sbyte value, int rotateAmount)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象向右旋转指定位数。</p>
+          <h3 id="Method16">Sign</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int Sign(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的符号。</p>
+          <h3 id="Method17">CopySign</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte CopySign(sbyte value, sbyte sign)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>返回一个值，此值的数值和符号分别来自两个参数。</p>
+          <h3 id="Method18">IsEvenInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsEvenInteger(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为偶数。</p>
+          <h3 id="Method19">IsOddInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsOddInteger(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为奇数。</p>
+          <h3 id="Method20">IsPositive</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsPositive(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为正数。</p>
+          <h3 id="Method21">IsNegative</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsNegative(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为负数。</p>
+          <h3 id="Method22">IsPow2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsPow2(sbyte value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为2的幂。</p>
+          <h3 id="Method23">CreateChecked</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte CreateChecked<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">SByte</span>实例，溢出时会抛出异常。</p>
+          <h3 id="Method24">CreateSaturating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte CreateSaturating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">SByte</span>实例，溢出时使用饱和算法进行范围限制。</p>
+          <h3 id="Method25">CreateTruncating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte CreateTruncating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">SByte</span>实例，溢出时使用截断算法进行范围限制。</p>
+          <h3 id="Method26">CompareTo</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public int CompareTo(sbyte value)
+public int CompareTo(object? value)</pre>
+          </div>
+          <p>比较当前实例与指定对象，并返回一个表明二者关系的整数：大于0表示当前实例大于指定对象，小于0则相反，等于0表示二者相等。需要注意的是，<span class="inline-code">CompareTo(Object)</span>的参数需要是<span class="inline-code">SByte</span>类型或<span class="inline-code">null</span>，否则将会抛出异常。</p>
+          <p>因为不需要拆箱，<span class="inline-code">CompareTo(SByte)</span>比<span class="inline-code">CompareTo(Object)</span>的性能更好。</p>
+          <h3 id="Method27">Equals</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool Equals(sbyte obj)
+public override bool Equals(object? obj)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>判断当前实例与指定对象是否相等。</p>
+          <p>因为不需要拆箱，<span class="inline-code">Equals(SByte)</span>比<span class="inline-code">Equals(Object)</span>的性能更好。</p>
+          <h3 id="Method28">GetTypeCode</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public TypeCode GetTypeCode()</pre>
+          </div>
+          <p>获取当前实例的<span class="inline-code">TypeCode</span>。</p>
+          <h3 id="Method29">ToString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public override string ToString()
+public override string ToString(string? format)
+public string ToString(IFormatProvider? provider)
+public override string ToString(string? format, IFormatProvider? provider)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>将当前实例转化为字符串。</p>
+          <h3 id="Method30">TryFormat</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)
+public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)</pre>
+          </div>
+          <p>尝试将当前实例的值的格式设置为提供的字符范围。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="./001005Byte.html">上一篇</a><a class="fr" href="./001007UInt16.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

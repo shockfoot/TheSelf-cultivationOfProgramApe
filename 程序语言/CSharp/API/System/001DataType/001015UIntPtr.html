@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UIntPtr</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">UIntPtr</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Constructor">构造函数</a></li>
+          <li class="sidebar-item-h1"><a href="#Field">字段</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Field01">Zero</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Property">属性</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Property01">MinValue</a></li>
+              <li class="sidebar-item-h2"><a href="#Property02">MaxValue</a></li>
+              <li class="sidebar-item-h2"><a href="#Property03">Size</a></li>
+            </ol>
+          </li>
+          <li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method01">Parse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">TryParse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method03">Add</a></li>
+              <li class="sidebar-item-h2"><a href="#Method04">Subtract</a></li>
+              <li class="sidebar-item-h2"><a href="#Method05">DivRem</a></li>
+              <li class="sidebar-item-h2"><a href="#Method06">Log2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method07">Clamp</a></li>
+              <li class="sidebar-item-h2"><a href="#Method08">Min</a></li>
+              <li class="sidebar-item-h2"><a href="#Method09">Max</a></li>
+              <li class="sidebar-item-h2"><a href="#Method10">LeadingZeroCount</a></li>
+              <li class="sidebar-item-h2"><a href="#Method11">TrailingZeroCount</a></li>
+              <li class="sidebar-item-h2"><a href="#Method12">PopCount</a></li>
+              <li class="sidebar-item-h2"><a href="#Method13">RotateLeft</a></li>
+              <li class="sidebar-item-h2"><a href="#Method14">RotateRight</a></li>
+              <li class="sidebar-item-h2"><a href="#Method15">Sign</a></li>
+              <li class="sidebar-item-h2"><a href="#Method16">IsEvenInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method17">IsOddInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method18">IsPow2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method19">CreateChecked</a></li>
+              <li class="sidebar-item-h2"><a href="#Method20">CreateSaturating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method21">CreateTruncating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method22">CompareTo</a></li>
+              <li class="sidebar-item-h2"><a href="#Method23">Equals</a></li>
+              <li class="sidebar-item-h2"><a href="#Method24">ToString</a></li>
+              <li class="sidebar-item-h2"><a href="#Method25">ToPointer</a></li>
+              <li class="sidebar-item-h2"><a href="#Method26">ToUInt32</a></li>
+              <li class="sidebar-item-h2"><a href="#Method27">ToUInt64</a></li>
+              <li class="sidebar-item-h2"><a href="#Method28">TryFormat</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Override">重写</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="./001001Object.html#Method04">GetHashCode</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">UIntPtr</h1>
+          <nav class="head-nav"><a class="fl" href="./001014Int128.html">上一篇</a><a class="fr" href="./001016IntPtr.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public readonly struct UIntPtr</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag struct-tag">结构体</span><span class="tag readonly-tag">只读</span></p>
+        </section>
+        <section>
+          <h2 id="Instruction">说明</h2>
+          <p><span class="inline-code">UIntPtr</span>表示与指针相同位宽的无符号整数，即在32位系统上为32位，在64位系统上为64位，默认值为0。</p>
+        </section>
+        <section>
+          <h2 id="Constructor">构造函数</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public UIntPtr(uint value)
+public UIntPtr(ulong value)
+public UIntPtr(void* value)</pre>
+          </div>
+          <p>初始化<span class="inline-code">UIntPtr</span>实例。</p>
+        </section>
+        <section>
+          <h2 id="Field">字段</h2>
+          <h3 id="Field01">Zero</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static readonly UIntPtr Zero;</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span><span class="tag readonly-tag">只读</span></p>
+          <p><span class="inline-code">UIntPtr</span>类型的值0。</p>
+        </section>
+        <section>
+          <h2 id="Property">属性</h2>
+          <h3 id="Property01">MinValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr MinValue { get; }</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p><span class="inline-code">UIntPtr</span>类型的最小值。</p>
+          <h3 id="Property02">MaxValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr MaxValue { get; }</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p><span class="inline-code">UIntPtr</span>类型的最大值。</p>
+          <h3 id="Property03">Size</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int Size { get; }</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p><span class="inline-code">UIntPtr</span>的尺寸，单位字节。</p>
+        </section>
+        <section>
+          <h2 id="Method">方法</h2>
+          <h3 id="Method01">Parse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr Parse(string s)
+public static UIntPtr Parse(string s, IFormatProvider? provider)
+public static UIntPtr Parse(string s, System.Globalization.NumberStyles style)
+public static UIntPtr Parse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider)
+public static UIntPtr Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
+public static UIntPtr Parse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)
+public static UIntPtr Parse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider)
+public static UIntPtr Parse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将字符串（前面和后面可以有空格）转化为<span class="inline-code">UIntPtr</span>，转换失败时会抛出异常。</p>
+          <h3 id="Method02">TryParse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool TryParse(string s, out UIntPtr result)
+public static bool TryParse(string s, IFormatProvider? provider, out UIntPtr resul)
+public static bool TryParse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider, out UIntPtr resul)
+public static bool TryParse(ReadOnlySpan<char> s, out UIntPtr result)
+public static bool TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, out UIntPtr resul)
+public static bool TryParse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style, IFormatProvider? provider, out UIntPtr resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, out UIntPtr result)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider, out UIntPtr resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style, IFormatProvider? provider, out UIntPtr resul)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>与<span class="inline-code">Parse</span>方法类型，将字符串（前面和后面可以有空格）转化为<span class="inline-code">UIntPtr</span>，但不会抛出异常。</p>
+          <h3 id="Method03">Add</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr Add(UIntPtr pointer, int offset)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定指针加上指定偏移量后指向的数。</p>
+          <h3 id="Method04">Subtract</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr Subtract(UIntPtr pointer, int offset)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定指针减去指定偏移量后指向的数。</p>
+          <h3 id="Method05">DivRem</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static (UIntPtr Quotient, UIntPtr Remainder) DivRem(UIntPtr left, UIntPtr right)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取左数除以右数的商和余数。</p>
+          <h3 id="Method06">Log2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr Log2(UIntPtr value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的Log2。</p>
+          <h3 id="Method07">Clamp</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr Clamp(UIntPtr value, UIntPtr min, UIntPtr max)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象钳制到指定的最小值（可及）和最大值之间（可及）。</p>
+          <h3 id="Method08">Min</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr Min(UIntPtr x, UIntPtr y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method09">Max</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr Max(UIntPtr x, UIntPtr y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method10">LeadingZeroCount</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr LeadingZeroCount(UIntPtr value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的前导0数量。</p>
+          <h3 id="Method11">TrailingZeroCount</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr TrailingZeroCount(UIntPtr value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的后置0数量。</p>
+          <h3 id="Method12">PopCount</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr PopCount(UIntPtr value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的位数。</p>
+          <h3 id="Method13">RotateLeft</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr RotateLeft(UIntPtr value, int rotateAmount)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象向左旋转指定位数。</p>
+          <h3 id="Method14">RotateRight</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr RotateRight(UIntPtr value, int rotateAmount)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象向右旋转指定位数。</p>
+          <h3 id="Method15">Sign</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int Sign(UIntPtr value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的符号。</p>
+          <h3 id="Method16">IsEvenInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsEvenInteger(UIntPtr value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为偶数。</p>
+          <h3 id="Method17">IsOddInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsOddInteger(UIntPtr value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为奇数。</p>
+          <h3 id="Method18">IsPow2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsPow2(UIntPtr value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为2的幂。</p>
+          <h3 id="Method19">CreateChecked</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr CreateChecked<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">UIntPtr</span>实例，溢出时会抛出异常。</p>
+          <h3 id="Method20">CreateSaturating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr CreateSaturating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">UIntPtr</span>实例，溢出时使用饱和算法进行范围限制。</p>
+          <h3 id="Method21">CreateTruncating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UIntPtr CreateTruncating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">UIntPtr</span>实例，溢出时使用截断算法进行范围限制。</p>
+          <h3 id="Method22">CompareTo</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public int CompareTo(UIntPtr value)
+public int CompareTo(object? value)</pre>
+          </div>
+          <p>比较当前实例与指定对象，并返回一个表明二者关系的整数：大于0表示当前实例大于指定对象，小于0则相反，等于0表示二者相等。需要注意的是，<span class="inline-code">CompareTo(Object)</span>的参数需要是<span class="inline-code">UIntPtr</span>类型或<span class="inline-code">null</span>，否则将会抛出异常。</p>
+          <p>因为不需要拆箱，<span class="inline-code">CompareTo(UIntPtr)</span>比<span class="inline-code">CompareTo(Object)</span>的性能更好。</p>
+          <h3 id="Method23">Equals</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool Equals(UIntPtr obj)
+public override bool Equals(object? obj)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>判断当前实例与指定对象是否相等。</p>
+          <p>因为不需要拆箱，<span class="inline-code">Equals(UIntPtr)</span>比<span class="inline-code">Equals(Object)</span>的性能更好。</p>
+          <h3 id="Method24">ToString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public override string ToString()
+public override string ToString(string? format)
+public string ToString(IFormatProvider? provider)
+public override string ToString(string? format, IFormatProvider? provider)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>将当前实例转化为字符串。</p>
+          <h3 id="Method25">ToPointer</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public void* ToPointer()</pre>
+          </div>
+          <p>将当前实例转化为指向未指定类型的指针。</p>
+          <h3 id="Method26">ToUInt32</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public uint ToUInt32()</pre>
+          </div>
+          <p>将当前实例转化为<span class="inline-code">UInt32</span>。</p>
+          <h3 id="Method27">ToUInt64</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public ulong ToUInt64()</pre>
+          </div>
+          <p>将当前实例转化为<span class="inline-code">UInt64</span>。</p>
+          <h3 id="Method28">TryFormat</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)
+public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)</pre>
+          </div>
+          <p>尝试将当前实例的值的格式设置为提供的字符范围。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="./001014Int128.html">上一篇</a><a class="fr" href="./001016IntPtr.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

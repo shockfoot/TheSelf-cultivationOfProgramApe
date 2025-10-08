@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Char</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">Char</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Field">字段</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Field01">MinValue</a></li>
+              <li class="sidebar-item-h2"><a href="#Field02">MaxValue</a></li>
+            </ol>
+          </li>
+          <li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method01">Parse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">TryParse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method03">ToLower</a></li>
+              <li class="sidebar-item-h2"><a href="#Method04">ToLowerInvariant</a></li>
+              <li class="sidebar-item-h2"><a href="#Method05">ToUpper</a></li>
+              <li class="sidebar-item-h2"><a href="#Method06">ToUpperInvariant</a></li>
+              <li class="sidebar-item-h2"><a href="#Method07">ToString</a></li>
+              <li class="sidebar-item-h2"><a href="#Method08">ConvertFromUtf32</a></li>
+              <li class="sidebar-item-h2"><a href="#Method09">ConvertToUtf32</a></li>
+              <li class="sidebar-item-h2"><a href="#Method10">GetNumericValue</a></li>
+              <li class="sidebar-item-h2"><a href="#Method11">GetUnicodeCategory</a></li>
+              <li class="sidebar-item-h2"><a href="#Method12">IsAscii</a></li>
+              <li class="sidebar-item-h2"><a href="#Method13">IsAsciiDigit</a></li>
+              <li class="sidebar-item-h2"><a href="#Method14">IsAsciiHexDigit</a></li>
+              <li class="sidebar-item-h2"><a href="#Method15">IsAsciiHexDigitLower</a></li>
+              <li class="sidebar-item-h2"><a href="#Method16">IsAsciiHexDigitUpper</a></li>
+              <li class="sidebar-item-h2"><a href="#Method17">IsAsciiLetter</a></li>
+              <li class="sidebar-item-h2"><a href="#Method18">IsAsciiLetterLower</a></li>
+              <li class="sidebar-item-h2"><a href="#Method19">IsAsciiLetterUpper</a></li>
+              <li class="sidebar-item-h2"><a href="#Method20">IsAsciiLetterOrDigit</a></li>
+              <li class="sidebar-item-h2"><a href="#Method21">IsLetter</a></li>
+              <li class="sidebar-item-h2"><a href="#Method22">IsDigit</a></li>
+              <li class="sidebar-item-h2"><a href="#Method23">IsLetterOrDigit</a></li>
+              <li class="sidebar-item-h2"><a href="#Method24">IsNumber</a></li>
+              <li class="sidebar-item-h2"><a href="#Method25">IsControl</a></li>
+              <li class="sidebar-item-h2"><a href="#Method26">IsPunctuation</a></li>
+              <li class="sidebar-item-h2"><a href="#Method27">IsSeparator</a></li>
+              <li class="sidebar-item-h2"><a href="#Method28">IsSymbol</a></li>
+              <li class="sidebar-item-h2"><a href="#Method29">IsWhiteSpace</a></li>
+              <li class="sidebar-item-h2"><a href="#Method30">IsLower</a></li>
+              <li class="sidebar-item-h2"><a href="#Method31">IsUpper</a></li>
+              <li class="sidebar-item-h2"><a href="#Method32">IsBetween</a></li>
+              <li class="sidebar-item-h2"><a href="#Method33">IsSurrogate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method34">IsSurrogatePair</a></li>
+              <li class="sidebar-item-h2"><a href="#Method35">IsHignSurrogate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method36">IsLowSurrogate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method37">CompareTo</a></li>
+              <li class="sidebar-item-h2"><a href="#Method38">Equals</a></li>
+              <li class="sidebar-item-h2"><a href="#Method39">GetTypeCode</a></li>
+              <li class="sidebar-item-h2"><a href="#Method40">ToString</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Override">重写</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="./001001Object.html#Method04">GetHashCode</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">Char</h1>
+          <nav class="head-nav"><a class="fl" href="./001003Boolean.html">上一篇</a><a class="fr" href="./001005Byte.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public readonly struct Char</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag struct-tag">结构体</span><span class="tag readonly-tag">只读</span></p>
+        </section>
+        <section>
+          <h2 id="Instruction">说明</h2>
+          <p><span class="inline-code">Char</span>（别名<span class="inline-code">char</span>）表示Unicode UTF-16字符，默认值为<span class="inline-code">\0</span>，2字节，范围为0x0000到0xFFFF。</p>
+          <p>除了使用<span class="inline-code">Char</span>表示单个字符外，UTF-16编码还允许使用两个<span class="inline-code">Char</span>表示抽象字符，这被称为<span class="blod">代理项对</span>（Surrogate Pair）。其中前一个被称作高代理项（High Surrogate），代码点的范围为0xD800到0xDBFF；后一个被称作低代理项（Low Surrogate），代码点的范围为0xDC00到0xDFFF。单独的代理项没有意义，它只有在作为代理对的一部分使用时才有意义。</p>
+        </section>
+        <section>
+          <h2 id="Field">字段</h2>
+          <h3 id="Field01">MinValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const char MinValue;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p><span class="inline-code">Char</span>类型的最小值0x0000。</p>
+          <h3 id="Field02">MaxValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const char MaxValue;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p><span class="inline-code">Char</span>类型的最大值0xFFFF。</p>
+        </section>
+        <section>
+          <h2 id="Method">方法</h2>
+          <h3 id="Method01">Parse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static char Parse(string s)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将字符串转化为等效的字符，转换失败时会抛出异常。</p>
+          <h3 id="Method02">TryParse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool TryParse(string? s, out char result)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>与<span class="inline-code">Parse</span>方法类型，将字符串转化为等效的字符，但不会抛出异常。</p>
+          <h3 id="Method03">ToLower</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static char ToLower(char c)
+public static char ToLower(char c, System.Globalization.CultureInfo culture)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定字符转换为等效的小写字符。</p>
+          <h3 id="Method04">ToLowerInvariant</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static char ToLowerInvariant(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>使用不变区域性的大小写规则将指定字符转换为等效的小写字符。</p>
+          <h3 id="Method05">ToUpper</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static char ToUpper(char c)
+public static char ToUpper(char c, System.Globalization.CultureInfo culture)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定字符转换为等效的大写字符。</p>
+          <h3 id="Method06">ToUpperInvariant</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static char ToUpperInvariant(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>使用不变区域性的大小写规则将指定字符转换为等效的大写字符。</p>
+          <h3 id="Method07">ToString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static string ToString(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定字符转化为字符串。</p>
+          <h3 id="Method08">ConvertFromUtf32</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static string ConvertFromUtf32(int utf32)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定的21位Unicode码位转换为UTF-16编码的字符串。</p>
+          <h3 id="Method09">ConvertToUtf32</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int ConvertToUtf32(char highSurrogate, char lowSurrogate)
+public static int ConvertToUtf32(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定的UTF-16编码的代理项对转换为21位Unicode码位。</p>
+          <h3 id="Method10">GetNumericValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double GetNumericValue(char c)
+public static double GetNumericValue(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定字符转换为<span class="inline-code">Double</span>。需要注意的是，当该字符不是数字时，返回-1。</p>
+          <h3 id="Method11">GetUnicodeCategory</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static System.Globalization.UnicodeCategory GetUnicodeCategory(char c)
+public static System.Globalization.UnicodeCategory GetUnicodeCategory(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定字符所在的<span class="inline-code">UnicodeCategory</span>。</p>
+          <h3 id="Method12">IsAscii</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsAscii(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Ascii字符。</p>
+          <h3 id="Method13">IsAsciiDigit</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsAsciiDigit(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Ascii十进制数字字符（<span class="inline-code">'0'</span>至<span class="inline-code">'9'</span>）。</p>
+          <h3 id="Method14">IsAsciiHexDigit</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsAsciiHexDigit(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Ascii十六进制数字字符（<span class="inline-code">'0'</span>至<span class="inline-code">'9'</span>、<span class="inline-code">'a'</span>至<span class="inline-code">'f'</span>、<span class="inline-code">'A'</span>至<span class="inline-code">'F'</span>）。</p>
+          <h3 id="Method15">IsAsciiHexDigitLower</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsAsciiHexDigitLower(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Ascii小写十六进制数字字符（<span class="inline-code">'0'</span>至<span class="inline-code">'9'</span>、<span class="inline-code">'a'</span>至<span class="inline-code">'f'</span>）。</p>
+          <h3 id="Method16">IsAsciiHexDigitUpper</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsAsciiHexDigitUpper(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Ascii大写十六进制数字字符（<span class="inline-code">'0'</span>至<span class="inline-code">'9'</span>、<span class="inline-code">'A'</span>至<span class="inline-code">'F'</span>）。</p>
+          <h3 id="Method17">IsAsciiLetter</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsAsciiLetter(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Ascii字母字符（<span class="inline-code">'a'</span>至<span class="inline-code">'z'</span>、<span class="inline-code">'A'</span>至<span class="inline-code">'Z'</span>）。</p>
+          <h3 id="Method18">IsAsciiLetterLower</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsAsciiLetterLower(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Ascii小写字母字符（<span class="inline-code">'a'</span>至<span class="inline-code">'z'</span>）。</p>
+          <h3 id="Method19">IsAsciiLetterUpper</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsAsciiLetterUpper(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Ascii大写字母字符（<span class="inline-code">'A'</span>至<span class="inline-code">'Z'</span>）。</p>
+          <h3 id="Method20">IsAsciiLetterOrDigit</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsAsciiLetterOrDigit(char c)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Ascii字母或数字字符（<span class="inline-code">'0'</span>至<span class="inline-code">'9'</span>、<span class="inline-code">'a'</span>至<span class="inline-code">'z'</span>、<span class="inline-code">'A'</span>至<span class="inline-code">'Z'</span>）。</p>
+          <h3 id="Method21">IsLetter</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsLetter(char c)
+public static bool IsLetter(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Unicode字母字符。</p>
+          <h3 id="Method22">IsDigit</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsDigit(char c)
+public static bool IsDigit(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为十进制数字字符。</p>
+          <h3 id="Method23">IsLetterOrDigit</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsLetterOrDigit(char c)
+public static bool IsLetterOrDigit(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为Unicode字母或十进制数字字符。</p>
+          <h3 id="Method24">IsNumber</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsNumber(char c)
+public static bool IsNumber(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为数字。</p>
+          <h3 id="Method25">IsControl</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsControl(char c)
+public static bool IsControl(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为控制字符。</p>
+          <h3 id="Method26">IsPunctuation</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsPunctuation(char c)
+public static bool IsPunctuation(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为标点符号。</p>
+          <h3 id="Method27">IsSeparator</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsSeparator(char c)
+public static bool IsSeparator(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为分隔符（包括空格分隔符、行分隔符、段落分隔符）。</p>
+          <h3 id="Method28">IsSymbol</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsSymbol(char c)
+public static bool IsSymbol(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为符号字符。</p>
+          <h3 id="Method29">IsWhiteSpace</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsWhiteSpace(char c)
+public static bool IsWhiteSpace(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为空白字符（包括空格、行分隔符、段落分隔符等）。</p>
+          <h3 id="Method30">IsLower</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsLower(char c)
+public static bool IsLower(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为小写字母。</p>
+          <h3 id="Method31">IsUpper</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsUpper(char c)
+public static bool IsUpper(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为大写字母。</p>
+          <h3 id="Method32">IsBetween</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsBetween(char c, char minInclusive, char maxInclusive)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否在指定字符范围内。</p>
+          <h3 id="Method33">IsSurrogate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsSurrogate(char c)
+public static bool IsSurrogate(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为代理项（包括高代理项或低代理项）。</p>
+          <h3 id="Method34">IsSurrogatePair</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsSurrogatePair(char highSurrogate, char lowSurrogate)
+public static bool IsSurrogatePair(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为代理项对。</p>
+          <h3 id="Method35">IsHighSurrogate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsHighSurrogate(char c)
+public static bool IsHighSurrogate(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为高代理项。</p>
+          <h3 id="Method36">IsLowSurrogate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsLowSurrogate(char c)
+public static bool IsLowSurrogate(string s, int index)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定字符是否为低代理项。</p>
+          <h3 id="Method37">CompareTo</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public int CompareTo(char value)
+public int CompareTo(object? value)</pre>
+          </div>
+          <p>比较当前实例与指定对象，并返回一个表明二者编码值关系的整数：大于0表示当前实例在指定对象之后，小于0则相反，等于0表示二者编码值相等。需要注意的是，<span class="inline-code">CompareTo(Object)</span>的参数需要是<span class="inline-code">Boolean</span>类型或<span class="inline-code">null</span>，否则将会抛出异常。</p>
+          <p>因为不需要拆箱，<span class="inline-code">CompareTo(Char)</span>比<span class="inline-code">CompareTo(Object)</span>的性能更好。</p>
+          <h3 id="Method38">Equals</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool Equals(char obj)
+public override bool Equals(object? obj)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>判断当前实例与指定对象是否相等。</p>
+          <p>因为不需要拆箱，<span class="inline-code">Equals(Char)</span>比<span class="inline-code">Equals(Object)</span>的性能更好。</p>
+          <h3 id="Method39">GetTypeCode</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public TypeCode GetTypeCode()</pre>
+          </div>
+          <p>获取当前实例的<span class="inline-code">TypeCode</span>。</p>
+          <h3 id="Method40">ToString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public override string ToString()
+public string ToString(IFormatProvider? provider)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>将当前实例转化为字符串。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="./001003Boolean.html">上一篇</a><a class="fr" href="./001005Byte.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

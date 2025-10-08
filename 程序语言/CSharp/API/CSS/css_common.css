@@ -1,6 +1,5 @@
 body {
   padding: 0 2rem;
-  min-width: 1384px;
 }
 
 .flex-row {
@@ -13,16 +12,19 @@ body {
 /* 左边栏目录 */
 
 .sidebar {
-  width: 300px;
+  width: 256px;
+  min-width: 256px;
+  font-size: 14px;
 }
 
 .sidebar-content {
   position: fixed;
   top: 0px;
-  max-height: 100%;
+  max-height: 100vh;
   overflow: hidden auto;
-  padding: 60px 0 60px 8px;
-  width: inherit;
+  padding: 40px 0 40px 8px;
+  width: 256px;
+  box-sizing: border-box;
 }
 
 .catalogue-item-h1 a, .catalogue-item-h2 a, .catalogue-item-h3 a {
@@ -45,14 +47,16 @@ body {
 
 .content {
   max-width: 1024px;
+  min-width: 0px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 10px 30px 30px 30px;
   height: auto;
-  width: inherit;
-  word-break: normal;
+  word-break: break-word;
   overflow-wrap: break-word;
   white-space: normal;
   overflow-x: visible;
+  flex: 1;
+  box-sizing: border-box;
 }
 
 h1,h2,h3 {
@@ -116,6 +120,8 @@ span.tag {
   color: #ffffff;
 }
 
+/* 类型标签 */
+
 span.class-tag {
   background-color: #0099cc;
 }
@@ -129,26 +135,41 @@ span.interface-tag {
 }
 
 span.enum-tag {
-  background-color: #cc6699;
+  background-color: #cc6688;
 }
 
 span.delegate-tag {
   background-color: #ff9966;
 }
 
+/* 状态标签 */
+
 span.static-tag {
-  background-color: #336699;
+  background-color: #cac83f;
+}
+
+span.const-tag {
+  background-color: #39b471;
+}
+
+span.readonly-tag {
+  background-color: #40acac;
 }
 
 span.sealed-tag {
-  background-color: #cc3333;
+  background-color: #5c33cc;
 }
 
-span.overload-tag {
-  padding: 0 0.6rem;
-  line-height: 1.4rem;
-  margin: 0.3rem 0.6rem 0.3rem 0;
-  background-color: #aaa;
+span.virtual-tag {
+  background-color: #808080;
+}
+
+span.override-tag {
+  background-color: #b83567;
+}
+
+span.abstract-tag {
+  background-color: #ac3acf;
 }
 
 /* 代码 */

@@ -8,58 +8,48 @@
     <link rel="stylesheet" href="../../CSS/css_common.css" />
   </head>
   <body>
-    <header>
-      <h1>SystemException</h1>
-      <nav>
-        <a class="fl" href="./003001Exception.html">上一篇</a>
-        <a class="fr" href="./003003AccessViolationException.html">下一篇</a>
-      </nav>
-      <hr />
-    </header>
-    <article>
-      <section>
-        <h2>定义</h2>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public class SystemException : Exception</pre>
-        </div>
-        <p>命名空间：<a href="../System.html">System</a></p>
-        <p>程序集：System.Runtime.dll</p>
-        <p><span class="tag classTag">类</span></p>
-      </section>
-      <section>
-        <h2>说明</h2>
-        <p><span class="inlineCode">SystemException</span>是系统异常类的基类。这个类是为了区分系统异常和应用程序异常。</p>
-      </section>
-      <section>
-        <h2>目录</h2>
-        <ol>
-          <li><a href="#Constructor">构造函数</a></li>
-          <li>
-            <ol>
-              <li><a href="#Constructor">SystemException()</a>&nbsp;<span class="tag overloadTag">重载</span></li>
-            </ol>
-          </li>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">SystemException</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Constructor">构造函数</a></li>
         </ol>
-      </section>
-      <section>
-        <h2 id="Constructor">构造函数</h2>
-        <h3 id="Constructor">SystemException()</h3>
-        <div class="blockCode">
-          <p>C#</p>
-          <pre>public SystemException()
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">SystemException</h1>
+          <nav class="head-nav"><a class="fl" href="./003001Exception.html">上一篇</a><a class="fr" href="./003003AccessViolationException.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public class SystemException : Exception</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag class-tag">类</span></p>
+        </section>
+        <section>
+          <h2 id="Instruction">说明</h2>
+          <p><span class="inline-code">SystemException</span>是系统异常类的基类。这个类是为了区分系统异常和应用程序异常。</p>
+        </section>
+        <section>
+          <h2 id="Constructor">构造函数</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public SystemException()
 public SystemException(string? message)
 public SystemException(string? message, Exception? innerException)</pre>
-        </div>
-        <p>以当前系统区域下系统提供的错误描述或传入参数初始化实例的<span class="inlineCode">Message</span>或<span class="inlineCode">InnerException</span>属性。</p>
-      </section>
-      <section><hr /></section>
-    </article>
-    <footer>
-      <nav>
-        <a class="fl" href="./003001Exception.html">上一篇</a>
-        <a class="fr" href="./003003AccessViolationException.html">下一篇</a>
-      </nav>
-    </footer>
+          </div>
+          <p>以当前系统区域下系统提供的错误描述或传入参数初始化实例的<span class="inline-code">Message</span>或<span class="inline-code">InnerException</span>属性。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="./003001Exception.html">上一篇</a><a class="fr" href="./003003AccessViolationException.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>
