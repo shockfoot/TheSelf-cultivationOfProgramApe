@@ -370,11 +370,11 @@
 /* 背景 */
 
 .bg-white {
-  background-color: --color-white;
+  background-color: var(--color-white);
 }
 
 .bg-black {
-  background-color: --color-black;
+  background-color: var(--color-black);
 }
 
 .bg-dark {
