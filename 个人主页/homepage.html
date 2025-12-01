@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>狠狠踩一脚 - 独立游戏开发者</title>
+    <link rel="stylesheet" href="./CSS/css_initialize.css" />
+    <link rel="stylesheet" href="./CSS/css_common.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <nav class="px-3 py-1 bg-dark-90 w-full border-box z-top fixed">
+      <div class="max-w-1280 mx-auto flex justify-between items-center">
+        <a href="#" class="text-accent font-blod text-1p5 line-2">狠狠踩一脚</a>
+        <div class="desktop-only flex">
+          <a href="#homepage" class="text-light px-1">关于我</a>
+          <a href="#portfolio" class="text-light px-1">作品</a>
+          <a href="#contact" class="text-light px-1">联系我</a>
+        </div>
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="mobile-only text-light text-1p5">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <!-- 移动端菜单按钮 -->
+      <div id="mobileMenu" class="hidden w-full flex flex-col py-1">
+        <a href="#homepage" class="text-light mt-1">关于我</a>
+        <a href="#portfolio" class="text-light mt-1">作品</a>
+        <a href="#contact" class="text-light mt-1">联系我</a>
+      </div>
+    </nav>
+
+    <section id="homepage" class="min-h-screen px-3 flex justify-center items-center bg-dark border-box pt-5">
+      <div class="max-w-1280 grid justify-center items-center grid-cols-1 grid-cols-2 gap-3">
+        <div class="fade-in">
+          <h1 class="font-blod text-4 line-5 text-light">独立游戏开发者</h1>
+          <h1 class="font-blod text-4 line-5 text-accent">灵魂像素 & 音乐</h1>
+          <p class="text-light line-2 py-1">专注2D独立游戏开发，擅长像素绘画与游戏配乐，记录开发过程中的学习与思考。</p>
+        </div>
+        <div class="flex justify-center fade-in">
+          <img id="avatar" src="https://picsum.photos/seed/gamedev/500/500" alt="狠狠踩一脚" class="w-16 h-16 rounded-full hover-scale border-box">
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="bg-light py-5 px-3">
+      <div class="max-w-1280 mx-auto">
+        <h2 class="text-2 line-3 font-blod text-dark text-center">作品</h2>
+        <p class="line-2 text-center text-dark mb-4">精选游戏、绘画、编曲作品与学习笔记，记录创作与成长。</p>
+
+        <div class="fade-in mt-5">
+          <div class="flex items-center mb-1">
+            <h3 class="text-dark font-blod text-1p5 line-2p5">游戏作品</h3>
+            <div class="portfolioTitleLine bg-game"></div>
+          </div>
+          <div class="grid grid-cols-1 grid-cols-3 gap-2 flex-warp">
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
+              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
+              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
+              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
+              <a href="#" class="px-1 my-0p5 text-game line-1p5">查看详情 <i class="fas fa-arrow-right text-game"></i></a>
+            </div>
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
+              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
+              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
+              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
+              <a href="#" class="px-1 my-0p5 text-game line-1p5">查看详情 <i class="fas fa-arrow-right text-game"></i></a>
+            </div>
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
+              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
+              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
+              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
+              <a href="#" class="px-1 my-0p5 text-game line-1p5">查看详情 <i class="fas fa-arrow-right text-game"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fade-in mt-5">
+          <div class="flex items-center mb-1">
+            <h3 class="text-dark font-blod text-1p5 line-2p5">绘画作品</h3>
+            <div class="portfolioTitleLine bg-paint"></div>
+          </div>
+          <div class="grid grid-cols-1 grid-cols-2 gap-2 flex-warp">
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
+              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
+              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
+              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
+            </div>
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
+              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
+              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
+              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fade-in mt-5">
+          <div class="flex items-center mb-1">
+            <h3 class="text-dark font-blod text-1p5 line-2p5">音乐作品</h3>
+            <div class="portfolioTitleLine bg-music"></div>
+          </div>
+          <div class="grid grid-cols-1 grid-cols-2 gap-2 flex-warp">
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
+              <div class="flex items-center mb-1">
+                <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-4 h-4 rounded-8">
+                <div>
+                  <h4 class="my-0p5 font-blod text-dark line-1p5 px-1">《像素冒险记》</h4>
+                  <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，包含5个关卡与原创配乐。</p>
+                </div>
+              </div>
+              <audio controls class="w-full"><source src="#" type="audio/mpeg">"你的浏览器不支持音频播放!"</audio>
+            </div>
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
+              <div class="flex items-center mb-1">
+                <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-4 h-4 rounded-8">
+                <div>
+                  <h4 class="my-0p5 font-blod text-dark line-1p5 px-1">《像素冒险记》</h4>
+                  <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，包含5个关卡与原创配乐。</p>
+                </div>
+              </div>
+              <audio controls class="w-full"><source src="#" type="audio/mpeg">"你的浏览器不支持音频播放!"</audio>
+            </div>
+          </div>
+        </div>        
+
+        <div class="fade-in mt-5">
+          <div class="flex items-center mb-1">
+            <h3 class="text-dark font-blod text-1p5 line-2p5">学习笔记</h3>
+            <div class="portfolioTitleLine bg-note"></div>
+          </div>
+          <div class="grid grid-cols-1 grid-cols-3 gap-2 flex-warp">
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
+              <p class="my-0p5 text-note line-1p5">#Unity</p>
+              <h4 class="my-0p5 font-blod text-dark text-1p25 line-2">《像素冒险记》</h4>
+              <p class="my-0p5 text-dark line-1p5">总结独立开发中遇到的性能问题，从渲染、脚本、资源三方面优化。</p>
+              <div class="flex justify-between items-center">
+                <span class="text-deep-gray">2025-10-21</span>
+                <a href="#" class="my-0p5 text-note">阅读全文</a>
+              </div>
+            </div>
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
+              <p class="my-0p5 text-note line-1p5">#Unity</p>
+              <h4 class="my-0p5 font-blod text-dark text-1p25 line-2">《像素冒险记》</h4>
+              <p class="my-0p5 text-dark line-1p5">总结独立开发中遇到的性能问题，从渲染、脚本、资源三方面优化。</p>
+              <div class="flex justify-between items-center">
+                <span class="text-deep-gray">2025-10-21</span>
+                <a href="#" class="my-0p5 text-note">阅读全文</a>
+              </div>
+            </div>
+            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
+              <p class="my-0p5 text-note line-1p5">#Unity</p>
+              <h4 class="my-0p5 font-blod text-dark text-1p25 line-2">《像素冒险记》</h4>
+              <p class="my-0p5 text-dark line-1p5">总结独立开发中遇到的性能问题，从渲染、脚本、资源三方面优化。</p>
+              <div class="flex justify-between items-center">
+                <span class="text-deep-gray">2025-10-21</span>
+                <a href="#" class="my-0p5 text-note">阅读全文</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-dark py-5 px-3">
+      <div class="max-w-1280 mx-auto">
+        <h2 class="text-2 line-3 font-blod text-light text-center">联系我</h2>
+        <p class="line-2 text-center text-light mb-4">欢迎交流游戏开发、绘画、编曲等相关问题。</p>
+
+        <div class="fade-in mt-5">
+          <div class="flex justify-center gap-3 items-center">
+            <a href="#" class="hover-scale flex items-center gap-1">
+              <div class="w-3 h-3 rounded-full bg-accent-30 flex items-center justify-center">
+                <i class="fab fa-github text-accent text-1p5 line-3"></i>
+              </div>
+              <div>
+                <p class="font-blod text-light line-1p5">GitHub</p>
+                <p class="text-light-gray line-1p5">@XXXXXXXX</p>
+              </div>
+            </a>
+            <a href="#" class="hover-scale flex items-center gap-1">
+              <div class="w-3 h-3 rounded-full bg-accent-30 flex items-center justify-center">
+                <i class="fab fa-bilibili text-accent text-1p5 line-3"></i>
+              </div>
+              <div>
+                <p class="font-blod text-light line-1p5">GitHub</p>
+                <p class="text-light-gray line-1p5">@XXXXXXXX</p>
+              </div>
+            </a>
+            <a href="#" class="hover-scale flex items-center gap-1">
+              <div class="w-3 h-3 rounded-full bg-accent-30 flex items-center justify-center">
+                <i class="fas fa-envelope text-accent text-1p5 line-3"></i>
+              </div>
+              <div>
+                <p class="font-blod text-light line-1p5">GitHub</p>
+                <p class="text-light-gray line-1p5">@XXXXXXXX</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark py-2">
+      <p class="text-center text-light-gray">&copy; 2025 狠狠踩一脚 - 独立游戏开发者</p>
+    </footer>
+
+    <script>
+      // 移动端菜单
+      const menuBtn = document.getElementById('menuBtn');
+      const icon = menuBtn.querySelector('i');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', ()=> {
+        mobileMenu.classList.toggle('hidden');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+      });
+
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, { threshold: 0.1 });
+      fadeElements.forEach(el => fadeInObserver.observe(el));
+    </script>
+  </body>
+</html>
