@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <title>正行&nbsp;|&nbsp;这是我的世界</title>
+</head>
+<body>
+    <header class="full-column">
+        <nav class="center-column">
+            <ul>
+                <!-- <li><a href="#">未完待续......</a></li> -->
+                <li><a href="#capriccio">随想</a></li>
+                <li><a href="./Page/knowledgeIndex.html">知识</a></li>
+                <li><a href="#read">悦读</a></li>
+                <li><a href="#workshop">工坊</a></li>
+                <li><a href="#more">更多</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <main  class="full-column">
+        <section id="top">
+            <div id="text-container">
+                <div id="hello">Hello,</div>
+                <div id="text-box">
+                    <div class="text1">world!</div>
+                    <div class="text4">sunshine!</div>
+                    <div class="text4">old time!</div>
+                    <div class="text1">dream!</div>
+                    <div class="text2">friend!</div>
+                    <div class="text3">my love!</div>
+                    <div class="text4">tomorrow!</div>
+                    <div class="text3">program!</div>
+                    <div class="text1">China!</div>
+                    <div class="text2">summer!</div>
+                    <div class="text3">comrade!</div>
+                    <div class="text1">happy!</div>
+                    <div class="text1">kitty!</div>
+                    <div class="text4">stranger!</div>
+                    <div class="text2">future!</div>
+                    <div class="text1">baozi!</div>
+                    <div class="text1">youth!</div>
+                    <div class="text3">failure!</div>
+                    <div class="text4">everyone!</div>
+                    <div class="text3">goodbye!</div>
+                </div>
+            </div>
+        </section>
+        <section id="mine" class="full-column"></section>
+    </main>
+    <footer class="full-column" id="bottom">
+        <div>
+            <span>&copy;&nbsp;2022&nbsp;正行</span>
+            <span>&nbsp;&verbar;&nbsp;</span>
+            <span><a href="https://beian.miit.gov.cn" title="工业和信息化部ICP/IP地址/域名信息备案管理系统" target="_blank">皖ICP备2022009674号-1</a></span>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+            console.log(header);
+        })
+    </script>
+</body>
+
+<!--
+--text1
+world!  _/
+youth!  _/
+kitty!  _/
+happy!  _/
+dream!  _/
+baozi!  _/
+alien!
+China!  _/
+
+--text2
+future!  _/
+friend!  _/
+summer!  _/
+
+--text3
+failure!  _/
+my love!  _/
+comrade!  _/
+captain!
+program!  _/
+sadness!
+goodbye!  _/
+
+--text4
+sunshine!  _/
+old time!  _/
+stranger!  _/
+tomorrow!  _/
+everyone!  _/
+ -->
+</html>

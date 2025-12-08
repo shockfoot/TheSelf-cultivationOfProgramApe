@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Tuple</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../CommonCSS/CommonStyle.css">
+</head>
+<body>
+    <section>
+        <nav id="Navigation">
+            <iframe title="nav_left" src="../../CSharpCommon/CSharp导航.html"></iframe>
+        </nav>
+        <article id="Artical">
+            <h2 class="blue">Tuple</h2>
+            <div id="Description">
+                <h3>描述</h3>
+                <ul>
+                    <li>定义：<i>public class Tuple</i></li>
+                    <li>继承自：<a href="../类/Object.html">Object</a></li>
+                    <li>命名空间：System</li>
+                    <li>程序集：System.Runtime.dll</li>
+                </ul>
+                <p>元组是具有特定数量和序列的值的数据结构。Tuple类本身并不表示元组，只是提供了用于创建八个及以下数量元素的元组对象的静态方法。.NET支持具有一至七个元素的元组Tuple&lt;T1&gt;、...、Tuple&lt;T1, ..., T7&gt;，八个及以上的元组则是Tuple&lt;T1, ..., TRest&gt;。TupleExtensions类为元组提供拓展方法。</p>
+                <p>Tuple通常用于：</p>
+                <ul>
+                    <li>表示一组数据。</li>
+                    <li>提供对数据集的轻松访问和操作。</li>
+                    <li>不使用输出参数即可从方法中返回多个结果。</li>
+                    <li>通过一个参数传递给方法多个值。</li>
+                </ul>
+            </div>
+            <div id="Constructor">
+                <h3>构造函数</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Tuple&lt;T1&gt;(T1)</p></td>
+                            <td><p>创建一元组对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tuple&lt;T1, T2&gt;(T1, T2)</p></td>
+                            <td><p>创建二元组对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tuple&lt;T1, T2, T3&gt;(T1, T2, T3)</p></td>
+                            <td><p>创建三元组对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tuple&lt;T1, T2, T3, T4&gt;(T1, T2, T3, T4)</p></td>
+                            <td><p>创建四元组对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tuple&lt;T1, T2, T3, T4, T5&gt;(T1, T2, T3, T4, T5)</p></td>
+                            <td><p>创建五元组对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tuple&lt;T1, T2, T3, T4, T5, T6&gt;(T1, T2, T3, T4, T5, T6)</p></td>
+                            <td><p>创建六元组对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tuple&lt;T1, T2, T3, T4, T5, T6, T7&gt;(T1, T2, T3, T4, T5, T6, T7)</p></td>
+                            <td><p>创建七元组对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tuple&lt;T1, ..., TRest&gt;(T1, ..., TRest)</p></td>
+                            <td><p>创建8个及以上元素的Tuple对象，其中TRest封装为通用元组对象。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="Field">
+                <h3>字段</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Item1</p></td>
+                            <td><p>第一个元素。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Item2</p></td>
+                            <td><p>第二个元素。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Item3</p></td>
+                            <td><p>第三个元素。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Item4</p></td>
+                            <td><p>第四个元素。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Item5</p></td>
+                            <td><p>第五个元素。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Item6</p></td>
+                            <td><p>第六个元素。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Item7</p></td>
+                            <td><p>第七个元素。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Rest</p></td>
+                            <td><p>8个及以上元素的Tuple的其他元素。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="StaticMethod">
+                <h3>静态方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Creat&lt;T1, ..., T8&gt;(T1, ..., T8)</p></td>
+                            <td><p>根据传入参数创建8个及以下数量元素的Tuple，最多支持8个元素。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="VirtualMethod">
+                <h3>虚方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Equals(Object)</p></td>
+                            <td><p>指定对象是否等于当前实例。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>GetHashCode()</p></td>
+                            <td><p>获取当前实例的哈希值。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>ToString()</p></td>
+                            <td><p>将当前实例转换为字符串形式，默认返回完全限定类型名称。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="InheritedMethod">
+                <h3>继承方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>GetType()</p></td>
+                            <td><p>获取对象的Type对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>MemberwiseClone()</p></td>
+                            <td><p>创建浅拷贝副本。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        <nav id="PageNav">
+            <p>本页目录</p>
+            <ul>
+                <li><a href="#Description">描述</a></li>
+                <li><a href="#Constructor">构造函数</a></li>
+                <li><a href="#Field">字段</a></li>
+                <li><a href="#StaticMethod">静态方法</a></li>
+                <li><a href="#VirtualMethod">虚方法</a></li>
+                <li><a href="#InheritedMethod">继承方法</a></li>
+            </ul>
+        </nav>
+    </section>
+</body>
+</html>

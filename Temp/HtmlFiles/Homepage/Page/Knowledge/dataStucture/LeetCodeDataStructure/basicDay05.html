@@ -1,0 +1,181 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../CSS/reset.css">
+    <link rel="stylesheet" href="../../../../CSS/page.css">
+    <title>正行 | LeetCode数据结构入门第五天</title>
+</head>
+<body>
+    <header class="full-column">
+        <nav class="center-column">
+            <ul>
+                <li><a href="../../../../index.html">首页</a></li>
+                <li><a href="#capriccio">随想</a></li>
+                <li><a href="../../../knowledgeIndex.html">知识</a></li>
+                <li><a href="#read">悦读</a></li>
+                <!-- <li><a href="#workshop">工坊</a></li> -->
+                <!-- <li><a href="#more">更多</a></li>  -->
+            </ul>
+        </nav>
+    </header>
+    <main class="center-column">
+        <section id="artical">
+            <div id="Question-1">
+                <h3>1、有效的数独</h3>
+                <p>判断一个<code>9 x 9</code>的数独是否有效。只需要验证已经填入的数字是否有效即可。</p>
+                <p>验证规则：数字1-9在每一<b>行</b>只能出现一次；数字1-9在每一<b>列</b>只能出现一次；数字1-9在每一个<b>九宫</b>内只能出现一次。</p>
+                <p>注意：一个有效的数独不一定是可解的；空白格用<code>'.'</code>表示。</p>
+                <section class="solution-1">
+                    <p class="solution"><b>解法1</b></p>
+                    <p>可以用哈希表存储每行、每列、每九宫格中各数字出现的次数，但由于原数组是矩阵，这里可以使用二维数组来代替哈希表。</p>
+<pre><code class="language-C#">public bool IsValidSudoku(char[][] board)
+{
+    int[,] rows = new int[9, 9], cols = new int[9, 9], box = new int[9, 9];
+    for (int r = 0; r < 9; r++)
+    {
+        for (int c = 0; c < 9; c++)
+        {
+            char cChar = board[r][c];
+            if (cChar == '.')
+                continue;
+            int index = cChar - '0' - 1;
+            rows[r, index]++;
+            cols[c, index]++;
+            //将二维数组的索引映射到一维数组
+            box[c / 3 + (r / 3) * 3, index]++;
+            if (rows[r, index] > 1 || cols[c, index] > 1 || box[c / 3 + (r / 3) * 3, index] > 1)
+                return false;
+        }
+    }
+    return true;
+}</code></pre>
+                </section>
+            </div>
+            <div id="Question-2">
+                <h3>2、矩阵置零</h3>
+                <p>给定一个<code>m x n</code>的矩阵，如果一个元素为<code>0</code>，则将其所在行和列的所有元素都设为0。请使用<b>原地</b>算法。</p>
+                <p>需要注意，不能在遍历0元素时修改原数组，因为这是产生的0会对后面遍历产生影响，因此需要先标记0元素的位置，再统一进行修改。</p>
+                <section class="solution-1">
+                    <p class="solution"><b>解法1：哈希表</b></p>
+                    <p>使用哈希表存储矩阵中0元素出现的位置，这里使用了二维数组与一维数组索引的映射。</p>
+<pre><code class="language-C#">public void SetZeroes(int[][] matrix)
+{
+    int m = matrix.Length, n = matrix[0].Length;
+    Hashtable ht = new Hashtable();
+    for (int r = 0; r < m; r++)
+    {
+        for (int c = 0; c < n; c++)
+        {
+            if (matrix[r][c] == 0)
+                ht.Add(r * n + c, r * n + c);
+        }
+    }
+    foreach (int vlaue in ht.Values)
+    {
+        for (int i = 0; i < m; i++)
+            matrix[i][vlaue % n] = 0;
+        for (int i = 0; i < n; i++)
+            matrix[vlaue / n][i] = 0;
+    }
+}</code></pre>
+                </section>
+                <section class="solution-2">
+                    <p class="solution"><b>解法2：双数组标记</b></p>
+                    <p>因为只要一行或列中有一个元素为0，则改行/列都将设为0，因此只需要使用两个数组标记行、列是否出现0即可。</p>
+<pre><code class="language-C#">public void SetZeroes(int[][] matrix)
+{
+    int m = matrix.Length, n = matrix[0].Length;
+    //标记行、列是否出现0
+    bool[] rows = new bool[m], cols = new bool[n];
+    for (int r = 0; r < m; r++)
+    {
+        for (int c = 0; c < n; c++)
+        {
+            if (matrix[r][c] == 0)
+            {
+                rows[r] = true;
+                cols[c] = true;
+            }
+        }
+    }
+    for (int r = 0; r < m; r++)
+    {
+        for (int c = 0; c < n; c++)
+        {
+            if (rows[r] || cols[c])
+                matrix[r][c] = 0;
+        }
+    }
+}</code></pre>
+                </section>
+                <section class="solution-3">
+                    <p class="solution"><b>解法3：双变量标记</b></p>
+                    <p>可以使用数组的第一行/列标记该行/列是否出现0元素，但此时需要先确定第一行/列中是否出现过0，因此需要设置两个标记变量记录。</p>
+<pre><code class="language-C#">public void SetZeroes(int[][] matrix)
+{
+    int m = matrix.Length, n = matrix[0].Length;
+    //标记变量
+    bool row = false, col = false;
+    //首行判断
+    for (int c = 0; c < n; c++)
+    {
+        if (!matrix[0][c])
+        {
+            row = true;
+            break;
+        }
+    }
+    //首列判断
+    for (int r = 0; r < m; r++)
+    {
+        if (!matrix[r][0])
+        {
+            col = true;
+            break;
+        }
+    }
+    //遍历0
+    for (int r = 0; r < m; r++)
+    {
+        for (int c = 0; c < n; c++)
+        {
+            if (!matrix[r][c])
+            {
+                matrix[r][0] = 0;
+                matrix[0][c] = 0;
+            }
+        }
+    }
+    //修改数组
+    for (int r = 0; r < m; r++)
+    {
+        for (int c = 0; c < n; c++)
+        {
+            if (!matrix[r][0] || !matrix[0][c])
+                matrix[r][c] = 0;
+        }
+    }
+    //修改首行
+    if (row)
+    {
+        for (int c = 0; c < n; c++)
+            matrix[0][c] = 0;
+    }
+    //修改首列
+    if (col)
+    {
+        for (int r = 0; r < m; r++)
+            matrix[r][0] = 0;
+    }
+}</code></pre>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="full-column" id="bottom">
+        <div>&copy;&nbsp;2022&nbsp;正行</div>
+    </footer>
+</body>
+</html>

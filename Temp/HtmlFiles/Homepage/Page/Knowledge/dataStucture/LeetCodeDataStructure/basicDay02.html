@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../CSS/reset.css">
+    <link rel="stylesheet" href="../../../../CSS/page.css">
+    <title>正行 | LeetCode数据结构入门第二天</title>
+</head>
+<body>
+    <header class="full-column">
+        <nav class="center-column">
+            <ul>
+                <li><a href="../../../../index.html">首页</a></li>
+                <li><a href="#capriccio">随想</a></li>
+                <li><a href="../../../knowledgeIndex.html">知识</a></li>
+                <li><a href="#read">悦读</a></li>
+                <!-- <li><a href="#workshop">工坊</a></li> -->
+                <!-- <li><a href="#more">更多</a></li>  -->
+            </ul>
+        </nav>
+    </header>
+    <main class="center-column">
+        <section id="artical">
+            <div id="Question-1">
+                <h3>1、两数之和</h3>
+                <p>给定一个整数数组<code>nums</code>和一个整数目标值<code>target</code>，在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。假设只存在一个有效答案，但是数组中同一个元素在答案里不能重复出现。</p>
+                <section class="solution-1">
+                    <p class="solution"><b>解法1：暴力解法</b></p>
+                    <p>通过循环遍历数组，用<code>Array.IndexOf</code>查找数组中是否存在与当前元素相加等于target的元素。</p>
+<pre><code class="language-C#">public int[] TwoSum(int[] nums, int target)
+{
+    int result = -1;
+    for (int i = 0; i < nums.Length; i++)
+    {
+        result = Array.IndexOf(nums, target - nums[i]);
+        if (result != -1 && result != i)//排除当前遍历元素自身
+        {
+            return new int[] { result, i };
+        }
+    }
+    return new int[0];
+}</code></pre>
+                <p>使用Array.IndexOf，已经遍历过的元素仍然会在后续查找中被计算。可以使用双循环，只在当前遍历元素之后的数据中计算。</p>
+<pre><code class="language-C#">public int[] TwoSum(int[] nums, int target)
+{
+    int n = nums.Length;
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = i + 1; j < n; j++)//查找位置为当前遍历元素之后
+        {
+            if (nums[i] + nums[j] == target)
+                return new int[] { i, j };
+        }
+    }
+    return new int[0];
+}</code></pre>
+                </section>
+                <section class="solution-2">
+                    <p class="solution"><b>解法2：哈希表</b></p>
+                    <p>i和j总是一前一后，可以根据j在哈希表中查找遍历过的元素。</p>
+<pre><code class="language-C#">public int[] TwoSum(int[] nums, int target)
+{
+    Hashtable ht = new Hashtable();//新建哈希表
+    for (int i = 0; i < nums.Length; i++)
+    {
+        if (ht.ContainsKey(target - nums[i]))//哈希表中存在目标元素
+        {
+            return new int[] { i, (int)ht[target - nums[i]] };
+        }
+        //不存在时加入哈希表
+        if (!ht.ContainsKey(nums[i]))//key不重复
+            ht.Add(nums[i], i);
+    }
+    return new int[0];
+}</code></pre>
+                    <p>哈希表也称散列表，由键（key）和值（value）组成，存储在由哈希函数处理键得到的哈希码对应项中。键通过特定的哈希函数可以快速得到元素的位置。</p>
+                    <p>哈希函数是哈希构建成功的关键，哈希函数一般都是保密的，最常用的使用取余法构建。</p>
+                    <p>在.NET Framework中，Hashtable是<code>System.Collections</code>命名空间提供的一个类，用于处理和表现类似key/value的键值对。其中key通常可用来快速查找，且区分大小写；value用于存储对应于key的值。</p>
+                    <p>Hashtable中key/value键值对均为object类型，所以Hashtable可以支持任何类型的key/value键值对。</p>
+                </section>
+            </div>
+            <div id="Question-2">
+                <h3>2、合并两个有序数组</h3>
+                <p>给定两个按非递减顺序排列的整数数组<code>nums1</code>和<code>nums2</code>，整数m和n分别表示nums1和nums2中的元素数目。</p>
+                <p>将nums2合并到nums1中，使合并后的数组同样按非递减顺序排列。</p>
+                <p>合并后数组不应由函数返回，而是存储在数组nums1中。因此nums1的初始长度为，<code>m + n</code>，其中前m个元素表示应合并的元素，后n个元素为0，应忽略。nums2的长度为n。</p>
+                <section class="solution-1">
+                    <p class="solution"><b>解法1：直接合并后排序</b></p>
+                    <p>C#中直接提供了合并与排序的方法。</p>
+<pre><code class="language-C#">public void Merge(int[] nums1, int m, int[] nums2, int n)
+{
+    Array.Copy(nums2, 0, nums1, m, n);
+    Array.Sort(nums1);
+}</code></pre>
+                </section>
+                <section class="solution-2">
+                    <p class="solution"><b>解法2：双索引</b></p>
+                    <p>为了利用nums1和nums2已经排序的性质，可以将两个数组看作队列，每次从两个数组头部取出比较小的元素放到<b>临时数组</b>中，最后给到nums1。</p>
+<pre><code class="language-C#">public void Merge(int[] nums1, int m, int[] nums2, int n)
+{
+    int[] temp = new int[m + n];//临时数组
+    int i1 = 0, i2 = 0;//nums1和nums2的索引
+    for (int i = 0; i < m + n; i++)//依次向临时数组中添加元素
+    {
+        //需要判断两个索引是否越界，取出元素时索引要自增
+        if (i1 < m && i2 < n)
+        {
+            if (nums1[i1] <= nums2[i2])
+                temp[i] = nums1[i1++];
+            else if (nums1[i1] > nums2[i2])
+                temp[i] = nums2[i2++];
+        }
+        else if (i1 < m && i2 >= n)
+            temp[i] = nums1[i1++];
+        else if (i1 >= m && i2 < n)
+            temp[i] = nums2[i2++];
+        else
+            break;
+    }
+    Array.Copy(temp, nums1, m + n);
+}</code></pre>
+                    <p>正向的双索引法需要一个临时数组来防止nums1的元素被覆盖，但是可以注意到，nums1的尾部是空的，可以直接覆盖而不影响结果。因此，可以使用<b>逆向索引</b>从两个数组队列中取出较大的元素，直接放到nums1的最后面。</p>
+                    <p>由nums1和nums2的长度可知，nums1的尾部空位刚好可以容纳nums2所有元素而不覆盖nums1的元素。</p>
+                    <p>严格的说，在任何一个遍历时刻，nums1中有<code>m - 1 - i1</code>个元素被放到后面，nums2中有<code>n - 1 - i2</code>个元素被放到nums1后面，此时nums1在i1之后一共有<code>m + n - 1 - i1</code>个位置。那么nums1在i1后的空位数<code>(m + n - 1 - i1) - {(m - 1 - i1) + (n - 1 - i2)} = i2 + 1</code>一定是大于0的，所以i1的元素不会被覆盖。</p>
+<pre><code class="language-C#">public void Merge(int[] nums1, int m, int[] nums2, int n)
+{
+    int i1 = m - 1, i2 = n - 1;//两个数组的逆向索引
+    for (int i = m + n - 1; i >= 0 ; i--)//从后往前填充nums1
+    {
+        if (i1 >= 0 && i2 >= 0)
+        {
+            if (nums1[i1] <= nums2[i2])
+                nums1[i] = nums2[i2--];
+            else if (nums1[i1] > nums2[i2])
+                nums1[i] = nums1[i1--];
+        }
+        else if (i1 < 0 && i2 >= 0)
+            nums1[i] = nums2[i2--];
+        else if (i1 >= 0 && i2 < 0)
+            nums1[i] = nums1[i1--];
+        else
+            break;
+    }
+}</code></pre>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="full-column" id="bottom">
+        <div>&copy;&nbsp;2022&nbsp;正行</div>
+    </footer>
+</body>
+</html>

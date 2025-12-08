@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/page.css">
+    <title>正行 | Markown</title>
+</head>
+<body>
+    <header class="full-column">
+        <nav class="center-column">
+            <ul>
+                <li><a href="../../index.html">首页</a></li>
+                <li><a href="#capriccio">随想</a></li>
+                <li><a href="../knowledgeIndex.html">知识</a></li>
+                <li><a href="#read">悦读</a></li>
+                <!-- <li><a href="#workshop">工坊</a></li> -->
+                <!-- <li><a href="#more">更多</a></li>  -->
+            </ul>
+        </nav>
+    </header>
+    <main class="center-column">
+        <section id="artical">
+            <div id="markdown-title">
+                <h3>1、标题</h3>
+                <p>在一行文本前输入<code>#</code>来表示标题，<code>#</code>与文本之间需要<code>&nbsp;</code>，并且<code>#</code>个数代表标题级数，最多六级。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown"># 这是 &lt;h1&gt; 一级标题
+## 这是 &lt;h2&gt; 二级标题
+### 这是 &lt;h3&gt; 三级标题
+#### 这是 &lt;h4&gt; 四级标题
+##### 这是 &lt;h5&gt; 五级标题
+###### 这是 &lt;h6&gt; 六级标题
+####### 最多只支持六级标题</code></pre>
+            </div>
+            <div id="markdown-emphasize">
+                <h3>2、强调</h3>
+                <p>用不同的符号包括文本以达到不同的强调作用：<code>*</code>和<code>_</code>的效果是斜体，<code>**</code>和<code>__</code>会加粗文本，<code>~~</code>会为文字增加删除线/中划线，<code>==</code>会高亮显示被包裹文本，<code>~</code>与<code>^</code>分别是上下标。注意：高亮和上、下标需要编辑器支持扩展语法。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">*这会是 斜体 的文字*
+_这会是 斜体 的文字_
+**这会是 粗体 的文字**
+__这会是 粗体 的文字__
+_你也可以 **组合** 这些符号_
+~~这行文字会被 横线 删除~~
+==这行文字会被 高亮 显示==
+这个会是~下标~
+这个会是^上标^</code></pre>
+            </div>
+            <div id="markdown-list">
+                <h3>3、列表</h3>
+                <h4>无序列表</h4>
+                <p>要创建无序列表，可以在每个列表项前面添加破折号<code>-</code>、<code>*</code>或<code>+</code>。缩进一个或多个列表项可创建嵌套列表。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">* 可以使用`*`作为标记
++ 也可以使用`+`作为标记
+- 也可以使用`-`作为标记
+    - 使用缩进可以构成多级无序列表
+    - 相同标记符号的会被视为同组</code></pre>
+                <h4>有序列表</h4>
+                <p>要创建有序列表，可以在每个列表项前面添加添加数字并紧跟一个英文句点<code>.</code>。数字不必按数学顺序排列，但是列表应当以数字1起始。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">1. 有序列表以数字和`.`为标记
+3. 数字的序列不会影响列表的序列
+    3.1 但仍推荐按自然序列编写</code></pre>
+                <h4>在列表中嵌套其他元素</h4>
+                <p>要在保留列表连续性的同时在列表中添加另一种元素，应给该元素置四个空格或一个制表符的缩进。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">* 这是第一个列表项
+* 这是第二个列表项
+    这是第二个列表项下的一个段落
+* 这是第三个列表项</code></pre>
+            </div>
+            <div id="markdown-cite">
+                <h3>4、引用</h3>
+                <p>使用<code>&gt;</code>创建一个块引用。</p>
+                <p>块引用可以包含多个段落，为段落之间的空白行添加一个<code>&gt;</code>符号即可。</p>
+                <p>块引用可以嵌套。在要嵌套的段落前使用两个<code>&gt;</code>符号。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">正如XXX所说:
+&gt; 这是一句引用。
+    &gt;&gt; 嵌套引用
+                </code></pre>
+                <h4>在列表中嵌套其他元素</h4>
+                <p>块引用可以包含其他Markdown格式的元素，但并非所有元素都可以使用。</p>
+            </div>
+            <div id="markdown-code">
+                <h3>5、代码</h3>
+                <h4>行内代码</h4>
+                <p>要将单词或短语表示为代码，可以将其包裹在反引号<code>`</code>中。</p>
+                <p>如果表示为代码的单词或短语中包含一个或多个反引号，则可以通过将单词或短语包裹在双反引号<code>``</code>中。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">`C#`, `Java`, `markdown`</code></pre>
+                <h4>代码块</h4>
+                <p>使用<code>```</code>引入代码块，添加语言名称后可以高亮显示相应关键字</p>
+                <p>示例：</p>
+                <pre><code class="language-C#">```C#
+private static void Main() {
+    int a = 0;
+}
+```</code></pre>
+            </div>
+            <div id="markdown-dividingline">
+                <h3>6、分隔线</h3>
+                <p>在一行使用三个或更多的<code>*</code>、<code>-</code>或<code>_</code>来添加分隔线，注意不能含有其他内容。</p>
+                <p>为了兼容性，可以在分隔线的前后均添加空白行。</p>
+                <p>示例：</p>
+                <pre><code class="language-C#">在分割线之前
+
+---
+
+和后添加空白行</code></pre>
+            </div>
+            <div id="markdown-link">
+                <h3>7、链接</h3>
+                <h4>外部链接</h4>
+                <p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。语法：<code>[链接显示名](链接地址 "链接title")</code>。</p>
+                <p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">[正行](https://zhengxingstudio.com "我的个人网站")</code></pre>
+                <h4>自动链接</h4>
+                <p>使用<code>&lt;</code>和<code>&gt;</code>包裹的URL或邮箱会自动转换为链接。</p>
+                <p>示例：</p>
+                <h4>带格式化的链接</h4>
+                <p>在链接两边使用<code>*</code>、<code>**</code>可以为链接增加文本强调效果。如果要将链接表示为代码，请在方括号中添加反引号<code>`</code>。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">我喜欢支持 **[正行](https://zhengxingstudio.com)**
+这里是 *[正行](https://zhengxingstudio.com)*
+我正在学习 [`C#`](#C#)</code></pre>
+                <h4>内部链接</h4>
+                <p>格式为<code>[link text](#aim title)</code>，只支持到标题的跳转。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">[1、标题](#1、标题)</code></pre>
+            </div>
+            <div id="markdown-img">
+                <h3>8、图片</h3>
+                <p>要添加图像，可以使用感叹号<code>!</code>，然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。URL可以为绝对路径,也可以为相对路径。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">![name](URL)</code></pre>
+            </div>
+            <div id="markdown-table">
+                <h3>9、表格</h3>
+                <h4>语法</h4>
+                <p>使用<code>|</code>分隔不同单元格，使用<code>-</code>分隔表头。</p>
+                <p>为了使表格更加清晰，<code>|</code>和<code>-</code>两侧各需要一个空格，最左/右边的<code>|</code>外侧就不需要了。为了美观，可以使用空格对齐不同行的单元格，并在左右两边使用<code>|</code>标记单元格边界。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">| First Header | Second Header |
+| ------------ | ------------  |
+| Content      | Content       |
+| Content      | Content       |</code></pre>
+                <h4>对齐方式</h4>
+                <p>在表头下方的分隔线中加入<code>:</code>，即可标记下方单元格内容的对齐方式。</p>
+                <p>示例：</p>
+                <pre><code class="language-markdown">| First Header | Second Header | Third Header |
+| :----------- | ------------: | :----------: |
+| 左对齐       |        右对齐 |   居中对齐   |
+| Content      |       Content |   Content    |</code></pre>
+            </div>
+        </section>
+    </main>
+    <footer class="full-column" id="bottom">
+        <div>&copy;&nbsp;2022&nbsp;正行</div>
+    </footer>
+</body>
+</html>

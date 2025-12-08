@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Object</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../CommonCSS/CommonStyle.css">
+</head>
+<body>
+    <section>
+        <nav id="Navigation">
+            <iframe title="nav_left" src="../../CSharpCommon/CSharp导航.html"></iframe>
+        </nav>
+        <article id="Artical">
+            <h2 class="blue">Object</h2>
+            <div id="Description">
+                <h3>描述</h3>
+                <ul>
+                    <li>定义：<i>public class Object</i></li>
+                    <li>命名空间：System</li>
+                    <li>程序集：System.Runtime.dll</li>
+                </ul>
+                <p>Object是所有.NET类的<strong>最终基类</strong>，是类型层次结构的根，其他类默认隐式继承之。</p>
+                <p>在使用Object时，可以为不同值类型提供重载方法或使用泛型来避免装/拆箱。</p>
+            </div>
+            <div id="Constructor">
+                <h3>构造函数</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Object()</p></td>
+                            <td><p>实例化Object对象。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="Destructor">
+                <h3>析构函数</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Finalize()</p><p>~Object()</p></td>
+                            <td><p>用于在销毁对象之前对其持有的非托管资源执行清理操作。</p><p>如果某个类型重写了Finalize()，GC会在销毁该对象实例之前将其添加到终结队列中并自动调用此方法。终结队列记录托管堆中所有需要执行析构函数的实例。</p><p>使用Finalize()释放资源有以下限制：执行时间和顺序不确定；对象会被复活一次。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="StaticMethod">
+                <h3>静态方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Equals(Object, Object)</p></td>
+                            <td><p>根据类型判断两对象是否相等。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>ReferenceEquals(Object, Object)</p></td>
+                            <td><p>通过引用判断两对象是否是同一实例。</p><p>在比较值类型时，即使相等也会因装箱返回false。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="VirtualMethod">
+                <h3>虚方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>GetHashCode()</p></td>
+                            <td><p>获取对象的哈希值。</p><p>若未重写此方法，引用类型通过Object.GetHashCode()基于引用计算哈希值，值类型通过ValueType.GetHashCode()基于值计算哈希值。相同对象具有相同哈希值，但哈希值相同的对象不一定是同一个。</p><p>重写GetHashCode()必须重写Equals()以确保哈希表可以正常工作。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>ToString()</p></td>
+                            <td><p>将对象转换为字符串形式，默认返回完全限定类型名称。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Equals(Object)</p></td>
+                            <td><p>指定对象是否等于当前对象。</p><p>值类型重写Equals()可避免反射的使用，引用类型重写可实现值相等性判断。</p><p>重写：1、实现IComparable接口的类型必须重写Equals()；2、重写Equals()还必须重写GetHashCode()，否则哈希表可能无法正常工作；3、应考虑实现IEquatable接口以支持强类型测试的相等性，且应返回与Equals()一致的结果；4、重载相等运算符必须重写Equals()方法，且应返回相同的结果。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="Method">
+                <h3>普通方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>GetType()</p></td>
+                            <td><p>获取对象的Type对象，进而通过反射获取该类型的所有信息。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>MemberwiseClone()</p></td>
+                            <td><p>创建浅拷贝副本，即原始对象及其克隆引用的是同一个对象。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        <nav id="PageNav">
+            <p>本页目录</p>
+            <ul>
+                <li><a href="#Description">描述</a></li>
+                <li><a href="#Constructor">构造函数</a></li>
+                <li><a href="#Destructor">析构函数</a></li>
+                <li><a href="#StaticMethod">静态方法</a></li>
+                <li><a href="#VirtualMethod">虚方法</a></li>
+                <li><a href="#Method">普通方法</a></li>
+            </ul>
+        </nav>
+    </section>
+</body>
+</html>

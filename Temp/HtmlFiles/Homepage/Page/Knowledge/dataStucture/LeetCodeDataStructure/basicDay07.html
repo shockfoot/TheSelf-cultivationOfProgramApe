@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../CSS/reset.css">
+    <link rel="stylesheet" href="../../../../CSS/page.css">
+    <title>正行 | LeetCode数据结构入门第七天</title>
+</head>
+<body>
+    <header class="full-column">
+        <nav class="center-column">
+            <ul>
+                <li><a href="../../../../index.html">首页</a></li>
+                <li><a href="#capriccio">随想</a></li>
+                <li><a href="../../../knowledgeIndex.html">知识</a></li>
+                <li><a href="#read">悦读</a></li>
+                <!-- <li><a href="#workshop">工坊</a></li> -->
+                <!-- <li><a href="#more">更多</a></li>  -->
+            </ul>
+        </nav>
+    </header>
+    <main class="center-column">
+        <section id="artical">
+            <div id="Question-1">
+                <h3>1、环形链表</h3>
+                <p>给定一个链表的头节点<code>head</code>，判断链表中是否有环。如果链表中有某个节点，可以通过连续跟踪<code>next</code>指针再次到达，则链表中存在环。如果链表中存在环，则返回<code>true</code>，否则返回<code>false</code>。</p>
+                <section class="solution-1">
+                    <p class="solution"><b>解法1：哈希表</b></p>
+                    <p>使用哈希表记录每个节点，如果在后续遍历中发现节点再次出现，说明链表中存在环。</p>
+<pre><code class="language-C#">public bool HasCycle(ListNode head)
+{
+    if (head == null)
+        return false;
+    Hashtable ht = new Hashtable();
+    int index = 0;//节点索引
+    while(head.next != null)
+    {
+        if (ht.ContainsKey(head))
+            return true;
+        else
+            ht.Add(head, index);
+        head = head.next;
+        index++;
+    }
+    return false;
+}</code></pre>
+                </section>
+                <section class="solution-2">
+                    <p class="solution"><b>解法2：快慢指针</b></p>
+                    <p>可以在遍历链表时设置两个步伐不同的指针。如果链表中存在环，两个指针必然会相遇。</p>
+<pre><code class="language-C#">public bool HasCycle(ListNode head)
+{
+    if (head == null)
+        return false;
+    ListNode slow = head, fast = head;
+    do
+    {
+        if (fast == null || fast.next == null)
+            return false;
+        fast = fast.next.next;//快指针步伐为2
+        slow = slow.next;
+    }while (slow != fast);
+    return true;
+}</code></pre>
+                </section>
+            </div>
+            <div id="Question-2">
+                <h3>2、合并两个有序链表</h3>
+                <p>将两个升序链表合并为一个新的升序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。</p>
+                <section class="solution-1">
+                    <p class="solution"><b>解法1：顺序迭代</b></p>
+                    <p>按顺序遍历两个有序链表，同时比较大小。需要注意的是，需要设置一个<b>哨兵</b>节点来标记返回结果的头节点。在此过程中，通过维护一个临时节点变量来调整返回结果的<code>next</code>指针。</p>
+                    <p>当退出循环时，最多有一个链表没有被合并完，因此需要将未合并的链表添加到返回结果中。</p>
+<pre><code class="language-C#">public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+{
+    ListNode prehead = new ListNode(-1);//哨兵节点
+    ListNode temp = prehead;
+    while (list1 != null && list2 != null)
+    {
+        if (list1.val <= list2.val)
+        {
+            temp.next = list1;
+            list1 = list1.next;
+        }
+        else
+        {
+            temp.next = list2;
+            list2 = list2.next;
+        }
+        temp = temp.next;
+    }
+    //退出循环后合并未被合并完的链表
+    temp.next = list1 == null ? list2 : list1;
+    return prehead.next;
+}</code></pre>
+                </section>
+                <section class="solution-2">
+                    <p class="solution"><b>解法2：递归</b></p>
+                    <p>链表的定义具有递归的性质，因此有关链表的问题通常可以使用递归来解决。</p>
+                    <p>当两个链表非空时，只需要判断两个链表哪个头节点的值更小，然后递归的决定下一个合并的节点，直到其中一个链表为空。</p>
+<pre><code class="language-C#">public bool CanConstruct(string ransomNote, string magazine)
+{
+    if (list1 == null)
+        return list2;
+    else if (list2 == null)
+        return list1;
+    else if (list1.val < list2.val)
+    {
+        list1.next = MergeTwoLists(list1.next, list2);
+        return list1;
+    }
+    else
+    {
+        list2.next = MergeTwoLists(list1, list2.next);
+        return list2;
+    }
+}</code></pre>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="full-column" id="bottom">
+        <div>&copy;&nbsp;2022&nbsp;正行</div>
+    </footer>
+</body>
+</html>

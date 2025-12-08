@@ -1,0 +1,139 @@
+一、语言基础
+ 1. C# 语言
+  基础语法尚可
+√ 程序集需要了解一下
+√ StringBuilder底层实现需要了解一下
+√ Dictionary底层实现需要了解一下
+√ 链表与数组的时间复杂度需要了解一下
+ 2. 数据结构
+  尚可
+ 3. Lua 语言
+  基础语法尚可
+√ Table的底层实现原理需要了解
+√ String的底层实现原理需要了解
+√ Lua和C#跨语言调用的底层实现原理需要了解
+√ Lua的GC算法底层实现原理需要了解一下
+ 4.  网络
+  跟kiki老师要下，我讲过的 《客户端网络架构》的公开课,可以暂时只先看前面的理论部分
+  
+二、3D数学
+  不做深入考察，但不会影响你就业
+
+三、设计模式
+ 需要了解4,5种，看发你的图就好了
+ 
+四、Unity
+√ 1. AssetBundle 了解的不是很多
+√ 2. UGUI 图集了解不多
+√ 3. UGUI 性能优化了解不多
+√ 4. UGUI 层级管理了解不多
+√ 5. UI 管理器 需要自己捋一下
+√ 6. Mono和IL2CPP的区别不是很了解
+√ 7. 协程底层实现原理不了解
+√ 8. Mask和RectMask2D的底层实现不了解
+√ 9. UGUI 无限循环列表需要了解一下
+ 
+五、总结
+    C#/Lua编程语言尚可，底层原理尚补充
+ 网络相关不怎么了解
+ Unity基础使用尚可，但UGUI图集、层级不了解
+ UGUI性能优化不了解（DrawCall、OverDraw）
+ AssetBundle了解的也不多，建议系统看下
+ 数据结构常见算法建议未找到工作前继续保持刷题
+ A*寻路算法原理，性能瓶颈了解下
+ UGUI 无限循环列表需要了解一下
+ 建议面试时适当降低语速，传递信息清楚
+ 
+复习资料：
+
+1. UGUI 图集资料
+
+https://blog.csdn.net/xinzhilinger/article/details/116043662
+https://blog.csdn.net/qq_34406755/article/details/103699215
+https://zhuanlan.zhihu.com/p/391885850
+ 
+2. UGUI 优化 drawcall & overdraw
+
+https://zhuanlan.zhihu.com/p/103612944
+https://blog.uwa4d.com/archives/QA_UGUI-1.html
+https://blog.csdn.net/qq_38913715/article/details/122537287
+ 
+2. AssetBundle 资料
+
+https://zhuanlan.zhihu.com/p/38122862
+ 
+3. MVC
+ 
+https://blog.csdn.net/q764424567/article/details/83788696
+ 
+4. 具体的C# GC算法
+
+ 搜索下 基于 CLR 的 GC算法
+ 
+5. List、Dictionary 底层
+ 
+ https://zhuanlan.zhihu.com/p/279165656
+ https://www.cnblogs.com/myprogram/p/4666100.html
+ 
+6. Lua 底层实现
+
+ https://zhuanlan.zhihu.com/p/340713035
+ https://zhuanlan.zhihu.com/p/295524176
+ 
+7. Lua GC算法
+
+ https://blog.csdn.net/LJY_rookie/article/details/108141615
+ https://zhuanlan.zhihu.com/p/144875092
+ 
+8. 协程的底层实现
+  https://blog.csdn.net/PlayerCreed/article/details/120907835
+  
+9. 为什么Mask内外不能合批？
+  原因是  不同材质不能合批。具体来讲就是 Mask用的Stencil模板材质；而非Mask用的default UI mat材质
+
+10. Mask 底层实现
+  Mask GPU 模板剔除实现
+
+11. 建议了解下 Mask 和 RectMask2D 的区别
+
+12. UGUI 无限循环列表
+ https://blog.csdn.net/linxinfa/article/details/115396546
+
+
+13、系统的设计：我的任务系统是根据MVC的设计思想来进行设计的；
+
+数据层：
+
+任务数据来源于服务器和配置表的数据。由服务器的任务数据，驱动客户端任务面板的显示，这块是通过观察者实现的。而对于其他UI业务系统，比如NPC头顶的任务状态的显示，也是通过观察者进行事件广播的，从而更新其他UI业务系统的显示。
+
+显示层和控制层：
+
+通过一个主任务面板，获取数据层的数据来显示当前任务明细，并且通过订阅任务数据层的事件，来对任务状态进行更新。界面的逻辑也是写在此处的。
+
+外设了个任务管理器：
+
+是该任务系统的入口，比如显示和关闭任务系统等；还有任务与对应NPC的绑定；以及提供一些公共的接口供外部访问，比如获取某任务的状态，任务的获取和交付等。
+
+
+
+1. TOM老师《UI架构设计》
+2. TOM老师《网络架构设计》
+3. TOM老师《配置表架构设计》
+4. JOKER老师《协程原理》
+5. 羊刀老师《热更新》公开课
+6. 羊刀老师《技术面试》
+7. 妙蛙老师《面试HR方向公开课》
+
+
+
+
+MOMO课程：https://note.youdao.com/s/Gmv8PiVl
+Lua基础：https://note.youdao.com/s/d3fNsl6G
+XLua热更新框架：https://note.youdao.com/s/BDkoGF9T
+Lua从0开始热更框架：https://note.youdao.com/s/bNpdOMeP
+
+
+
+
+链接：https://pan.baidu.com/s/14cF1IC3kgWbErOgR_nZcNQ 
+提取码：d4o0

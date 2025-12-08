@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Byte</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../CommonCSS/CommonStyle.css">
+</head>
+<body>
+    <section>
+        <nav id="Navigation">
+            <iframe title="nav_left" src="../../CSharpCommon/CSharp导航.html" frameborder="0"></iframe>
+        </nav>
+        <article id="Artical">
+            <div>
+                <h2 class="blue">Byte</h2>
+            </div>
+            <div id="Description">
+                <h3>描述</h3>
+                <ul>
+                    <li>定义：<i class="inlineCode">public readonly struct Byte</i></li>
+                    <li>继承自：<a href="../类/ValueType.html">ValueType</a></li>
+                    <li>命名空间：System</li>
+                    <li>程序集：System.Runtime.dll</li>
+                </ul>
+                <p>Byte，即byte，8位无符号整数，范围为0~255(2<sup>8</sup>-1)。</p>
+            </div>
+            <div id="Field">
+                <h3>字段</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>MaxValue</p></td>
+                            <td><p>常量，Byte能表示的最大值。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>MinValue</p></td>
+                            <td><p>常量，Byte能表示的最小值。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="StaticMethod">
+                <h3>静态方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Clamp(Byte, Byte, Byte)</p></td>
+                            <td><p>钳制范围。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>CreateChecked&lt;TOther&gt;(TOther)</p></td>
+                            <td><p>根据值创建当前类型的实例，溢出时引发异常。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>CreateSaturating&lt;TOther&gt;(TOther)</p></td>
+                            <td><p>根据值创建当前类型的实例，溢出时取边界。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>CreateTruncating&lt;TOther&gt;(TOther)</p></td>
+                            <td><p>根据值创建当前类型的实例，溢出时截断高位。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>DivRem(Byte, Byte)</p></td>
+                            <td><p>计算两个值的商和余数。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>IsEvenInteger(Byte)</p></td>
+                            <td><p>是否为偶数。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>IsOddInteger(Byte)</p></td>
+                            <td><p>是否为奇数。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>IsPow2(Byte)</p></td>
+                            <td><p>是否为2的n次幂。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Log2(Byte)</p></td>
+                            <td><p>Log2。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>LeadingZeroCount(Byte)</p></td>
+                            <td><p>前导零的数量。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>TrailingZeroCount(Byte)</p></td>
+                            <td><p>尾随零的数量。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Max(Byte, Byte)</p></td>
+                            <td><p>得到两个值中较大的。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Min(Byte, Byte)</p></td>
+                            <td><p>得到两个值中更较的。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Parse(String)</p></td>
+                            <td><p>将字符串转换为等效的Byte。多个重载。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>TryParse(String, out Byte)</p></td>
+                            <td><p>尝试将字符串转换为等效的Byte。多个重载。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>PopCount(Byte)</p></td>
+                            <td><p>计算值中的有效位数。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>RotateLeft(Byte, Int32)</p></td>
+                            <td><p>将值向左旋转指定位数。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>RotateRight(Byte, Int32)</p></td>
+                            <td><p>将值向右旋转指定位数。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Sign(Byte)</p></td>
+                            <td><p>获取符号。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="VirtualMethod">
+                <h3>虚方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Equals(Object)</p></td>
+                            <td><p>指定对象是否等于当前实例。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>GetHashCode()</p></td>
+                            <td><p>获取当前实例的哈希值。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>ToString()</p></td>
+                            <td><p>将当前实例转换为字符串形式，默认返回完全限定类型名称。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="Method">
+                <h3>普通方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>CompareTo(Byte)</p></td>
+                            <td><p>比较当前实例与指定对象。若返回值小于0则当前实例小于指定对象，等于0时二者相等，大于0时当前实例大于指定对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Equals(Byte)</p></td>
+                            <td><p>指定对象是否等于当前实例。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>GetTypeCode()</p></td>
+                            <td><p>获取当前实例的TypeCode枚举值。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>ToString(String)</p></td>
+                            <td><p>将当前实例按指定格式转换为字符串形式。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>TryFormat(Span&lt;Char&gt;, out Int32, ReadOnlySpan&lt;Char&gt;, IFormatProvider)</p></td>
+                            <td><p>尝试将当前实例格式化为指定的字符串形式。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        <nav id="PageNav">
+            <p>本页目录</p>
+            <ul>
+                <li><a href="#Description">描述</a></li>
+                <li><a href="#Field">字段</a></li>
+                <li><a href="#StaticMethod">静态方法</a></li>
+                <li><a href="#VirtualMethod">虚方法</a></li>
+                <li><a href="#Method">普通方法</a></li>
+            </ul>
+        </nav>
+    </section>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>TupleExtensions</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../CommonCSS/CommonStyle.css">
+</head>
+<body>
+    <section>
+        <nav id="Navigation">
+            <iframe title="nav_left" src="../../CSharpCommon/CSharp导航.html"></iframe>
+        </nav>
+        <article id="Artical">
+            <h2 class="blue">TupleExtensions</h2>
+            <div id="Description">
+                <h3>描述</h3>
+                <ul>
+                    <li>定义：<i>public static class TupleExtensions</i></li>
+                    <li>继承自：<a href="../类/Object.html">Object</a></li>
+                    <li>命名空间：System</li>
+                    <li>程序集：System.Runtime.dll</li>
+                </ul>
+                <p>TupleExtensions为元组提供扩展方法。尽管这些方法可以直接调用，但它们主要用于C#编译器创建和解构元组。</p>
+            </div>
+            <div id="StaticMethod">
+                <h3>静态方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Deconstruct&lt;T1, ..., T21&gt;(Tuple&lt;T1, ..., T7, Tuple&lt;T8, ..., T14, Tuple&lt;T15, ..., T21&gt;&gt;&gt;, out T1, ..., out T21)</p></td>
+                            <td><p>将元组分解为单独的变量，最多支持21个元素。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>ToTuple&lt;T1, ..., T21&gt;(ValueTuple&lt;T1, ..., T7, ValueTuple&lt;T8, ..., T14, ValueTuple&lt;T15, ..., T21&gt;&gt;&gt;)</p></td>
+                            <td><p>将值元组转为元组，最多支持21个元素。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>ToValueTuple&lt;T1, ..., T21&gt;(Tuple&lt;T1, ..., T7, Tuple&lt;T8, ..., T14, Tuple&lt;T15, ..., T21&gt;&gt;&gt;, out T1, ..., out T21)</p></td>
+                            <td><p>将元组转为值元组，最多支持21个元素。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ValueType</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../CommonCSS/CommonStyle.css">
+</head>
+<body>
+    <section>
+        <nav id="Navigation">
+            <iframe title="nav_left" src="../../CSharpCommon/CSharp导航.html" frameborder="0"></iframe>
+        </nav>
+        <article id="Artical">
+            <div>
+                <h2 class="blue">ValueType</h2>
+            </div>
+            <div id="Description">
+                <h3>描述</h3>
+                <ul>
+                    <li>定义：<i>public abstract class ValueType</i></li>
+                    <li>继承自：<a href="./Object.html">Object</a></li>
+                    <li>命名空间：System</li>
+                    <li>程序集：System.Runtime.dll</li>
+                </ul>
+                <p>ValueType是值类型的基类，但不能自定义直接继承ValueType的类，只能通过struct自定义值类型。基于上述原因，ValueType通常不会直接在代码中使用，但可以在方法中用作参数以限制其为值类型。</p>
+                <p>ValueType和Object可以通过装/拆箱互相转换，但实际过程中应尽量避免，因为装/拆箱性能开销较大。</p>
+            </div>
+            <div id="Constructor">
+                <h3>构造函数</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>ValueType()</p></td>
+                            <td><p>实例化ValueType对象。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="VirtualMethod">
+                <h3>虚方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>Equals(Object)</p></td>
+                            <td><p>指定对象是否等于当前对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>GetHashCode()</p></td>
+                            <td><p>获取对象的哈希值。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>ToString()</p></td>
+                            <td><p>将对象转换为字符串形式，默认返回完全限定类型名称。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="InheritedMethod">
+                <h3>继承方法</h3>
+                <table>
+                    <tbody>
+                        <tr><th>名称</th><th>描述</th></tr>
+                        <tr>
+                            <td><p>GetType()</p></td>
+                            <td><p>获取对象的Type对象。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>MemberwiseClone()</p></td>
+                            <td><p>创建浅拷贝副本。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        <nav id="PageNav">
+            <p>本页目录</p>
+            <ul>
+                <li><a href="#Description">描述</a></li>
+                <li><a href="#Constructor">构造函数</a></li>
+                <li><a href="#VirtualMethod">虚方法</a></li>
+                <li><a href="#InheritedMethod">继承方法</a></li>
+            </ul>
+        </nav>
+    </section>
+</body>
+</html>

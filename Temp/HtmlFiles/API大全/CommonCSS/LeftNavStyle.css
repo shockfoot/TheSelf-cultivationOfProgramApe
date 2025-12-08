@@ -1,0 +1,34 @@
+:root {
+    font-size: 14px;
+    cursor: default;
+}
+
+html, body, div, ul, li {
+    margin:  0;
+    padding: 0;
+}
+div {
+    box-sizing: border-box;
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 10px 12px;
+}
+
+a {
+    color: #11659a;
+    text-decoration: none;
+}
+a:hover {
+    color: #c21f30;
+    text-decoration: underline;
+}
+
+ul li {
+    line-height: 1.5rem;
+}
+.liLevel2 {
+    text-indent: 1rem;
+}
+.liLevel3 {
+    text-indent: 2rem;
+}

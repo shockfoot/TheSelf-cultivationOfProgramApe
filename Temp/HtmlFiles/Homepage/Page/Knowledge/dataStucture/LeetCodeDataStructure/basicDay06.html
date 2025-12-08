@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../CSS/reset.css">
+    <link rel="stylesheet" href="../../../../CSS/page.css">
+    <title>正行 | LeetCode数据结构入门第六天</title>
+</head>
+<body>
+    <header class="full-column">
+        <nav class="center-column">
+            <ul>
+                <li><a href="../../../../index.html">首页</a></li>
+                <li><a href="#capriccio">随想</a></li>
+                <li><a href="../../../knowledgeIndex.html">知识</a></li>
+                <li><a href="#read">悦读</a></li>
+                <!-- <li><a href="#workshop">工坊</a></li> -->
+                <!-- <li><a href="#more">更多</a></li>  -->
+            </ul>
+        </nav>
+    </header>
+    <main class="center-column">
+        <section id="artical">
+            <div id="Question-1">
+                <h3>1、字符串中的第一个唯一字符</h3>
+                <p>给定一个字符串<code>s</code>，s中只包含小写字母。找到s的第一个不重复的字符，并返回它的索引。如果不存在，则返回-1。</p>
+                <section class="solution-1">
+                    <p class="solution"><b>解法1：数组存储重复次数</b></p>
+                    <p>使用一个长度为为26的一维数组存储26个英文字母在字符串中重复出现的次数，在第二次遍历字符串时返回第一个重复次数为1的字母的索引。</p>
+<pre><code class="language-C#">public int FirstUniqChar(string s)
+{
+    int[] arr = new int[26];
+    int n = s.Length;
+    for (int i = 0; i < n; i++)
+        arr[s[i] - 'a']++;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[s[i] - 'a'] == 1)
+            return i;
+    }
+    return -1;
+}</code></pre>
+                </section>
+                <section class="solution-2">
+                    <p class="solution"><b>解法2：哈希表存储重复次数</b></p>
+                    <p>使用哈希表存储字符串中每个字符的索引，当该字符重复出现时，索引置-1。最后只需要查找哈希表中非-1的最小索引即可。</p>
+<pre><code class="language-C#">public int FirstUniqChar(string s)
+{
+    Hashtable ht = new Hashtable();
+    int n = s.Length, index = n;
+    for (int i = 0; i < n; i++)
+    {
+        if (ht.ContainsKey(s[i]))
+            ht[s[i]] = -1;
+        else
+            ht.Add(s[i], i);
+    }
+    foreach (int value in ht.Values)
+    {
+        if (value != -1)
+            index = Math.Min(index, value);
+    }
+    if (index == n)
+        index = -1;
+    return index;
+}</code></pre>
+                </section>
+                <p>此类的问题也可以用“先进先出”的队列/栈来解决。</p>
+            </div>
+            <div id="Question-2">
+                <h3>2、赎金信</h3>
+                <p>给定两个由小写英文字母组成的字符串<code>ransomNote</code>和<code>magazine</code>，判断ransomNote能不能由magazine里面的字符构成。如果可以，返回<code>true</code>，否则返回<code>false</code>。magazine中的每个字符只能在ransomNote中使用一次。</p>
+                <section class="solution-1">
+                    <p class="solution"><b>解法1：数组存储重复次数</b></p>
+<pre><code class="language-C#">public bool CanConstruct(string ransomNote, string magazine)
+{
+    if (magazine.Length < ransomNote.Length)
+        return false;
+    int[] arr = new int[26];
+    for (int i = 0; i < magazine.Length; i++)
+        arr[magazine[i] - 'a']++;
+    for (int i = 0; i < ransomNote.Length; i++)
+        arr[ransomNote[i] - 'a']--;
+    for (int i = 0; i < 26; i++)
+    {
+        if (arr[i] < 0)
+            return false;
+    }
+    return true;
+}</code></pre>
+                </section>
+                <section class="solution-2">
+                    <p class="solution"><b>解法2：哈希表存储重复次数</b></p>
+<pre><code class="language-C#">public bool CanConstruct(string ransomNote, string magazine)
+{
+    if (magazine.Length < ransomNote.Length)
+        return false;
+    Hashtable ht = new Hashtable();
+    for (int i = 0; i < magazine.Length; i++)
+    {
+        if (ht.ContainsKey(magazine[i]))
+            ht[magazine[i]] = (int)ht[magazine[i]] + 1;
+        else
+            ht.Add(magazine[i], 1);
+    }
+    for (int i = 0; i < ransomNote.Length; i++)
+    {
+        if (ht.ContainsKey(ransomNote[i]))
+            ht[ransomNote[i]] = (int)ht[ransomNote[i]] - 1;
+        else
+            return false;
+    }
+    foreach (int value in ht.Values)
+    {
+        if (value < 0)
+           return false;
+    }
+    return true;
+}</code></pre>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="full-column" id="bottom">
+        <div>&copy;&nbsp;2022&nbsp;正行</div>
+    </footer>
+</body>
+</html>
