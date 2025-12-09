@@ -16,7 +16,7 @@
 # 忽略所有.o和.a文件.
 # *.[oa]
 
-*.vs
-*.idea
+.vs/
+.idea/
 bin/
 obj/
