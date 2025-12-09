@@ -16,11 +16,7 @@
 # 忽略所有.o和.a文件.
 # *.[oa]
 
-/程序语言/CSharp工程/.vs
-/程序语言/CSharp工程/.idea
-/程序语言/CSharp工程/Common/bin
-/程序语言/CSharp工程/Common/obj
-/程序语言/CSharp工程/LeetCode/bin
-/程序语言/CSharp工程/LeetCode/obj
-/程序语言/CSharp工程/Main/bin
-/程序语言/CSharp工程/Main/obj
+*.vs
+*.idea
+bin/
+obj/
