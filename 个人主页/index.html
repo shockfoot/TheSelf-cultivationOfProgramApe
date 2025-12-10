@@ -4,19 +4,217 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>狠狠踩一脚 - 这是我的世界</title>
-    <link rel="stylesheet" href="./CSS/css_initialize.css" />
-    <link rel="stylesheet" href="./CSS/css_common.css" />
-    <link rel="stylesheet" href="./CSS/css_custom.css" />
+    <link rel="icon" type="image/png" href="Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="Favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="CSS/CSS_Initialize.css" />
+    <link rel="stylesheet" href="CSS/CSS_Common.css" />
+    <link rel="stylesheet" href="CSS/CSS_Custom.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+      nav a:hover {
+        color: var(--color-accent);
+      }
+
+      #homepage h1 {
+        font-weight: 700;
+        font-size: 4rem;
+        line-height: 5rem;
+      }
+      #avatar {
+        border: 4px solid var(--color-accent-30);
+      }
+      
+      .section {
+        padding: 5rem 3rem
+      }
+      .section > div {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .section-title {
+        font-size: 2rem;
+        line-height: 3rem;
+        font-weight: 700;
+        text-align: center;
+      }
+      .section-description {        
+        line-height: 2rem;
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .section-part {
+        margin-bottom: 5rem;
+      }
+      .section-part-title-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .section-part-title {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+      }
+      .section-part-title-line {
+        width: 4rem;
+        height: 0.25rem;
+        margin-left: 1rem;
+      }
+      .section-part-grid {
+        display: grid;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .game-item {
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .game-item > img {
+        width: 100%;
+      }
+      .game-item > h4 {
+        padding: 1rem 1rem 0.5rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+        color: var(--color-dark);
+      }
+      .game-description {
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        line-height: 1.5rem;
+        color: var(--color-dark);
+      }
+      .game-annotation {
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        line-height: 1.5rem;
+        color: var(--color-game);
+      }
+
+      .paint-item {
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .paint-item > img {
+        width: 100%;
+      }
+      .paint-item > h4 {
+        padding: 1rem 1rem 0.5rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+        color: var(--color-dark);
+      }
+      .paint-item > p {
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        line-height: 1.5rem;
+        color: var(--color-dark);
+      }
+
+      .music-item {
+        padding: 1rem;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .music-top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .music-top > img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 8px;
+      }
+      .music-top > div {
+        height: 3.5rem;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+      .music-top > div > h4 {
+        line-height: 1.5rem;
+        font-weight: 700;
+        color: var(--color-dark);
+      }
+      .music-top > div > p {
+        line-height: 1.5rem;
+        color: var(--color-dark);
+      }
+      .music-item > audio {
+        width: 100%;
+      }
+
+      .note-item {
+        padding: 1rem;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .note-item > p:first-child {
+        padding-bottom: 0.5rem;
+        line-height: 1.5rem;
+        color: var(--color-note);
+      }
+      .note-item > h4 {
+        padding-bottom: 0.5rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+        color: var(--color-dark);
+      }
+      .note-description {
+        padding-bottom: 0.5rem;
+        line-height: 1.5rem;
+        color: var(--color-dark);
+      }
+      .note-annotation {
+        padding-bottom: 0.5rem;
+        line-height: 1.5rem;
+        color: var(--color-deepGray);
+      }
+      .note-item > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .note-item > div > p {
+        color: var(--color-note);
+      }
+      .note-item > div > p:first-child {
+        color: var(--color-deepGray);
+      }
+
+      footer a:hover {
+        color: var(--color-dark);
+      }
+    </style>
   </head>
   <body>
     <nav class="px-3 py-1 bg-dark-90 w-full border-box z-50 fixed">
       <div class="max-w-1280 mx-auto flex justify-between items-center">
-        <a href="#" class="text-accent font-blod text-1p5 line-2">狠狠踩一脚</a>
+        <a href="#" class="text-accent font-blod text-1d5 line-2">狠狠踩一脚</a>
         <div class="desktop-only flex">
           <a href="#workshop" class="text-light px-1">工坊</a>
           <a href="#knowledge" class="text-light px-1">知识</a>
-          <a href="#contact" class="text-light px-1">交流</a>
+          <a href="#contact" class="text-light px-1">联系我</a>
         </div>
         <!-- 移动端菜单按钮 -->
         <button id="menuBtn" class="mobile-only text-light text-1p5">
@@ -27,173 +225,163 @@
       <div id="mobileMenu" class="hidden w-full flex flex-col py-1">
         <a href="#workshop" class="text-light mt-1">工坊</a>
         <a href="#knowledge" class="text-light mt-1">知识</a>
-        <a href="#contact" class="text-light mt-1">交流</a>
+        <a href="#contact" class="text-light mt-1">联系我</a>
       </div>
     </nav>
 
     <section id="homepage" class="min-h-screen px-3 flex justify-center items-center bg-dark border-box pt-5">
       <div class="max-w-1280 grid justify-center items-center grid-cols-1 grid-cols-2 gap-3">
         <div class="fade-in">
-          <h1 class="font-blod text-4 line-5 text-light">独立游戏开发者</h1>
-          <h1 class="font-blod text-4 line-5 text-accent">灵魂像素 & 音乐</h1>
+          <h1 class="text-light">独立游戏开发者</h1>
+          <h1 class="text-accent">灵魂像素 & 音乐</h1>
           <p class="text-light line-2 py-1">专注2D独立游戏开发，擅长像素绘画与游戏配乐，记录开发过程中的学习与思考。</p>
         </div>
         <div class="flex justify-center fade-in">
-          <img id="avatar" src="https://picsum.photos/seed/gamedev/500/500" alt="狠狠踩一脚" class="w-16 h-16 rounded-full hover-scale border-box">
+          <img id="avatar" src="Image/avatar.png" alt="狠狠踩一脚" title="狠狠踩一脚" class="w-16 h-16 rounded-full hover-scale border-box">
         </div>
       </div>
     </section>
 
-    <section id="portfolio" class="bg-light py-5 px-3">
-      <div class="max-w-1280 mx-auto">
-        <h2 class="text-2 line-3 font-blod text-dark text-center">作品</h2>
-        <p class="line-2 text-center text-dark mb-4">精选游戏、绘画、编曲作品与学习笔记，记录创作与成长。</p>
+    <section id="workshop" class="bg-light section">
+      <div>
+        <h2 class="section-title text-dark">工坊</h2>
+        <p class="section-description text-dark">精选游戏、绘画、编曲作品与学习笔记，记录创作与成长。</p>
 
-        <div class="fade-in mt-5">
-          <div class="flex items-center mb-1">
-            <h3 class="text-dark font-blod text-1p5 line-2p5">游戏作品</h3>
-            <div class="portfolioTitleLine bg-game"></div>
+        <div class="fade-in section-part">
+          <div class="section-part-title-wrapper">
+            <h3 class="text-dark section-part-title">游戏作品</h3>
+            <div class="section-part-title-line bg-game"></div>
           </div>
-          <div class="grid grid-cols-1 grid-cols-3 gap-2 flex-warp">
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
-              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
-              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
-              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
-              <a href="#" class="px-1 my-0p5 text-game line-1p5">查看详情 <i class="fas fa-arrow-right text-game"></i></a>
-            </div>
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
-              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
-              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
-              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
-              <a href="#" class="px-1 my-0p5 text-game line-1p5">查看详情 <i class="fas fa-arrow-right text-game"></i></a>
-            </div>
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
-              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
-              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
-              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
-              <a href="#" class="px-1 my-0p5 text-game line-1p5">查看详情 <i class="fas fa-arrow-right text-game"></i></a>
+          <div class="section-part-grid grid-cols-1 grid-cols-3">
+            <a class="game-item hover-scale" href="#" target="_blank">
+              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面">
+              <h4>《像素冒险记》</h4>
+              <p class="game-description">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
+              <p class="game-annotation">查看详情 <i class="fas fa-arrow-right"></i></p>
+            </a>
+          </div>
+        </div>
+        
+        <div class="fade-in section-part">
+          <div class="section-part-title-wrapper">
+            <h3 class="text-dark section-part-title">绘画作品</h3>
+            <div class="section-part-title-line bg-paint"></div>
+          </div>
+          <div class="section-part-grid grid-cols-1 grid-cols-2">
+            <div class="paint-item hover-scale">
+              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面">
+              <h4>《像素冒险记》</h4>
+              <p>2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
             </div>
           </div>
         </div>
         
-        <div class="fade-in mt-5">
-          <div class="flex items-center mb-1">
-            <h3 class="text-dark font-blod text-1p5 line-2p5">绘画作品</h3>
-            <div class="portfolioTitleLine bg-paint"></div>
+        <div class="fade-in section-part">
+          <div class="section-part-title-wrapper">
+            <h3 class="text-dark section-part-title">音乐作品</h3>
+            <div class="section-part-title-line bg-music"></div>
           </div>
-          <div class="grid grid-cols-1 grid-cols-2 gap-2 flex-warp">
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
-              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
-              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
-              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
-            </div>
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden pb-0p5">
-              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-full">
-              <h4 class="my-0p5 font-blod text-dark line-2 text-indent-1">《像素冒险记》</h4>
-              <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
+          <div class="section-part-grid grid-cols-1 grid-cols-2">
+            <div class="music-item hover-scale">
+              <div class="music-top">
+                <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面">
+                <div>
+                  <h4>《像素冒险记》</h4>
+                  <p>2D像素冒险游戏，包含5个关卡与原创配乐。</p>
+                </div>
+              </div>
+              <audio controls><source src="#" type="audio/mpeg">"你的浏览器不支持音频播放!"</audio>
             </div>
           </div>
         </div>
-        
-        <div class="fade-in mt-5">
-          <div class="flex items-center mb-1">
-            <h3 class="text-dark font-blod text-1p5 line-2p5">音乐作品</h3>
-            <div class="portfolioTitleLine bg-music"></div>
-          </div>
-          <div class="grid grid-cols-1 grid-cols-2 gap-2 flex-warp">
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
-              <div class="flex items-center mb-1">
-                <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-4 h-4 rounded-8">
-                <div>
-                  <h4 class="my-0p5 font-blod text-dark line-1p5 px-1">《像素冒险记》</h4>
-                  <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，包含5个关卡与原创配乐。</p>
-                </div>
-              </div>
-              <audio controls class="w-full"><source src="#" type="audio/mpeg">"你的浏览器不支持音频播放!"</audio>
-            </div>
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
-              <div class="flex items-center mb-1">
-                <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面" class="w-4 h-4 rounded-8">
-                <div>
-                  <h4 class="my-0p5 font-blod text-dark line-1p5 px-1">《像素冒险记》</h4>
-                  <p class="my-0p5 text-dark line-1p5 px-1">2D像素冒险游戏，包含5个关卡与原创配乐。</p>
-                </div>
-              </div>
-              <audio controls class="w-full"><source src="#" type="audio/mpeg">"你的浏览器不支持音频播放!"</audio>
-            </div>
-          </div>
-        </div>        
 
-        <div class="fade-in mt-5">
-          <div class="flex items-center mb-1">
-            <h3 class="text-dark font-blod text-1p5 line-2p5">学习笔记</h3>
-            <div class="portfolioTitleLine bg-note"></div>
-          </div>
-          <div class="grid grid-cols-1 grid-cols-3 gap-2 flex-warp">
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
-              <p class="my-0p5 text-note line-1p5">#Unity</p>
-              <h4 class="my-0p5 font-blod text-dark text-1p25 line-2">《像素冒险记》</h4>
-              <p class="my-0p5 text-dark line-1p5">总结独立开发中遇到的性能问题，从渲染、脚本、资源三方面优化。</p>
-              <div class="flex justify-between items-center">
-                <span class="text-deep-gray">2025-10-21</span>
-                <a href="#" class="my-0p5 text-note">阅读全文</a>
+      </div>
+    </section>
+
+    <section id="knowledge" class="bg-dark section">
+      <div>
+        <h2 class="section-title text-light">知识</h2>
+        <p class="section-description text-light">学习笔记，记录各种知识。</p>      
+
+        <div class="fade-in section-part">
+          <div class="section-part-grid grid-cols-1 grid-cols-3">
+            <a class="note-item hover-scale" href="Page/CSharpNote/CSharpNoteIndex.html" target="_blank">
+              <p>#C#</p>
+              <h4>C#学习笔记</h4>
+              <p class="note-description">C#从零到入门全部学习记录。</p>
+              <p class="note-annotation">最近更新：《C#导论》 2025-12-10</p>
+              <div>
+                <p>C# 9</p>
+                <p>查看详情 <i class="fas fa-arrow-right"></i></p>
               </div>
-            </div>
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
-              <p class="my-0p5 text-note line-1p5">#Unity</p>
-              <h4 class="my-0p5 font-blod text-dark text-1p25 line-2">《像素冒险记》</h4>
-              <p class="my-0p5 text-dark line-1p5">总结独立开发中遇到的性能问题，从渲染、脚本、资源三方面优化。</p>
-              <div class="flex justify-between items-center">
-                <span class="text-deep-gray">2025-10-21</span>
-                <a href="#" class="my-0p5 text-note">阅读全文</a>
+            </a>
+            <a class="note-item hover-scale" href="Page/CSharpAPI/CSharpAPIIndex.html" target="_blank">
+              <p>#C#</p>
+              <h4>C# API</h4>
+              <p class="note-description">一边学习官方API文档，一边整理。</p>
+              <p class="note-annotation">最近更新：《C#导论》 2025-12-10</p>
+              <div>
+                <p>C# 9</p>
+                <p>查看详情 <i class="fas fa-arrow-right"></i></p>
               </div>
-            </div>
-            <div class="rounded-8 hover-scale bg-white shadow-d overflow-hidden py-1 px-1">
-              <p class="my-0p5 text-note line-1p5">#Unity</p>
-              <h4 class="my-0p5 font-blod text-dark text-1p25 line-2">《像素冒险记》</h4>
-              <p class="my-0p5 text-dark line-1p5">总结独立开发中遇到的性能问题，从渲染、脚本、资源三方面优化。</p>
-              <div class="flex justify-between items-center">
-                <span class="text-deep-gray">2025-10-21</span>
-                <a href="#" class="my-0p5 text-note">阅读全文</a>
+            </a>
+            <a class="note-item hover-scale" href="Page/UnityNote/UnityNoteIndex.html" target="_blank">
+              <p>#Unity</p>
+              <h4>Unity学习笔记</h4>
+              <p class="note-description">Unity学习记录。</p>
+              <p class="note-annotation">最近更新：《C#导论》 2025-12-10</p>
+              <div>
+                <p>Unity2022.f1c1</p>
+                <p>查看详情 <i class="fas fa-arrow-right"></i></p>
               </div>
-            </div>
+            </a>
+            <a class="note-item hover-scale" href="Page/UnityAPI/UnityAPIIndex.html" target="_blank">
+              <p>#Unity</p>
+              <h4>Unity API</h4>
+              <p class="note-description">一边学习官方API文档，一边整理。</p>
+              <p class="note-annotation">最近更新：《C#导论》 2025-12-10</p>
+              <div>
+                <p>Unity2022.f1c1</p>
+                <p>查看详情 <i class="fas fa-arrow-right"></i></p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="bg-dark py-5 px-3">
-      <div class="max-w-1280 mx-auto">
-        <h2 class="text-2 line-3 font-blod text-light text-center">联系我</h2>
-        <p class="line-2 text-center text-light mb-4">欢迎交流游戏开发、绘画、编曲等相关问题。</p>
+    <section id="contact" class="bg-light section">
+      <div>
+        <h2 class="section-title text-dark">联系我</h2>
+        <p class="section-description text-dark">欢迎交流游戏开发、绘画、编曲等相关问题。</p>
 
-        <div class="fade-in mt-5">
+        <div class="fade-in section-part">
           <div class="flex justify-center gap-3 items-center">
             <a href="#" class="hover-scale flex items-center gap-1">
               <div class="w-3 h-3 rounded-full bg-accent-30 flex items-center justify-center">
-                <i class="fab fa-github text-accent text-1p5 line-3"></i>
+                <i class="fab fa-github text-accent text-1d5 line-3"></i>
               </div>
               <div>
-                <p class="font-blod text-light line-1p5">GitHub</p>
-                <p class="text-light-gray line-1p5">@XXXXXXXX</p>
+                <p class="font-blod text-dark line-1d5">GitHub</p>
+                <p class="text-deep-gray line-1d5">@XXXXXXXX</p>
               </div>
             </a>
             <a href="#" class="hover-scale flex items-center gap-1">
               <div class="w-3 h-3 rounded-full bg-accent-30 flex items-center justify-center">
-                <i class="fab fa-bilibili text-accent text-1p5 line-3"></i>
+                <i class="fab fa-github text-accent text-1d5 line-3"></i>
               </div>
               <div>
-                <p class="font-blod text-light line-1p5">GitHub</p>
-                <p class="text-light-gray line-1p5">@XXXXXXXX</p>
+                <p class="font-blod text-dark line-1d5">GitHub</p>
+                <p class="text-deep-gray line-1d5">@XXXXXXXX</p>
               </div>
             </a>
             <a href="#" class="hover-scale flex items-center gap-1">
               <div class="w-3 h-3 rounded-full bg-accent-30 flex items-center justify-center">
-                <i class="fas fa-envelope text-accent text-1p5 line-3"></i>
+                <i class="fab fa-github text-accent text-1d5 line-3"></i>
               </div>
               <div>
-                <p class="font-blod text-light line-1p5">GitHub</p>
-                <p class="text-light-gray line-1p5">@XXXXXXXX</p>
+                <p class="font-blod text-dark line-1d5">GitHub</p>
+                <p class="text-deep-gray line-1d5">@XXXXXXXX</p>
               </div>
             </a>
           </div>
@@ -201,8 +389,8 @@
       </div>
     </section>
 
-    <footer class="bg-dark py-1">
-      <p class="text-center text-light-gray text-0d75">&copy;&nbsp;2025&nbsp;狠狠踩一脚&nbsp;-&nbsp;独立游戏开发者&nbsp;&verbar;&nbsp;<a href="https://beian.miit.gov.cn" title="工业和信息化部ICP/IP地址/域名信息备案管理系统" target="_blank" class="text-light-gray">皖ICP备2022009674号-1</a></p>
+    <footer class="bg-light py-1">
+      <p class="text-center text-deep-gray">&copy;&nbsp;2025&nbsp;狠狠踩一脚&nbsp;&verbar;&nbsp;<a href="https://beian.miit.gov.cn" title="工业和信息化部ICP/IP地址/域名信息备案管理系统" target="_blank" class="text-deep-gray">皖ICP备2022009674号-1</a></p>
     </footer>
 
     <script>
