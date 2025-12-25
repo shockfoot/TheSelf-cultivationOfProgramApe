@@ -1,5 +1,5 @@
 html {
-  color: #222;
+  color: #000;
   overflow-y: scroll;
   font-family: "微软雅黑", Arial;
   font-size: 16px;
@@ -35,7 +35,7 @@ img {
 }
 
 a {
-  color: #222;
+  color: #000;
   text-decoration: none;
 }
 

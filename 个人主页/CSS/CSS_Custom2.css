@@ -1,0 +1,65 @@
+:root {
+  --color-dark: #0F1423;
+  --color-deep: #5e5c5d;
+  --color-middle: #8f8c8e;
+  --color-shallow: #c3c1c2;
+  --color-light: #faf7f9;
+
+  --color-red: #7495bb;
+
+  --duration : 0.3s;
+}
+
+/* #region 背景 */
+.bg-dark {
+  border-color: var(--color-dark);
+}
+
+.bb-dark {
+  border-bottom: 2px solid var(--color-dark)
+}
+.bb-dark-blod {
+  border-bottom: 4px solid var(--color-dark)
+}
+.br-shallow {
+  border-right: 2px solid var(--color-shallow)
+}
+.br-dark-blod {
+  border-right: 4px solid var(--color-dark)
+}
+/* #endregion */
+
+/* #region 文本 */
+.text-dark {
+  color: var(--color-dark);
+}
+/* #endregion */
+
+/* #region 动画 */
+/* #endregion */
+
+/* #region 导航 */
+.desktopNavLink {
+  color: var(--color-dark);
+  background-color: transparent;
+  transition: all var(--duration) ease;
+}
+.desktopNavLink span:first-child {
+  color: var(--color-middle);
+}
+.desktopNavLink:hover {
+  background-color: var(--color-red);
+  color: var(--color-light);
+}
+.desktopNavLink:hover span:first-child {
+  color: var(--color-shallow);
+}
+
+.activeDesktopNavLink {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+.activeDesktopNavLink:hover {
+  background-color: var(--color-red);
+}
+/* #endregion */

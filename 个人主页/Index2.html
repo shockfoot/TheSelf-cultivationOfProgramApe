@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>狠狠踩一脚 - 这是我的世界</title>
+    <link rel="icon" type="image/png" href="Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="Favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="CSS/CSS_Initialize.css" />
+    <link rel="stylesheet" href="CSS/CSS_Common.css" />
+    <link rel="stylesheet" href="CSS/CSS_Custom2.css" />
+    <link rel="stylesheet" href="IconFont/iconfont.css" />
+
+    <style>
+        /* 移动端导航 */
+        #mobileNav {
+          border-bottom: 4px solid var(--color-dark);
+        }
+        .mobileNavLink {
+          display: block;
+          margin-left: 1rem;
+          padding: 0.5rem 0.5rem;
+          font-weight: 700;
+        }
+        .mobileNavLink span {
+          margin-right: 0.5rem;
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div id="desktopNav" class="desktop-only-f fixed top-0 left-0 w-16 h-full py-2 border-box flex-col items-center br-dark-blod">
+        <div class="flex flex-col items-center pb-1 gap-1 w-full bb-dark-blod">
+            <img src="./Image/avatar.png" alt="狠狠踩一脚" title="狠狠踩一脚" class="w-4 h4" />
+            <p class="text-blod text-1d5 line-2 text-dark">狠狠踩一脚</p>
+        </div>
+        <div id="desktopNavContainer" class="flex-auto w-full bb-dark-blod relative">
+            <div class="absolute br-shallow left-2 top-0 bottom-0 z-n1" style="width: 2px"></div>
+            <div>
+                <a id="desktopGen" href="#gen" class="flex h-4 line-4 bb-dark desktopNavLink" data-type="gen"><span class="w-2 text-0d75 text-center">01</span><span class="iconfont icon-card w-4 text-center text-blod"></span><span class="flex-auto text-blod">情报</span></a>
+                <a id="desktopArchvie" href="#archive" class="flex h-4 line-4 bb-dark desktopNavLink" data-type="archive"><span class="w-2 text-0d75 text-center">02</span><span class="iconfont icon-paper w-4 text-center text-blod"></span><span class="flex-auto text-blod">档案</span></a>
+                <a id="desktopWarehouse" href="#warehouse" class="flex h-4 line-4 bb-dark desktopNavLink" data-type="warehouse"><span class="w-2 text-0d75 text-center">03</span><span class="iconfont icon-folder w-4 text-center text-blod"></span><span class="flex-auto text-blod">仓库</span></a>
+            </div>
+        </div>
+        <div class="h-8 w-full">ces </div>
+      </div>
+      <div id="mobileNav" class="mobile-only-f fixed top-0 left-0 w-full h-4 justify-between items-center px-2 border-box" >
+        <div class="flex items-center">
+          <img
+            src="./Image/avatar.png"
+            alt="狠狠踩一脚"
+            ,
+            title="狠狠踩一脚"
+            class="w-2 h2 mr-0d5"
+          />
+          <p class="text-blod text-1d25">狠狠踩一脚</p>
+        </div>
+        <div class="flex items-center">
+            <a id="mobileNavHomepage" href="#" class="mobileNavLink"><span class="iconfont icon-home"></span>主页</a>
+            <a id="mobileNavWorkshop" href="#" class="mobileNavLink"><span class="iconfont icon-shoppingbag"></span>工坊</a>
+            <a id="mobileNavKnowledge" href="#" class="mobileNavLink" data-type=""><span class="iconfont icon-notebook"></span>知识</a>
+        </div>
+      </div>
+    </nav>
+    <div id="contentContainer"></div>
+    <script>
+      // 导航
+      const contentMap = {
+        'gen': `
+        <div class="pixel-content">
+          <h2 class="pixel-title">欢迎来到我的像素世界</h2>
+          <p style="font-size: 14px; line-height: 2;">独立游戏开发者 | 像素画手 | 游戏配乐师<br>专注2D像素游戏开发，分享作品与学习笔记</p>
+        </div>
+      `,
+        'archive': `
+        <div class="pixel-content">
+          <h2 class="pixel-title">游戏作品</h2>
+          <div style="font-size: 14px; line-height: 1.8;">
+            <div>🎮 《像素冒险记》- Unity开发 | 2D横版闯关</div>
+            <div>🎮 《节奏方块》- 音乐节奏游戏 | 原创配乐</div>
+            <div>🎮 《像素农场》- 模拟经营 | 像素风格场景</div>
+          </div>
+        </div>
+      `,
+        'warehouse': `
+        <div class="pixel-content">
+          <h2 class="pixel-title">绘画作品</h2>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+            <div>🖌️ 勇者角色设计 - CSP创作</div>
+            <div>🖌️ 森林场景像素图 - Aseprite</div>
+            <div>🖌️ 恶龙BOSS设计 - 像素风</div>
+            <div>🖌️ 道具图标合集 - 8bit风格</div>
+          </div>
+        </div>
+      `
+      };
+      const desktopNaveLinkMap = {
+        'gen': 0,
+        'archive': 1,
+        'warehouse': 2
+      }
+
+      const desktopNavLinks = [
+        document.getElementById('desktopGen'),
+        document.getElementById('desktopArchvie'),
+        document.getElementById('desktopWarehouse')
+      ];
+      const contentContainer = document.getElementById('contentContainer')
+
+      function onClickDesktopNavLink(index, type)
+      {
+        desktopNavLinks.forEach(link => link.classList.remove('activeDesktopNavLink'));
+        desktopNavLinks[index].classList,add('activeDesktopNavLink');
+        contentContainer.innerHTML = contentMap[type];
+      }
+
+      function handleDesktopNavLinkClick(e) {
+        const target = e.target;
+        if (target.classList.contains('navLink'))
+        {
+          e.preventDefault();
+          onClickDesktopNavLink(desktopNaveLinkMap[type], target.dataset.type);
+        }
+      }
+
+      const desktopNavContainer = document.getElementById('desktopNavContainer');
+      desktopNavContainer.addEventListener('click', handleDesktopNavLinkClick);
+
+      document.addEventListener('DOMContentLoaded', () => {
+        onClickDesktopNavLink(desktopNaveLinkMap['gen'], 'gen');
+      });
+    </script>
+  </body>
+</html>
