@@ -5,14 +5,27 @@
   --color-shallow: #c3c1c2;
   --color-light: #faf7f9;
 
-  --color-red: #7495bb;
+  --color-red: #7c1414;
 
   --duration : 0.3s;
+
+  --scale: 1.05;
 }
 
 /* #region 背景 */
 .bg-dark {
-  border-color: var(--color-dark);
+  background-color: var(--color-dark);
+}
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.bg-image {
+  background-attachment: fixed;
+  background-position: center;
+}
+.bg-image1 {
+  background-image: url('../Image/Bg1.jpg');
 }
 
 .bb-dark {
@@ -27,39 +40,95 @@
 .br-dark-blod {
   border-right: 4px solid var(--color-dark)
 }
+
+.ba-dark {
+  border-bottom: 2px solid var(--color-dark);  
+  border-top: 2px solid var(--color-dark);  
+  border-left: 2px solid var(--color-dark);
+  border-right: 2px solid var(--color-dark);
+}
+
+.shadow {
+  box-shadow: 4px 4px var(--color-dark);
+}
 /* #endregion */
 
 /* #region 文本 */
-.text-dark {
-  color: var(--color-dark);
+.text-red {
+  color: var(--color-red);
+}
+.text-middle {
+  color: var(--color-middle);
 }
 /* #endregion */
 
 /* #region 动画 */
+.hover-scale {
+  transition: all var(--duration) ease;
+}
+.hover-scale:hover {
+  transform: scale(var(--scale));
+}
 /* #endregion */
 
 /* #region 导航 */
 .desktopNavLink {
-  color: var(--color-dark);
   background-color: transparent;
   transition: all var(--duration) ease;
 }
-.desktopNavLink span:first-child {
+.desktopNavLink p:first-child {
   color: var(--color-middle);
+}
+.desktopNavLink p:not(:first-child) {
+  transition: all var(--duration) ease;
 }
 .desktopNavLink:hover {
   background-color: var(--color-red);
   color: var(--color-light);
 }
-.desktopNavLink:hover span:first-child {
+.desktopNavLink:hover p:first-child {
   color: var(--color-shallow);
 }
+.desktopNavLink:hover p:not(:first-child) {
+  transform: translateX(16px);
+}
 
-.activeDesktopNavLink {
+.desktopNavLink.activeDesktopNavLink {
   background-color: var(--color-dark);
   color: var(--color-light);
 }
-.activeDesktopNavLink:hover {
+.desktopNavLink.activeDesktopNavLink p:first-child {
+  color: var(--color-middle);
+}
+.desktopNavLink.activeDesktopNavLink::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
   background-color: var(--color-red);
+}
+.desktopNavLink.activeDesktopNavLink:hover {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+.desktopNavLink.activeDesktopNavLink:hover p:first-child {
+  color: var(--color-shallow);
+}
+
+@media (max-width: 768px) {
+  .mobile-container {
+    padding-top: 4rem;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-container {
+    padding-top: 0;
+    padding-left: 16rem;
+  }
 }
 /* #endregion */
