@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狠狠踩一脚 - 这是我的世界</title>
+    <link rel="icon" type="image/png" href="Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="Favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="CSS/css_initialize.css" />
+    <link rel="stylesheet" href="CSS/css_common.css" />
+    <link rel="stylesheet" href="CSS/css_custom.css" />
+    <link rel="stylesheet" href="IconFont/iconfont.css" />
+</head>
+<body>
+    <div id="content">
+        <div class="px-5 py-4 w-full min-h-screen border-box bg-light">
+            <div class="flex h-content-between v-item-center">
+                <p class="genTag genDarkTag">资料</p>
+                <p id="nowDate" class="text-blod text-0d75" style="font-family: 'Consolas';"></p>
+            </div>
+            <p class="h-7 line-7 text-4 text-blod">欢迎来到我的博客!</p>
+            <div class="genTagContainer flex h-2 v-item-center"><span>#独立游戏</span><span>#C#</span><span>#Unity</span><span>#像素画</span></div>
+            <div class="bb-dark-blod h-1"></div>
+            <div class="border-box py-2 grid grid-col-2 gap-2 genDescriptionContainer">
+                <div>
+                    <p>测试测试</p>
+                    <p>测试测试测试测试，测试测试，测试测试测试测试测试测试测试测试，测试测试测试测试测试测试，测试测试测试测试，测试测试测试测试。</p>
+                </div>
+                <div>
+                    <p>测试测试</p>
+                    <p>测试测试测试测试，测试测试，测试测试测试测试测试测试测试测试，测试测试测试测试测试测试，测试测试测试测试，测试测试测试测试。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="script-module" data-src="./JS/gen.js"></div>
+    <script>
+        const scriptModuleID = 'script-module';
+        async function loadAndExecuteJS() {
+            try {
+                const moduleElement = document.getElementById(scriptModuleID);
+                if (moduleElement) {
+                    const scriptSrc = moduleElement.dataset.src;
+                    if (scriptSrc) {
+                        const module = await import(scriptSrc);
+                        if (!module) throw new Error(`导入模块失败: ${scriptSrc}`);
+                        if (module.init) {
+                            module.init();
+                        }
+                    }
+                }
+            }
+            catch (error) {
+                console.error(e);
+            }
+        }
+        loadAndExecuteJS();
+    </script>
+</body>
+</html>

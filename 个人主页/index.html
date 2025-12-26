@@ -10,409 +10,254 @@
     <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png" />
     <link rel="manifest" href="Favicon/site.webmanifest" />
 
-    <link rel="stylesheet" href="CSS/CSS_Initialize.css" />
-    <link rel="stylesheet" href="CSS/CSS_Common.css" />
-    <link rel="stylesheet" href="CSS/CSS_Custom.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/css_initialize.css" />
+    <link rel="stylesheet" href="CSS/css_common.css" />
+    <link rel="stylesheet" href="CSS/css_custom.css" />
+    <link rel="stylesheet" href="IconFont/iconfont.css" />
 
     <style>
-      nav a:hover {
-        color: var(--color-accent);
+      /* #region 桌面端导航头像 */
+      .desktopNavLine {
+        border-bottom: 2px solid var(--color-dark);
+        width: 12rem;
       }
-
-      #homepage h1 {
-        font-weight: 700;
-        font-size: 4rem;
+      /* #endregion */
+      /* #region 桌面端导航链接 */
+      .desktopNavLink {
+        display: flex;
+        height: 5rem;
         line-height: 5rem;
+        border-bottom: 2px solid var(--color-dark);
+        position: relative;
+        background-color: transparent;
+        transition: all var(--duration) ease;
       }
-      #avatar {
-        border: 4px solid var(--color-accent-30);
-      }
-      
-      .section {
-        padding: 5rem 3rem
-      }
-      .section > div {
-        max-width: 1280px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .section-title {
-        font-size: 2rem;
-        line-height: 3rem;
-        font-weight: 700;
-        text-align: center;
-      }
-      .section-description {        
+      .desktopNavIndex {
+        width: 2rem;
         line-height: 2rem;
+        font-size: 0.75rem;
         text-align: center;
-        margin-bottom: 4rem;
+        color: var(--color-middle);
+        font-family: 'Consolas' ;
       }
-      .section-part {
-        margin-bottom: 5rem;
-      }
-      .section-part-title-wrapper {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-      }
-      .section-part-title {
-        font-weight: 700;
-        font-size: 1.5rem;
-        line-height: 2.5rem;
-      }
-      .section-part-title-line {
+      .desktopNavIcon {
         width: 4rem;
-        height: 0.25rem;
-        margin-left: 1rem;
-      }
-      .section-part-grid {
-        display: grid;
-        gap: 2rem;
-        flex-wrap: wrap;
-      }
-
-      .game-item {
-        border-radius: 8px;
-        background-color: #fff;
-        box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-      }
-      .game-item > img {
-        width: 100%;
-      }
-      .game-item > h4 {
-        padding: 1rem 1rem 0.5rem;
-        line-height: 1.5rem;
+        text-align: center;
         font-weight: 700;
-        color: var(--color-dark);
       }
-      .game-description {
-        padding-bottom: 0.5rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        line-height: 1.5rem;
-        color: var(--color-dark);
+      .desktopNavAnimation {
+        flood-color: var();
+        transition: all var(--duration) ease;
       }
-      .game-annotation {
-        padding-bottom: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        line-height: 1.5rem;
-        color: var(--color-game);
-      }
-
-      .paint-item {
-        border-radius: 8px;
-        background-color: #fff;
-        box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-      }
-      .paint-item > img {
-        width: 100%;
-      }
-      .paint-item > h4 {
-        padding: 1rem 1rem 0.5rem;
-        line-height: 1.5rem;
+      .desktopNavTitle {
+        flex: auto;
         font-weight: 700;
-        color: var(--color-dark);
       }
-      .paint-item > p {
-        padding-bottom: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        line-height: 1.5rem;
-        color: var(--color-dark);
+      .desktopNavLink:hover {
+        background-color: var(--color-red);
+        color: var(--color-light);
       }
-
-      .music-item {
-        padding: 1rem;
-        border-radius: 8px;
-        background-color: #fff;
-        box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
+      .desktopNavLink:hover .desktopNavIndex {
+        color: var(--color-shallow);
       }
-      .music-top {
+      .desktopNavLink:hover .desktopNavAnimation {
+        transform: translateX(16px);
+      }
+      .desktopNavLink.activeDesktopNavLink {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+      }
+      .desktopNavLink.activeDesktopNavLink .desktopNavIndex {
+        color: var(--color-middle);
+      }
+      .desktopNavLink.activeDesktopNavLink::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: var(--color-red);
+      }
+      .desktopNavLink.activeDesktopNavLink:hover {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+      }
+      .desktopNavLink.activeDesktopNavLink:hover .desktopNavIndex {
+        color: var(--color-shallow);
+      }
+      /* #endregion */
+      /* #region 桌面端导航联系方式 */
+      .desktopNavMyLink {
         display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-      }
-      .music-top > img {
         width: 4rem;
-        height: 4rem;
-        border-radius: 8px;
-      }
-      .music-top > div {
-        height: 3.5rem;
-        padding: 0 1rem;
-        display: flex;
-        justify-content: space-between;
         flex-direction: column;
-      }
-      .music-top > div > h4 {
-        line-height: 1.5rem;
-        font-weight: 700;
-        color: var(--color-dark);
-      }
-      .music-top > div > p {
-        line-height: 1.5rem;
-        color: var(--color-dark);
-      }
-      .music-item > audio {
-        width: 100%;
-      }
-
-      .note-item {
-        padding: 1rem;
-        border-radius: 8px;
-        background-color: #fff;
-        box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-      }
-      .note-item > p:first-child {
-        padding-bottom: 0.5rem;
-        line-height: 1.5rem;
-        color: var(--color-note);
-      }
-      .note-item > h4 {
-        padding-bottom: 0.5rem;
-        line-height: 1.5rem;
-        font-weight: 700;
-        color: var(--color-dark);
-      }
-      .note-description {
-        padding-bottom: 0.5rem;
-        line-height: 1.5rem;
-        color: var(--color-dark);
-      }
-      .note-annotation {
-        padding-bottom: 0.5rem;
-        line-height: 1.5rem;
-        color: var(--color-deepGray);
-      }
-      .note-item > div {
-        display: flex;
+        padding: 0.5rem;
         align-items: center;
-        justify-content: space-between;
+        gap: 0.5rem;
+        border: 2px solid var(--color-dark);
+        box-shadow: 4px 4px var(--color-dark);
       }
-      .note-item > div > p {
-        color: var(--color-note);
+      .desktopNavMyLink p:first-child {
+        font-weight: 700;
       }
-      .note-item > div > p:first-child {
-        color: var(--color-deepGray);
+      .desktopNavMyLink p:last-child {
+        font-weight: 700;
+        color: var(--color-red);
+        font-size: 0.75rem;
       }
-
-      footer a:hover {
-        color: var(--color-dark);
+      /* #endregion */
+      /* #region 移动端导航 */
+      .mobileNavLink {
+        margin-left: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        font-weight: 700;
       }
+      .mobileNavLink span {
+        margin-right: 0.5rem;
+      }
+      /* #endregion */
+      /* #region 内容盒子 */
+      @media (max-width: 768px) {
+        .mobile-container {
+          padding-top: 4rem;
+          padding-left: 0;
+        }
+      }
+      @media (min-width: 769px) {
+        .mobile-container {
+          padding-top: 0;
+          padding-left: 16rem;
+        }
+      }
+      /* #endregion */
     </style>
   </head>
   <body>
-    <nav class="px-3 py-1 bg-dark-90 w-full border-box z-50 fixed">
-      <div class="max-w-1280 mx-auto flex justify-between items-center">
-        <a href="#" class="text-accent font-blod text-1d5 line-2">狠狠踩一脚</a>
-        <div class="desktop-only flex">
-          <a href="#workshop" class="text-light px-1">工坊</a>
-          <a href="#knowledge" class="text-light px-1">知识</a>
-          <a href="#contact" class="text-light px-1">联系我</a>
+    <div class="fixed w-full h-full bg-image bg-image1 z-n1"></div>
+    <nav>
+      <div class="desktop-only-f fixed top-0 left-0 w-16 h-full border-box flex-col v-item-center br-dark-blod bg-light">
+        <div class="flex flex-col v-item-center pb-1 gap-1 w-full bb-dark-blod pt-2">
+            <img src="Image/avatar_t.png" alt="狠狠踩一脚" title="狠狠踩一脚" class="w-4 h-4 rounded-full" />
+            <h1 class="text-blod text-1d5 line-2">狠狠踩一脚</h1>
+            <div class="desktopNavLine"></div>
+            <p class="text-red text-blod" style="font-size: 0.9rem;">像花虽未红，如冰虽不冻。</p>
         </div>
-        <!-- 移动端菜单按钮 -->
-        <button id="menuBtn" class="mobile-only text-light text-1p5">
-          <i class="fas fa-bars"></i>
-        </button>
+        <div class="flex-auto w-full bb-dark-blod relative" style="overflow-y: auto; overflow-x: hidden;">
+            <div class="absolute br-shallow left-2 top-0 bottom-0 z-n1" style="width: 2px"></div>
+            <div>
+                <a id="desktopGen" href="#gen" class="desktopNavLink activeDesktopNavLink" data-type="gen"><p class="desktopNavIndex">01</p><p class="iconfont icon-card desktopNavIcon desktopNavAnimation"></p><p class="desktopNavTitle desktopNavAnimation">情报</p></a>
+                <a id="desktopArchvie" href="#archive" class="desktopNavLink" data-type="archive"><p class="desktopNavIndex">02</p><p class="iconfont icon-paper desktopNavIcon desktopNavAnimation"></p><p class="desktopNavTitle desktopNavAnimation">档案</p></a>
+                <a id="desktopWarehouse" href="#warehouse" class="desktopNavLink" data-type="warehouse"><p class="desktopNavIndex">03</p><p class="iconfont icon-folder desktopNavIcon desktopNavAnimation"></p><p class="desktopNavTitle desktopNavAnimation">仓库</p></a>
+            </div>
+        </div>
+        <div class="w-full pb-2 flex flex-col gap-1 pt-1 v-item-center" style="height: 8rem;">
+          <div class="grid grid-2 gap-2 rgap-1">
+            <a href="https://space.bilibili.com/95120665?spm_id_from=333.1007.0.0" target="_blank" class="desktopNavMyLink hover-scale">
+              <p class="iconfont icon-time"></p>
+              <p>BiliBili</p>
+            </a>
+            <a href="https://github.com/shockfoot" target="_blank" class="desktopNavMyLink hover-scale">
+              <p class="iconfont icon-time"></p>
+              <p>GitHub</p>
+            </a>
+          </div>
+          <div class="desktopNavLine"></div>
+          <a href="https://beian.miit.gov.cn" title="工业和信息化部ICP/IP地址/域名信息备案管理系统" target="_blank" class="w-full text-0d75 text-center text-middle">&copy;&nbsp;2025&nbsp;狠狠踩一脚&nbsp;&verbar;&nbsp;皖ICP备2022009674号-1</a>
+        </div>
       </div>
-      <!-- 移动端菜单按钮 -->
-      <div id="mobileMenu" class="hidden w-full flex flex-col py-1">
-        <a href="#workshop" class="text-light mt-1">工坊</a>
-        <a href="#knowledge" class="text-light mt-1">知识</a>
-        <a href="#contact" class="text-light mt-1">联系我</a>
+      <div class="mobile-only-f fixed top-0 left-0 w-full h-4 h-content-between v-item-center px-2 border-box bb-dark-blod bg-light" >
+        <div class="flex v-item-center">
+          <img src="./Image/avatar_t.png" alt="狠狠踩一脚", title="狠狠踩一脚" class="w-2 h2 mr-0d5" />
+          <p class="text-blod text-1d25">狠狠踩一脚</p>
+        </div>
+        <div class="flex v-item-center">
+            <a id="mobileGen" href="#gen" class="mobileNavLink" data-type="gen"><span class="iconfont icon-card"></span>情报</a>
+            <a id="mobileArchvie" href="#archive" class="mobileNavLink" data-type="archive"><span class="iconfont icon-paper"></span>档案</a>
+            <a id="mobileWarehouse" href="#warehouse" class="mobileNavLink" data-type="warehouse"><span class="iconfont icon-folder"></span>仓库</a>
+        </div>
       </div>
     </nav>
-
-    <section id="homepage" class="min-h-screen px-3 flex justify-center items-center bg-dark border-box pt-5">
-      <div class="max-w-1280 grid justify-center items-center grid-cols-1 grid-cols-2 gap-3">
-        <div class="fade-in">
-          <h1 class="text-light">独立游戏开发者</h1>
-          <h1 class="text-accent">灵魂像素 & 音乐</h1>
-          <p class="text-light line-2 py-1">专注2D独立游戏开发，擅长像素绘画与游戏配乐，记录开发过程中的学习与思考。</p>
-        </div>
-        <div class="flex justify-center fade-in">
-          <img id="avatar" src="Image/avatar.png" alt="狠狠踩一脚" title="狠狠踩一脚" class="w-16 h-16 rounded-full hover-scale border-box">
-        </div>
-      </div>
-    </section>
-
-    <section id="workshop" class="bg-light section">
-      <div>
-        <h2 class="section-title text-dark">工坊</h2>
-        <p class="section-description text-dark">精选游戏、绘画、编曲作品与学习笔记，记录创作与成长。</p>
-
-        <div class="fade-in section-part">
-          <div class="section-part-title-wrapper">
-            <h3 class="text-dark section-part-title">游戏作品</h3>
-            <div class="section-part-title-line bg-game"></div>
-          </div>
-          <div class="section-part-grid grid-cols-1 grid-cols-3">
-            <a class="game-item hover-scale" href="#" target="_blank">
-              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面">
-              <h4>《像素冒险记》</h4>
-              <p class="game-description">2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
-              <p class="game-annotation">查看详情 <i class="fas fa-arrow-right"></i></p>
-            </a>
-          </div>
-        </div>
-        
-        <div class="fade-in section-part">
-          <div class="section-part-title-wrapper">
-            <h3 class="text-dark section-part-title">绘画作品</h3>
-            <div class="section-part-title-line bg-paint"></div>
-          </div>
-          <div class="section-part-grid grid-cols-1 grid-cols-2">
-            <div class="paint-item hover-scale">
-              <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面">
-              <h4>《像素冒险记》</h4>
-              <p>2D像素冒险游戏，Unity开发，包含5个关卡与原创配乐。</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="fade-in section-part">
-          <div class="section-part-title-wrapper">
-            <h3 class="text-dark section-part-title">音乐作品</h3>
-            <div class="section-part-title-line bg-music"></div>
-          </div>
-          <div class="section-part-grid grid-cols-1 grid-cols-2">
-            <div class="music-item hover-scale">
-              <div class="music-top">
-                <img src="https://picsum.photos/seed/game1/800/450" alt="游戏封面">
-                <div>
-                  <h4>《像素冒险记》</h4>
-                  <p>2D像素冒险游戏，包含5个关卡与原创配乐。</p>
-                </div>
-              </div>
-              <audio controls><source src="#" type="audio/mpeg">"你的浏览器不支持音频播放!"</audio>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="knowledge" class="bg-dark section">
-      <div>
-        <h2 class="section-title text-light">知识</h2>
-        <p class="section-description text-light">学习笔记，记录各种知识。</p>      
-
-        <div class="fade-in section-part">
-          <div class="section-part-grid grid-cols-1 grid-cols-3">
-            <a class="note-item hover-scale" href="Page/CSharpNote/CSharpNoteIndex.html" target="_blank">
-              <p>#C#</p>
-              <h4>C#学习笔记</h4>
-              <p class="note-description">C#从零到入门全部学习记录。</p>
-              <p class="note-annotation">最近更新：《C#导论》 2025-12-10</p>
-              <div>
-                <p>C# 9</p>
-                <p>查看详情 <i class="fas fa-arrow-right"></i></p>
-              </div>
-            </a>
-            <a class="note-item hover-scale" href="Page/CSharpAPI/CSharpAPIIndex.html" target="_blank">
-              <p>#C#</p>
-              <h4>C# API</h4>
-              <p class="note-description">一边学习官方API文档，一边整理。</p>
-              <p class="note-annotation">最近更新：《C#导论》 2025-12-10</p>
-              <div>
-                <p>C# 9</p>
-                <p>查看详情 <i class="fas fa-arrow-right"></i></p>
-              </div>
-            </a>
-            <a class="note-item hover-scale" href="Page/UnityNote/UnityNoteIndex.html" target="_blank">
-              <p>#Unity</p>
-              <h4>Unity学习笔记</h4>
-              <p class="note-description">Unity学习记录。</p>
-              <p class="note-annotation">最近更新：《C#导论》 2025-12-10</p>
-              <div>
-                <p>Unity2022.f1c1</p>
-                <p>查看详情 <i class="fas fa-arrow-right"></i></p>
-              </div>
-            </a>
-            <a class="note-item hover-scale" href="Page/UnityAPI/UnityAPIIndex.html" target="_blank">
-              <p>#Unity</p>
-              <h4>Unity API</h4>
-              <p class="note-description">一边学习官方API文档，一边整理。</p>
-              <p class="note-annotation">最近更新：《C#导论》 2025-12-10</p>
-              <div>
-                <p>Unity2022.f1c1</p>
-                <p>查看详情 <i class="fas fa-arrow-right"></i></p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="bg-light section">
-      <div>
-        <h2 class="section-title text-dark">联系我</h2>
-        <p class="section-description text-dark">欢迎交流游戏开发、绘画、编曲等相关问题。</p>
-
-        <div class="fade-in section-part">
-          <div class="flex justify-center gap-3 items-center">
-            <a href="#" class="hover-scale flex items-center gap-1">
-              <div class="w-3 h-3 rounded-full bg-accent-30 flex items-center justify-center">
-                <i class="fab fa-github text-accent text-1d5 line-3"></i>
-              </div>
-              <div>
-                <p class="font-blod text-dark line-1d5">GitHub</p>
-                <p class="text-deep-gray line-1d5">@XXXXXXXX</p>
-              </div>
-            </a>
-            <a href="#" class="hover-scale flex items-center gap-1">
-              <div class="w-3 h-3 rounded-full bg-accent-30 flex items-center justify-center">
-                <i class="fab fa-github text-accent text-1d5 line-3"></i>
-              </div>
-              <div>
-                <p class="font-blod text-dark line-1d5">GitHub</p>
-                <p class="text-deep-gray line-1d5">@XXXXXXXX</p>
-              </div>
-            </a>
-            <a href="#" class="hover-scale flex items-center gap-1">
-              <div class="w-3 h-3 rounded-full bg-accent-30 flex items-center justify-center">
-                <i class="fab fa-github text-accent text-1d5 line-3"></i>
-              </div>
-              <div>
-                <p class="font-blod text-dark line-1d5">GitHub</p>
-                <p class="text-deep-gray line-1d5">@XXXXXXXX</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="bg-light py-1">
-      <p class="text-center text-deep-gray">&copy;&nbsp;2025&nbsp;狠狠踩一脚&nbsp;&verbar;&nbsp;<a href="https://beian.miit.gov.cn" title="工业和信息化部ICP/IP地址/域名信息备案管理系统" target="_blank" class="text-deep-gray">皖ICP备2022009674号-1</a></p>
-    </footer>
-
+    <div id="contentContainer" class="mobile-container"></div>
     <script>
-      // 移动端菜单
-      const menuBtn = document.getElementById('menuBtn');
-      const icon = menuBtn.querySelector('i');
-      const mobileMenu = document.getElementById('mobileMenu');
-      menuBtn.addEventListener('click', ()=> {
-        mobileMenu.classList.toggle('hidden');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-      });
+      // 导航
+      let isLoading = false;
+      const contentID = 'content';
+      const scriptModuleID = 'script-module';
+      const navLinkURLMap = {
+        'gen': 'gen.html',
+        'archive': 'archive.html',
+        'warehouse': 'warehouse.html'
+      };
 
-      const fadeElements = document.querySelectorAll('.fade-in');
-      const fadeInObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+      const desktopNavLinks = [
+        document.getElementById('desktopGen'),
+        document.getElementById('desktopArchvie'),
+        document.getElementById('desktopWarehouse')
+      ];
+      desktopNavLinks.forEach(link => link.addEventListener('click', handleDesktopNavLinkClick));
+      const mobileNavLinks= [
+        document.getElementById('mobileGen'),
+        document.getElementById('mobileArchvie'),
+        document.getElementById('mobileWarehouse')
+      ];
+      mobileNavLinks.forEach(link => link.addEventListener('click', handleDesktopNavLinkClick));
+      const contentContainer = document.getElementById('contentContainer')
+      loadHTMLContent('gen');
+
+      async function handleDesktopNavLinkClick(e) {
+        e.preventDefault();
+        if (isLoading || this.classList.contains('activeDesktopNavLink')) return;
+        desktopNavLinks.forEach(link => link.classList.remove('activeDesktopNavLink'));
+        this.classList.add('activeDesktopNavLink');
+        await loadHTMLContent(this.dataset.type)
+      }
+      async function loadHTMLContent(type) {
+        isLoading = true;
+        const filepath = navLinkURLMap[type];
+        console.log(filepath);
+        try {
+          const response = await fetch(filepath);
+          if (!response.ok) throw new Error(`请求失败: ${response.status}`);
+          const htmlContent = await response.text();
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(htmlContent, 'text/html');
+          const container = htmlDoc.getElementById(contentID);
+          if (!container) throw new Error(`未找到内容: ${contentID}`);
+          contentContainer.innerHTML = container.innerHTML;
+
+          const moduleElement = htmlDoc.getElementById(scriptModuleID);
+          if (moduleElement) {
+            const scriptSrc = moduleElement.dataset.src;
+            if (scriptSrc) {
+              const module = await import(scriptSrc);
+              if (!module) throw new Error(`导入模块失败: ${scriptSrc}`);
+              if (module.init) {
+                module.init();
+              }
+            }
           }
-        });
-      }, { threshold: 0.1 });
-      fadeElements.forEach(el => fadeInObserver.observe(el));
+        }
+        catch (error) {
+          console.error(`加载${filepath}失败: ${error}`);
+          contentContainer.innerHTML = `<div>加载失败: ${error.message}</div>`;
+        }
+        finally {
+          isLoading = false;
+        }
+      }
+
+      //const fadeElements = document.querySelectorAll('.fade-in');
+      //const fadeInObserver = new IntersectionObserver((entries) => {
+      //  entries.forEach(entry => {
+      //    if (entry.isIntersecting) {
+      //      entry.target.classList.add('show');
+      //    }
+      //  });
+      //}, { threshold: 0.1 });
+      //fadeElements.forEach(el => fadeInObserver.observe(el));
     </script>
   </body>
 </html>

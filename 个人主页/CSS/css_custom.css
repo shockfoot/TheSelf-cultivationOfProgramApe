@@ -1,83 +1,67 @@
 :root {
-  --color-deepGray: #888;
-  --color-lightGray: #aaa;
+  --color-dark: #0F1423;
+  --color-deep: #5e5c5d;
+  --color-middle: #8f8c8e;
+  --color-shallow: #c3c1c2;
+  --color-light: #fff;
 
-  --color-dark: #2C3E50; /* 底色 */
-  --color-dark-90: rgba(44, 62, 80, 0.9);
+  --color-red: #7c1414;
 
-  --color-light: #F5F5F5; /* 普通 */
+  --duration : 0.3s;
 
-  --color-accent: #3498DB; /* 强调色 */
-  --color-accent-30: rgba(52, 152, 219, 0.3);
-
-  --color-game: #3498DB; /* 游戏模块色 */
-  --color-paint: #E74C3C; /* 绘画模块色 */
-  --color-music: #2ECC71; /* 编曲模块色 */
-  --color-note: #F39C12; /* 笔记模块色 */
+  --scale: 1.05;
 }
 
 /* #region 背景 */
-.shadow-d {
-  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
-}
-
 .bg-dark {
   background-color: var(--color-dark);
-}
-
-.bg-dark-90 {
-  background-color: var(--color-dark-90);
-}
-.bg-accent {
-  background-color: var(--color-accent);
-}
-.bg-accent-30 {
-  background-color: var(--color-accent-30);
 }
 .bg-light {
   background-color: var(--color-light);
 }
-.bg-game {
-  background-color: var(--color-game);
+
+.bg-image {
+  background-attachment: fixed;
+  background-position: center;
 }
-.bg-paint {
-  background-color: var(--color-paint);
+.bg-image1 {
+  background-image: url('../Image/bg1.jpg');
 }
-.bg-music {
-  background-color: var(--color-music);
+
+.br-dark {
+  border: 2px solid var(--color-dark);
 }
-.bg-note {
-  background-color: var(--color-note);
+
+.bb-dark {
+  border-bottom: 2px solid var(--color-dark);
+}
+.bb-dark-blod {
+  border-bottom: 4px solid var(--color-dark);
+}
+.br-shallow {
+  border-right: 2px solid var(--color-shallow);
+}
+.br-dark-blod {
+  border-right: 4px solid var(--color-dark);
+}
+
+.shadow {
+  box-shadow: 4px 4px var(--color-dark);
 }
 /* #endregion */
 
 /* #region 文本 */
-.text-dark {
-  color: var(--color-dark);
+.text-deep {
+  color: var(--color-deep);
+}
+.text-middle {
+  color: var(--color-middle);
 }
 .text-light {
   color: var(--color-light);
 }
-.text-deep-gray {
-  color: var(--color-deepGray)
-}
-.text-light-gray {
-  color: var(--color-lightGray)
-}
-.text-accent {
-  color: var(--color-accent);
-}
-.text-game {
-  color: var(--color-game);
-}
-.text-paint {
-  color: var(--color-paint);
-}
-.text-music {
-  color: var(--color-music);
-}
-.text-note {
-  color: var(--color-note);
+.text-red {
+  color: var(--color-red);
 }
 /* #endregion */
 
@@ -93,9 +77,64 @@
 }
 
 .hover-scale {
-  transition: all 0.3s ease;
+  transition: all var(--duration) ease;
 }
 .hover-scale:hover {
-  transform: scale(1.03);
+  transform: scale(var(--scale)) translateY(-4px);
 }
 /* #endregion */
+
+/* #region gen */
+.genTag {
+  padding: 0 1rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.genDarkTag {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+.genLightTag {
+  border: 2px solid var(--color-dark);
+}
+
+.genTagContainer span {
+  padding: 0 1rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  background-color: var(--color-red);
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-light);
+  margin-right: 1rem;
+  border-radius: 0.75rem;
+}
+.genDescriptionContainer > div {
+  border: 2px solid var(--color-dark);
+  box-shadow: 6px 6px var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 2rem;
+  box-sizing: border-box;
+  transition: all var(--duration) ease;
+}
+.genDescriptionContainer > div:hover {
+  transform: translateY(-10px);
+}
+.genDescriptionContainer > div > p:first-child {
+  font-size: 1.75rem;
+  height: 4rem;
+  line-height: 4rem;
+  font-weight: 700;
+}
+.genDescriptionContainer > div:hover > p:first-child {
+  color: var(--color-red);
+}
+.genDescriptionContainer > div > p:last-child {
+  line-height: 1.5rem;
+}
+/* #endregion
