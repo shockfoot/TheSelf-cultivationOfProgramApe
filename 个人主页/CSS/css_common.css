@@ -1125,17 +1125,17 @@
 
 @media (max-width: 768px) {
   .grid-col-2 {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .grid-col-3 {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
 @media (min-width: 769px) {
   .grid-col-2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 3fr 2fr;
   }
 
   .grid-col-3 {

@@ -19,6 +19,9 @@
 .bg-light {
   background-color: var(--color-light);
 }
+.bg-red {
+  background-color: var(--color-red);
+}
 
 .bg-image {
   background-attachment: fixed;
@@ -86,8 +89,8 @@
 
 /* #region gen */
 .genTag {
+  display: block;
   padding: 0 1rem;
-  height: 1.5rem;
   line-height: 1.5rem;
   text-align: center;
   font-size: 0.75rem;
@@ -113,28 +116,26 @@
   margin-right: 1rem;
   border-radius: 0.75rem;
 }
-.genDescriptionContainer > div {
+
+.genDescriptionItem {
   border: 2px solid var(--color-dark);
-  box-shadow: 6px 6px var(--color-dark);
   display: flex;
   flex-direction: column;
-  padding: 1rem 1rem 2rem;
+  padding: 1rem 2rem;
   box-sizing: border-box;
   transition: all var(--duration) ease;
+  line-height: 1.5rem;
 }
-.genDescriptionContainer > div:hover {
+.genDescriptionItem-dark {
+  box-shadow: 6px 6px var(--color-dark);
+}
+.genDescriptionItem-light {
+  box-shadow: 6px 6px var(--color-middle);
+}
+.genDescriptionItem:hover {
   transform: translateY(-10px);
 }
-.genDescriptionContainer > div > p:first-child {
-  font-size: 1.75rem;
-  height: 4rem;
-  line-height: 4rem;
-  font-weight: 700;
-}
-.genDescriptionContainer > div:hover > p:first-child {
+.genDescriptionItem:hover > .genHoverRed {
   color: var(--color-red);
-}
-.genDescriptionContainer > div > p:last-child {
-  line-height: 1.5rem;
 }
 /* #endregion
