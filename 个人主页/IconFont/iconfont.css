@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 5097496 */
-  src: url('iconfont.woff2?t=1766642326254') format('woff2'),
-       url('iconfont.woff?t=1766642326254') format('woff'),
-       url('iconfont.ttf?t=1766642326254') format('truetype');
+  src: url('iconfont.woff2?t=1766979672742') format('woff2'),
+       url('iconfont.woff?t=1766979672742') format('woff'),
+       url('iconfont.ttf?t=1766979672742') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-GitHub:before {
+  content: "\e602";
+}
+
+.icon-BiliBili:before {
+  content: "\e601";
 }
 
 .icon-card:before {
@@ -89,7 +97,7 @@
   content: "\e733";
 }
 
-.icon-menu-dots:before {
+.icon-dots:before {
   content: "\e734";
 }
 

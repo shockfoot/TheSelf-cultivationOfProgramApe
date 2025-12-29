@@ -45,10 +45,6 @@
         text-align: center;
         font-weight: 700;
       }
-      .desktopNavAnimation {
-        flood-color: var();
-        transition: all var(--duration) ease;
-      }
       .desktopNavTitle {
         flex: auto;
         font-weight: 700;
@@ -136,9 +132,9 @@
     </style>
   </head>
   <body>
-    <div class="fixed w-full h-full bg-image bg-image1 z-n1"></div>
+    <!-- <div class="fixed w-full h-full bg-image bg-image1 z-n1"></div> -->
     <nav>
-      <div class="desktop-only-f fixed top-0 left-0 w-16 h-full border-box flex-col v-item-center br-dark-blod bg-light">
+      <div class="desktop-only-f fixed top-0 left-0 w-16 h-full border-box flex-col v-item-center br-dark-blod">
         <div class="flex flex-col v-item-center pb-1 gap-1 w-full bb-dark-blod pt-2">
             <img src="Image/avatar_t.png" alt="狠狠踩一脚" title="狠狠踩一脚" class="w-4 h-4 rounded-full" />
             <h1 class="text-blod text-1d5 line-2">狠狠踩一脚</h1>
@@ -148,19 +144,19 @@
         <div class="flex-auto w-full bb-dark-blod relative" style="overflow-y: auto; overflow-x: hidden;">
             <div class="absolute br-shallow left-2 top-0 bottom-0 z-n1" style="width: 2px"></div>
             <div>
-                <a id="desktopGen" href="#gen" class="desktopNavLink activeDesktopNavLink" data-type="gen"><p class="desktopNavIndex">01</p><p class="iconfont icon-card desktopNavIcon desktopNavAnimation"></p><p class="desktopNavTitle desktopNavAnimation">情报</p></a>
-                <a id="desktopArchvie" href="#archive" class="desktopNavLink" data-type="archive"><p class="desktopNavIndex">02</p><p class="iconfont icon-paper desktopNavIcon desktopNavAnimation"></p><p class="desktopNavTitle desktopNavAnimation">档案</p></a>
-                <a id="desktopWarehouse" href="#warehouse" class="desktopNavLink" data-type="warehouse"><p class="desktopNavIndex">03</p><p class="iconfont icon-folder desktopNavIcon desktopNavAnimation"></p><p class="desktopNavTitle desktopNavAnimation">仓库</p></a>
+                <a id="desktopGen" href="#gen" class="desktopNavLink activeDesktopNavLink" data-src="gen.html"><p class="desktopNavIndex">01</p><p class="iconfont icon-card desktopNavIcon desktopNavAnimation animation"></p><p class="desktopNavTitle desktopNavAnimation animation">主页</p></a>
+                <a id="desktopArchvie" href="#archive" class="desktopNavLink" data-src="archive.html"><p class="desktopNavIndex">02</p><p class="iconfont icon-paper desktopNavIcon desktopNavAnimation animation"></p><p class="desktopNavTitle desktopNavAnimation animation">笔记</p></a>
+                <a id="desktopWarehouse" href="#warehouse" class="desktopNavLink" data-src="warehouse.html"><p class="desktopNavIndex">03</p><p class="iconfont icon-folder desktopNavIcon desktopNavAnimation animation"></p><p class="desktopNavTitle desktopNavAnimation animation">作品</p></a>
             </div>
         </div>
         <div class="w-full pb-2 flex flex-col gap-1 pt-1 v-item-center" style="height: 7rem;">
           <div class="grid grid-2 gap-2 rgap-1">
-            <a href="https://space.bilibili.com/95120665?spm_id_from=333.1007.0.0" target="_blank" class="desktopNavMyLink hover-scale">
-              <p class="iconfont icon-time"></p>
+            <a href="https://space.bilibili.com/95120665?spm_id_from=333.1007.0.0" target="_blank" class="desktopNavMyLink animation hover-scale">
+              <p class="iconfont icon-BiliBili"></p>
               <p>BiliBili</p>
             </a>
-            <a href="https://github.com/shockfoot" target="_blank" class="desktopNavMyLink hover-scale">
-              <p class="iconfont icon-time"></p>
+            <a href="https://github.com/shockfoot" target="_blank" class="desktopNavMyLink animation hover-scale">
+              <p class="iconfont icon-GitHub"></p>
               <p>GitHub</p>
             </a>
           </div>
@@ -168,15 +164,15 @@
           <a href="https://beian.miit.gov.cn" title="工业和信息化部ICP/IP地址/域名信息备案管理系统" target="_blank" class="w-full text-0d75 text-center text-middle">&copy;&nbsp;2025&nbsp;狠狠踩一脚&nbsp;&verbar;&nbsp;皖ICP备2022009674号-1</a>
         </div>
       </div>
-      <div class="mobile-only-f fixed top-0 left-0 w-full h-4 h-content-between v-item-center px-2 border-box bb-dark-blod bg-light" >
+      <div class="mobile-only-f fixed top-0 left-0 w-full h-4 h-content-between v-item-center px-2 border-box bb-dark-blod bg-light z-50">
         <div class="flex v-item-center">
           <img src="./Image/avatar_t.png" alt="狠狠踩一脚", title="狠狠踩一脚" class="w-2 h2 mr-0d5" />
           <p class="text-blod text-1d25">狠狠踩一脚</p>
         </div>
         <div class="flex v-item-center">
-            <a id="mobileGen" href="#gen" class="mobileNavLink" data-type="gen"><span class="iconfont icon-card"></span>情报</a>
-            <a id="mobileArchvie" href="#archive" class="mobileNavLink" data-type="archive"><span class="iconfont icon-paper"></span>档案</a>
-            <a id="mobileWarehouse" href="#warehouse" class="mobileNavLink" data-type="warehouse"><span class="iconfont icon-folder"></span>仓库</a>
+            <a id="mobileGen" href="#gen" class="mobileNavLink" data-src="gen.html" data-index="0"><span class="iconfont icon-card"></span>主页</a>
+            <a id="mobileArchvie" href="#archive" class="mobileNavLink" data-src="archive.html" data-index="1"><span class="iconfont icon-paper"></span>笔记</a>
+            <a id="mobileWarehouse" href="#warehouse" class="mobileNavLink" data-src="warehouse.html" data-index="2"><span class="iconfont icon-folder"></span>作品</a>
         </div>
       </div>
     </nav>
@@ -186,11 +182,7 @@
       let isLoading = false;
       const contentID = 'content';
       const scriptModuleID = 'script-module';
-      const navLinkURLMap = {
-        'gen': 'gen.html',
-        'archive': 'archive.html',
-        'warehouse': 'warehouse.html'
-      };
+      const activeDesktopNavLinkClass = 'activeDesktopNavLink';
 
       const desktopNavLinks = [
         document.getElementById('desktopGen'),
@@ -203,23 +195,32 @@
         document.getElementById('mobileArchvie'),
         document.getElementById('mobileWarehouse')
       ];
-      mobileNavLinks.forEach(link => link.addEventListener('click', handleDesktopNavLinkClick));
+      mobileNavLinks.forEach(link => link.addEventListener('click', handleMobileNavLinkClick));
       const contentContainer = document.getElementById('contentContainer')
-      loadHTMLContent('gen');
+      loadHTMLContent('gen.html');
 
       async function handleDesktopNavLinkClick(e) {
         e.preventDefault();
-        if (isLoading || this.classList.contains('activeDesktopNavLink')) return;
-        desktopNavLinks.forEach(link => link.classList.remove('activeDesktopNavLink'));
-        this.classList.add('activeDesktopNavLink');
-        await loadHTMLContent(this.dataset.type)
+        console.log(this.dataset.src);
+        if (isLoading || this.classList.contains(activeDesktopNavLinkClass)) return;
+        desktopNavLinks.forEach(link => link.classList.remove(activeDesktopNavLinkClass));
+        this.classList.add(activeDesktopNavLinkClass);
+        await loadHTMLContent(this.dataset.src)
       }
-      async function loadHTMLContent(type) {
+      async function handleMobileNavLinkClick(e) {
+        e.preventDefault();
+        if (isLoading) return;
+        const index = parseInt(this.dataset.index);
+        if (desktopNavLinks[index].classList.contains(activeDesktopNavLinkClass)) return;
+        desktopNavLinks.forEach(link => link.classList.remove(activeDesktopNavLinkClass));
+        desktopNavLinks[index].classList.add(activeDesktopNavLinkClass);
+        await loadHTMLContent(this.dataset.src)
+      }
+      async function loadHTMLContent(filePath) {
         isLoading = true;
-        const filepath = navLinkURLMap[type];
-        console.log(filepath);
+        console.log(filePath);
         try {
-          const response = await fetch(filepath);
+          const response = await fetch(filePath);
           if (!response.ok) throw new Error(`请求失败: ${response.status}`);
           const htmlContent = await response.text();
           const parser = new DOMParser();
@@ -241,23 +242,13 @@
           }
         }
         catch (error) {
-          console.error(`加载${filepath}失败: ${error}`);
+          console.error(`加载${filePath}失败: ${error}`);
           contentContainer.innerHTML = `<div>加载失败: ${error.message}</div>`;
         }
         finally {
           isLoading = false;
         }
       }
-
-      //const fadeElements = document.querySelectorAll('.fade-in');
-      //const fadeInObserver = new IntersectionObserver((entries) => {
-      //  entries.forEach(entry => {
-      //    if (entry.isIntersecting) {
-      //      entry.target.classList.add('show');
-      //    }
-      //  });
-      //}, { threshold: 0.1 });
-      //fadeElements.forEach(el => fadeInObserver.observe(el));
     </script>
   </body>
 </html>
