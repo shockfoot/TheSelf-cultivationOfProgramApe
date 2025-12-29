@@ -166,6 +166,7 @@
   transform: scale(var(--scale));
 }
 
+/* #region archive */
 .archiveRoundTag {
   padding: 0 1rem;
   height: 1.5rem;
@@ -186,12 +187,12 @@
 }
 .archiveTagContainer a.activeArchiveTag {
   border: 1px solid var(--color-light);
-  background-color: var(--color-dark);
+  background-color: var(--color-red);
   color: var(--color-light);
 }
 .archiveTagContainer a.activeArchiveTag:hover {
   border: 1px solid var(--color-light);
-  background-color: var(--color-dark);
+  background-color: var(--color-red);
   color: var(--color-shallow);
 }
 
@@ -202,3 +203,27 @@
 .article-item:hover .article-circle {
   border: 2px solid var(--color-red);
 }
+
+.article-item-hidden {
+  height: 0;
+  overflow: hidden;
+}
+.article-item-hidden .side-in {  
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: none;
+}
+
+#articleCatalogueContiner {
+  transform: translateX(0);
+}
+#articleCatalogueContiner.hide {
+  transform: translateX(-100%);
+}
+#articleContentContiner {
+  transform: translateX(100%);
+}
+#articleContentContiner.show {
+  transform: translateX(-100%);
+}
+/* #endregion */

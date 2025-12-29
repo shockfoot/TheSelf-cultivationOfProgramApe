@@ -815,6 +815,9 @@
 .top-10 {
   top: 10rem;
 }
+.top-full {
+  top: 100%;
+}
 
 .bottom-0 {
   bottom: 0;
@@ -912,6 +915,9 @@
 }
 .left-10 {
   left: 10rem;
+}
+.left-full {
+  left: 100%;
 }
 
 .right-0 {
@@ -1143,6 +1149,9 @@
 }
 .flex-bottom {
   align-items: flex-end;
+}
+.flex-shrink {
+  flex-shrink: 0;
 }
 /* #endregion */
 

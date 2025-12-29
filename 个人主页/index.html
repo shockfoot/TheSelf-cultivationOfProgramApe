@@ -201,11 +201,10 @@
 
       async function handleDesktopNavLinkClick(e) {
         e.preventDefault();
-        console.log(this.dataset.src);
         if (isLoading || this.classList.contains(activeDesktopNavLinkClass)) return;
         desktopNavLinks.forEach(link => link.classList.remove(activeDesktopNavLinkClass));
         this.classList.add(activeDesktopNavLinkClass);
-        await loadHTMLContent(this.dataset.src)
+        await loadHTMLContent(this.dataset.src);
       }
       async function handleMobileNavLinkClick(e) {
         e.preventDefault();
@@ -214,7 +213,7 @@
         if (desktopNavLinks[index].classList.contains(activeDesktopNavLinkClass)) return;
         desktopNavLinks.forEach(link => link.classList.remove(activeDesktopNavLinkClass));
         desktopNavLinks[index].classList.add(activeDesktopNavLinkClass);
-        await loadHTMLContent(this.dataset.src)
+        await loadHTMLContent(this.dataset.src);
       }
       async function loadHTMLContent(filePath) {
         isLoading = true;
