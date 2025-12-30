@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>狠狠踩一脚 - 这是我的世界</title>
+    <link rel="icon" type="image/png" href="./Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./Favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./Favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="./CSS/initialize.css" />
+    <link rel="stylesheet" href="./CSS/common.css" />
+    <link rel="stylesheet" href="./CSS/custom.css" />
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <link rel="stylesheet" href="./CSS/gen.css" />
+    <link rel="stylesheet" href="./CSS/archive.css" />
+    <link rel="stylesheet" href="./IconFont/iconfont.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="desktop-only-f fixed top-0 left-0 w-16 h-full border-box flex-col v-item-center br-dark-bold">
+        <div class="flex flex-col v-item-center pb-1 gap-1 w-full bb-dark-bold pt-2">
+            <img src="./Image/avatar_t.png" alt="狠狠踩一脚" title="狠狠踩一脚" class="w-4 h-4 rounded-full" />
+            <h1 class="text-bold text-1d5 line-2">狠狠踩一脚</h1>
+            <div class="desktopNavHLine"></div>
+            <p class="text-red text-bold" style="font-size: 0.9rem;">像花虽未红，如冰虽不冻。</p>
+        </div>
+        <div class="flex-auto w-full bb-dark-bold relative" style="overflow-y: auto; overflow-x: hidden;">
+            <div class="absolute br-shallow left-2 top-0 bottom-0 z-n1" style="width: 2px"></div>
+            <div>
+                <a id="desktopGen" href="#gen" class="animation desktopNavLink activeDesktopNavLink" data-src="./gen.html"><p class="desktopNavIndex">01</p><p class="iconfont icon-card desktopNavIcon animation desktopNavAnimation"></p><p class="desktopNavTitle animation desktopNavAnimation">主页</p></a>
+                <a id="desktopArchvie" href="#archive" class="animation desktopNavLink" data-src="./archive.html"><p class="desktopNavIndex">02</p><p class="iconfont icon-paper desktopNavIcon animation desktopNavAnimation"></p><p class="desktopNavTitle animation desktopNavAnimation">笔记</p></a>
+                <a id="desktopWarehouse" href="#warehouse" class="animation desktopNavLink" data-src="./warehouse.html"><p class="desktopNavIndex">03</p><p class="iconfont icon-folder desktopNavIcon animation desktopNavAnimation"></p><p class="desktopNavTitle animation desktopNavAnimation">作品</p></a>
+            </div>
+        </div>
+        <div class="w-full pb-2 flex flex-col gap-1 pt-1 v-item-center" style="height: 7rem;">
+          <div class="grid grid-2 gap-2 rgap-1">
+            <a href="https://space.bilibili.com/95120665?spm_id_from=333.1007.0.0" target="_blank" class="desktopNavContack animation hover-scale">
+              <p class="iconfont icon-BiliBili text-bold"></p>
+              <p class="text-bold text-red text-0d75">BiliBili</p>
+            </a>
+            <a href="https://github.com/shockfoot" target="_blank" class="desktopNavContack animation hover-scale">
+              <p class="iconfont icon-GitHub text-bold"></p>
+              <p class="text-bold text-red text-0d75">GitHub</p>
+            </a>
+          </div>
+          <div class="desktopNavHLine"></div>
+          <a href="https://beian.miit.gov.cn" title="工业和信息化部ICP/IP地址/域名信息备案管理系统" target="_blank" class="w-full text-0d75 text-center text-middle">&copy;&nbsp;2025&nbsp;狠狠踩一脚&nbsp;&verbar;&nbsp;皖ICP备2022009674号-1</a>
+        </div>
+      </div>
+      <div class="mobile-only-f fixed top-0 left-0 w-full h-4 h-content-between v-item-center px-2 border-box bb-dark-bold bg-light z-50">
+        <div class="flex v-item-center">
+          <img src="./Image/avatar_t.png" alt="狠狠踩一脚", title="狠狠踩一脚" class="w-2 h2 mr-0d5" />
+          <p class="text-bold text-1d25">狠狠踩一脚</p>
+        </div>
+        <div class="flex v-item-center">
+            <a id="mobileGen" href="#gen" class="mobileNavLink" data-src="./gen.html" data-index="0"><span class="iconfont icon-card"></span>主页</a>
+            <a id="mobileArchvie" href="#archive" class="mobileNavLink" data-src="./archive.html" data-index="1"><span class="iconfont icon-paper"></span>笔记</a>
+            <a id="mobileWarehouse" href="#warehouse" class="mobileNavLink" data-src="./warehouse.html" data-index="2"><span class="iconfont icon-folder"></span>作品</a>
+        </div>
+      </div>
+    </nav>
+    <div id="contentContainer" class="mobile-container"></div>
+    <script type="module">
+      let isLoading = false;
+      import { secondaryPageContentDivID, subPageScriptModulDivID } from './JS/common.js';
+      const activeDesktopNavLinkClass = 'activeDesktopNavLink';
+
+      const desktopNavLinks = [
+        document.getElementById('desktopGen'),
+        document.getElementById('desktopArchvie'),
+        document.getElementById('desktopWarehouse')
+      ];
+      desktopNavLinks.forEach(link => link.addEventListener('click', handleDesktopNavLinkClick));
+      const mobileNavLinks= [
+        document.getElementById('mobileGen'),
+        document.getElementById('mobileArchvie'),
+        document.getElementById('mobileWarehouse')
+      ];
+      mobileNavLinks.forEach(link => link.addEventListener('click', handleMobileNavLinkClick));
+      const contentContainer = document.getElementById('contentContainer')
+      loadHTMLContent('./gen.html');
+
+      async function handleDesktopNavLinkClick(e) {
+        e.preventDefault();
+        if (isLoading || this.classList.contains(activeDesktopNavLinkClass)) return;
+        desktopNavLinks.forEach(link => link.classList.remove(activeDesktopNavLinkClass));
+        this.classList.add(activeDesktopNavLinkClass);
+        await loadHTMLContent(this.dataset.src);
+      }
+      async function handleMobileNavLinkClick(e) {
+        e.preventDefault();
+        if (isLoading) return;
+        const index = parseInt(this.dataset.index);
+        if (desktopNavLinks[index].classList.contains(activeDesktopNavLinkClass)) return;
+        desktopNavLinks.forEach(link => link.classList.remove(activeDesktopNavLinkClass));
+        desktopNavLinks[index].classList.add(activeDesktopNavLinkClass);
+        await loadHTMLContent(this.dataset.src);
+      }
+      async function loadHTMLContent(filePath) {
+        isLoading = true;
+        console.log(filePath);
+        try {
+          const response = await fetch(filePath);
+          if (!response.ok) throw new Error(`请求失败: ${response.status}`);
+          const htmlContent = await response.text();
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(htmlContent, 'text/html');
+          const container = htmlDoc.getElementById(secondaryPageContentDivID);
+          if (!container) throw new Error(`未找到内容: ${secondaryPageContentDivID}`);
+          contentContainer.innerHTML = container.innerHTML;
+
+          const moduleElement = htmlDoc.getElementById(subPageScriptModulDivID);
+          if (moduleElement) {
+            const scriptSrc = moduleElement.dataset.src;
+            if (scriptSrc) {
+              const module = await import(scriptSrc);
+              if (!module) throw new Error(`导入模块失败: ${scriptSrc}`);
+              if (module.init) {
+                module.init();
+              }
+            }
+          }
+        }
+        catch (error) {
+          console.error(`加载${filePath}失败: ${error}`);
+          contentContainer.innerHTML = `<div>加载失败: ${error.message}</div>`;
+        }
+        finally {
+          isLoading = false;
+        }
+      }
+    </script>
+  </body>
+</html>

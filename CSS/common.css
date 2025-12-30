@@ -1132,11 +1132,14 @@
 .flex {
   display: flex;
 }
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
 .flex-col {
   flex-direction: column;
 }
-.flex-reverse {
-  flex-direction: row-reverse;
+.flex-col-reverse {
+  flex-direction: column-reverse;
 }
 .flex-warp {
   flex-wrap: wrap;
@@ -1243,6 +1246,9 @@
 /* #endregion */
 
 /* #region 背景 */
+.bg-transparent {
+  background-color: transparent;
+}
 
 .bg-white {
   background-color: #fff;
@@ -1256,7 +1262,7 @@
 .text-weight {
   font-weight: 400;
 }
-.text-blod {
+.text-bold {
   font-weight: 700;
 }
 
