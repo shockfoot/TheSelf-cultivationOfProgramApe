@@ -27,7 +27,7 @@ git subtree add --prefix=指定路径 仓库B的git路径 独立分支 --squash
 git add 目标文件夹
 git commit -m "提交日志"
 # 同步到独立分支
-git subtree split --prefix=目标文件夹 -b 独立分支 --rejion
+git subtree split --prefix=目标文件夹 -b 独立分支 --rejoin
 # 推送到远程仓库
 git push origin 独立分支
 ```
