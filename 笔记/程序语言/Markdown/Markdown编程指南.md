@@ -209,22 +209,7 @@ Markdown支持有序列表和无序列表。
 - rust：Rust
 - typescript/ts：TypeScript
 
-某些渲染器支持通过特定的语法或配置显示行号。
-
-```js {.line-numbers}
-function test() {
-
-}
-```
-
-可以使用`diff`，然后在代码行前添加`+`或`-`表示版本控制中代码的添加、删除或修改。
-
-```diff
-function test() {
--    let index = 0;
-+    let index = 1;
-}
-```
+某些渲染器支持通过配置或在语言标识符后使用`{.line-numbers}`显示行号。某些渲染器支持用`diff`替换语言标识符，然后可以在代码行前添加`+`或`-`表示版本控制中代码的添加、删除或修改。
 
 ### 链接
 
