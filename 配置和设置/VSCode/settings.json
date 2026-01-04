@@ -1,0 +1,8 @@
+{
+    "markdown-preview-enhanced.previewTheme": "github-light.css",
+    "editor.fontSize": 16,
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontSize"
+    ],
+    "editor.wordWrap": "on"
+}

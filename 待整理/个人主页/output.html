@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>狠狠踩一脚 - 这是我的世界</title>
+<link rel="icon" type="image/png" href="Favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="Favicon/favicon.svg" />
+<link rel="shortcut icon" href="Favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png" />
+<link rel="manifest" href="Favicon/site.webmanifest" />
+
+<link rel="stylesheet" href="CSS/css_initialize.css" />
+<link rel="stylesheet" href="CSS/css_common.css" />
+<link rel="stylesheet" href="CSS/css_custom.css" />
+<link rel="stylesheet" href="IconFont/iconfont.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div id="markdown-container"></div>
+    <script>
+        const markdownContent = `
+# 我是一级标题
+
+## 我是二级标题
+
+### 我是三级标题
+
+#### 我是四级标题
+
+##### 我是五级标题
+
+###### 我是六级标题
+
+这是一个段落。
+
+这是一个段落，包含*斜体*，**粗体**，***粗斜体***，^上标^，~下标~，~~删除线~~，\`行内代码\`，[测试](index.html "测试")。
+
+***
+
+- 第一项
+    第一行
+- 第二项
+    > 引用
+- 第三项
+
+1. 第一项
+   - 第一项
+   - 第二项
+2. 第二项
+3. 第三项
+
+> 引用
+>
+> 第一层
+> > 第二层
+
+\`\`\`js
+function test() {
+
+}
+\`\`\`
+
+[测试](index.html "测试")
+
+![头像](Image/avatar.png "头像")
+
+| 表头 | 表头 | 表头 | 表头 |
+| ---- | :---- | ----: | :----: |
+| 单元格 | 单元格 | 单元格 | 单元格 |
+| 单元格 | 单元格 | 单元格 | 单元格 |
+        `;
+        const content = marked.parse(markdownContent);
+        document.getElementById('markdown-container').innerHTML = content;
+    </script>
+</body>
+</html>

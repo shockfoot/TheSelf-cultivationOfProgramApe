@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delegate</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">Delegate</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Constructor">构造函数</a></li>
+          <li class="sidebar-item-h1"><a href="#Property">属性</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Property01">Target</a></li>
+              <li class="sidebar-item-h2"><a href="#Property02">HasSingleTarget</a></li>
+              <li class="sidebar-item-h2"><a href="#Property03">Method</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method01">CreateDelegate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">Combine</a></li>
+              <li class="sidebar-item-h2"><a href="#Method03">Remove</a></li>
+              <li class="sidebar-item-h2"><a href="#Method04">RemoveAll</a></li>
+              <li class="sidebar-item-h2"><a href="#Method05">EnumerateInvocationList</a></li>
+              <li class="sidebar-item-h2"><a href="#Method06">Clone</a></li>
+              <li class="sidebar-item-h2"><a href="#Method07">CombineImpl</a></li>
+              <li class="sidebar-item-h2"><a href="#Method08">RemoveImpl</a></li>
+              <li class="sidebar-item-h2"><a href="#Method09">DynamicInvoke</a></li>
+              <li class="sidebar-item-h2"><a href="#Method10">DynamicInvokeImpl</a></li>
+              <li class="sidebar-item-h2"><a href="#Method11">GetInvocationList</a></li>
+              <li class="sidebar-item-h2"><a href="#Method12">GetMethodImpl</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Override">重写</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="../001DataType/001001Object.html#Method03">Equals</a></li>
+              <li class="sidebar-item-h2"><a href="../001DataType/001001Object.html#Method04">GetHashCode</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">Delegate</h1>
+          <nav class="head-nav"><a class="fl" href="../003Exception/003004AggregateException.html">上一篇</a><a class="fr" href="./004002Delegate.InvocationListEnumerator.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public abstract class Delegate</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag class-tag">类</span><span class="tag abstract-tag">抽象</span></p>
+        </section>
+        <section>
+          <h2 id="Instruction">说明</h2>
+          <p><span class="inline-code">Delegate</span>表示委托，是所有委托的基类，用于引用静态方法或实例方法。<span class="inline-code">Delegate</span>不被视为委托类型，只能用于派生委托类型。</p>
+          <p>只有系统和编译器可以显式地从<span class="inline-code">Delegate</span>或<span class="inline-code">MulticastDelegate</span>派生委托类型。用户只能通过<span class="inline-code">delegate</span>关键字声明委托类型，编译器会自动从<span class="inline-code">MulticastDelegate</span>派生相应委托类型。</p>
+          <p>委托的声明决定了可以引用哪些方法。委托可以指向与其具有相同签名（参数列表和返回类型）的方法。</p>
+          <p>当委托表示静态方法时存储该方法入口的引用；当委托表示在目标上闭合的静态方法或实例方法时存储该目标和该方法入口的引用；当委托表示开放的实例方法时只存储该方法入口的引用，在调用时需要传入目标。</p>
+          <p>委托的调用列表是一组有序的委托，可以包含重复的方法。在调用期间，将按照方法在调用列表中的出现顺序调用方法。委托尝试调用其调用列表中的每个方法；每次重复出现在调用列表中时，都会调用一次重复项。委托是不可变的；创建后，委托的调用列表不会更改；对委托的删除或增加操作会返回一个新的委托对象。</p>
+          <p>如果调用的方法引发异常，则该方法将停止执行，不会再调用调用列表中的其余方法，并将异常传递回委托的调用方。捕获调用方中的异常不会改变此行为。</p>
+          <p>当委托调用的方法签名包含返回值时，委托将返回调用列表中最后一个元素的返回值。当签名包含通过引用传递的参数时，参数的最终值是调用列表中的每个方法按顺序执行并更新参数值的结果。</p>
+        </section>
+        <section>
+          <h2 id="Constructor">构造函数</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>protected Delegate(object target, string method)
+protected Delegate(Type target, string method)</pre>
+          </div>
+          <p>初始化指向实例方法或静态方法的<span class="inline-code">Delegate</span>实例。</p>
+        </section>
+        <section>
+          <h2 id="Property">属性</h2>
+          <h3 id="Property01">Target</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public object? Target { get; }</pre>
+          </div>
+          <p>获取当前对象调用实例方法的类实例。如果委托调用一个或多个实例方法，则此属性将返回调用列表中最后一个实例方法的目标。</p>
+          <h3 id="Property02">HasSingleTarget</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool HasSingleTarget { get; }</pre>
+          </div>
+          <p>判断当前对象是否具有单一调用目标。</p>
+          <h3 id="Property03">Method</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public System.Reflection.MethodInfo Method { get; }</pre>
+          </div>
+          <p>获取委托所表示的方法，调用<span class="inline-code">GetMethodImpl()</span>。</p>
+        </section>
+        <section>
+          <h2 id="Method">方法</h2>
+          <h3 id="Method01">CreateDelegate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static Delegate CreateDelegate(Type type, object target, string method)
+public static Delegate CreateDelegate(Type type, Type target, string method)
+public static Delegate CreateDelegate(Type type, object target, string method, bool ignoreCase)
+public static Delegate CreateDelegate(Type type, Type target, string method, bool ignoreCase)
+public static Delegate? CreateDelegate(Type type, object target, string method, bool ignoreCase, bool throwOnBindFailure)
+public static Delegate? CreateDelegate(Type type, Type target, string method, bool ignoreCase, bool throwOnBindFailure)
+public static Delegate CreateDelegate(Type type, object? firstArgument, System.Reflection.MethodInfo method)
+public static Delegate CreateDelegate(Type type, System.Reflection.MethodInfo method)
+public static Delegate? CreateDelegate(Type type, object? firstArgument, System.Reflection.MethodInfo method, bool throwOnBindFailure)
+public static Delegate? CreateDelegate(Type type, System.Reflection.MethodInfo method, bool throwOnBindFailure)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>创建指定类型的委托。</p>
+          <h3 id="Method02">Combine</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static Delegate? Combine(Delegate? a, Delegate? b)
+public static Delegate? Combine(params Delegate?[]? delegates)
+public static Delegate? Combine(scoped ReadOnlySpan<Delegate?> delegates)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>组合指定对象的调用列表，结果返回一个新的委托。</p>
+          <h3 id="Method03">Remove</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static Delegate? Remove(Delegate? source, Delegate? value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>从指定对象的调用列表中删除指定委托的调用列表（顺序要相同），结果返回一个新的委托。如果指定对象中多次出现指定委托的调用列表，则删除最后一个。</p>
+          <h3 id="Method04">RemoveAll</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static Delegate? RemoveAll(Delegate? source, Delegate? value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>从指定对象的调用列表中删除指定委托的调用列表，结果返回一个新的委托。如果指定对象中多次出现指定委托的调用列表，则删除所有。</p>
+          <h3 id="Method05">EnumerateInvocationList</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static Delegate.InvocationListEnumerator<TDelegate> EnumerateInvocationList<TDelegate>(TDelegate? d) where TDelegate : Delegate</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象调用列表的枚举器。</p>
+          <h3 id="Method06">Clone</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public virtual object Clone()</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚方法</span></p>
+          <p>克隆当前对象的<b>浅拷贝</b>。</p>
+          <h3 id="Method07">CombineImpl</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>protected virtual Delegate CombineImpl(Delegate? d)</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚方法</span></p>
+          <p>将当前对象的调用列表组合到当前对象，结果返回一个新的委托。只有多播委托才实现此方法。</p>
+          <h3 id="Method08">RemoveImpl</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>protected virtual Delegate? RemoveImpl(Delegate d)</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚方法</span></p>
+          <p>从指定对象的调用列表中删除指定委托的调用列表（顺序要相同），结果返回一个新的委托。如果指定对象中多次出现指定委托的调用列表，则删除最后一个。只有多播委托才实现此方法。</p>
+          <h3 id="Method09">DynamicInvoke</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public object? DynamicInvoke(params object?[]? args)</pre>
+          </div>
+          <p>动态调用（延迟绑定）当前对象所表示的方法，调用<span class="inline-code">DynamicInvokeImpl()</span>。</p>
+          <h3 id="Method10">DynamicInvokeImpl</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>protected virtual object? DynamicInvokeImpl(object?[]? args)</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚方法</span></p>
+          <p>动态调用（延迟绑定）当前对象所表示的方法。</p>
+          <h3 id="Method11">GetInvocationList</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public virtual Delegate[] GetInvocationList()</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚方法</span></p>
+          <p>获取当前对象的调用列表。</p>
+          <h3 id="Method12">GetMethodImpl</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>protected virtual System.Reflection.MethodInfo GetMethodImpl()</pre>
+          </div>
+          <p><span class="tag virtual-tag">虚方法</span></p>
+          <p>获取当前对象表示的方法。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="../003Exception/003004AggregateException.html">上一篇</a><a class="fr" href="./004002Delegate.InvocationListEnumerator.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

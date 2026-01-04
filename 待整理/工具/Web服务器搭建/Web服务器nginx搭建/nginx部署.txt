@@ -1,0 +1,15 @@
+//nginx本体
+http://nginx.org/
+//支持nginx开通https的模块，非对称加密工具
+https://www.openssl.org/
+//支持压缩模块，必须
+http://zlib.net/
+//支持正则表达式的模块，必须
+http://www.pcre.org/
+
+解压缩以后
+
+//编译C的三个程序
+apt install gcc
+apt install build-essential
+apt install make

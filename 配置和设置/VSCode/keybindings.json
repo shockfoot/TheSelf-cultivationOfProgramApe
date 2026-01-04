@@ -1,0 +1,30 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+shift+p",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "alt+f",
+        "command": "prettier.forceFormatDocument"
+    },
+    {
+        "key": "alt+a",
+        "command": "editor.foldAll",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "alt+s",
+        "command": "editor.unfoldAll",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "alt+d",
+        "command": "markdown-preview-enhanced.syncPreview",
+        "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.files.saveFiles"
+    }
+]

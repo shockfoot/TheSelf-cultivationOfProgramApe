@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">Double</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Field">字段</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Field01">NegativeZero</a></li>
+              <li class="sidebar-item-h2"><a href="#Field02">Epsilon</a></li>
+              <li class="sidebar-item-h2"><a href="#Field03">E</a></li>
+              <li class="sidebar-item-h2"><a href="#Field04">Pi</a></li>
+              <li class="sidebar-item-h2"><a href="#Field05">Tau</a></li>
+              <li class="sidebar-item-h2"><a href="#Field06">MinValue</a></li>
+              <li class="sidebar-item-h2"><a href="#Field07">MaxValue</a></li>
+              <li class="sidebar-item-h2"><a href="#Field08">PositiveInfinity</a></li>
+              <li class="sidebar-item-h2"><a href="#Field09">NegativeInfinity</a></li>
+              <li class="sidebar-item-h2"><a href="#Field10">NaN</a></li>
+            </ol>
+          </li>
+          <li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method01">Parse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">TryParse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method03">Sin</a></li>
+              <li class="sidebar-item-h2"><a href="#Method04">Sinh</a></li>
+              <li class="sidebar-item-h2"><a href="#Method05">SinPi</a></li>
+              <li class="sidebar-item-h2"><a href="#Method06">Asin</a></li>
+              <li class="sidebar-item-h2"><a href="#Method07">Asinh</a></li>
+              <li class="sidebar-item-h2"><a href="#Method08">AsinPi</a></li>
+              <li class="sidebar-item-h2"><a href="#Method09">Cos</a></li>
+              <li class="sidebar-item-h2"><a href="#Method10">Cosh</a></li>
+              <li class="sidebar-item-h2"><a href="#Method11">CosPi</a></li>
+              <li class="sidebar-item-h2"><a href="#Method12">Acos</a></li>
+              <li class="sidebar-item-h2"><a href="#Method13">Acosh</a></li>
+              <li class="sidebar-item-h2"><a href="#Method14">AcosPi</a></li>
+              <li class="sidebar-item-h2"><a href="#Method15">SinCosh</a></li>
+              <li class="sidebar-item-h2"><a href="#Method16">SinCosPi</a></li>
+              <li class="sidebar-item-h2"><a href="#Method17">Tan</a></li>
+              <li class="sidebar-item-h2"><a href="#Method18">Tanh</a></li>
+              <li class="sidebar-item-h2"><a href="#Method19">TanPi</a></li>
+              <li class="sidebar-item-h2"><a href="#Method20">Atan</a></li>
+              <li class="sidebar-item-h2"><a href="#Method21">Atanh</a></li>
+              <li class="sidebar-item-h2"><a href="#Method22">AtanPi</a></li>
+              <li class="sidebar-item-h2"><a href="#Method23">Atan2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method24">Atan2Pi</a></li>
+              <li class="sidebar-item-h2"><a href="#Method25">Exp2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method26">Exp2M1</a></li>
+              <li class="sidebar-item-h2"><a href="#Method27">Exp10</a></li>
+              <li class="sidebar-item-h2"><a href="#Method28">Exp10M1</a></li>
+              <li class="sidebar-item-h2"><a href="#Method29">Exp</a></li>
+              <li class="sidebar-item-h2"><a href="#Method30">ExpM1</a></li>
+              <li class="sidebar-item-h2"><a href="#Method31">Pow</a></li>
+              <li class="sidebar-item-h2"><a href="#Method32">ScaleB</a></li>
+              <li class="sidebar-item-h2"><a href="#Method33">Log2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method34">Log2P1</a></li>
+              <li class="sidebar-item-h2"><a href="#Method35">Log10</a></li>
+              <li class="sidebar-item-h2"><a href="#Method36">Log10P1</a></li>
+              <li class="sidebar-item-h2"><a href="#Method37">Log</a></li>
+              <li class="sidebar-item-h2"><a href="#Method38">LogP1</a></li>
+              <li class="sidebar-item-h2"><a href="#Method39">ILogB</a></li>
+              <li class="sidebar-item-h2"><a href="#Method40">Abs</a></li>
+              <li class="sidebar-item-h2"><a href="#Method41">Cbrt</a></li>
+              <li class="sidebar-item-h2"><a href="#Method42">Sqrt</a></li>
+              <li class="sidebar-item-h2"><a href="#Method43">RootN</a></li>
+              <li class="sidebar-item-h2"><a href="#Method44">FusedMultiplyAdd</a></li>
+              <li class="sidebar-item-h2"><a href="#Method45">MultiplyAddEstimate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method46">ReciprocalEstimate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method47">ReciprocalSqrtEstimate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method48">Hypot</a></li>
+              <li class="sidebar-item-h2"><a href="#Method49">Ieee754Remainder</a></li>
+              <li class="sidebar-item-h2"><a href="#Method50">Lerp</a></li>
+              <li class="sidebar-item-h2"><a href="#Method51">Ceiling</a></li>
+              <li class="sidebar-item-h2"><a href="#Method52">Floor</a></li>
+              <li class="sidebar-item-h2"><a href="#Method53">BitIncrement</a></li>
+              <li class="sidebar-item-h2"><a href="#Method54">BitDecrement</a></li>
+              <li class="sidebar-item-h2"><a href="#Method55">Round</a></li>
+              <li class="sidebar-item-h2"><a href="#Method56">Truncate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method57">DegreesToRadians</a></li>
+              <li class="sidebar-item-h2"><a href="#Method58">RadiansToDegrees</a></li>
+              <li class="sidebar-item-h2"><a href="#Method59">Clamp</a></li>
+              <li class="sidebar-item-h2"><a href="#Method60">Min</a></li>
+              <li class="sidebar-item-h2"><a href="#Method61">MinMagnitude</a></li>
+              <li class="sidebar-item-h2"><a href="#Method62">MinNumber</a></li>
+              <li class="sidebar-item-h2"><a href="#Method63">MinMagnitudeNumber</a></li>
+              <li class="sidebar-item-h2"><a href="#Method64">Max</a></li>
+              <li class="sidebar-item-h2"><a href="#Method65">MaxMagnitude</a></li>
+              <li class="sidebar-item-h2"><a href="#Method66">MaxNumber</a></li>
+              <li class="sidebar-item-h2"><a href="#Method67">MaxMagnitudeNumber</a></li>
+              <li class="sidebar-item-h2"><a href="#Method68">Sign</a></li>
+              <li class="sidebar-item-h2"><a href="#Method69">CopySign</a></li>
+              <li class="sidebar-item-h2"><a href="#Method70">IsEvenInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method71">IsOddInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method72">IsPositive</a></li>
+              <li class="sidebar-item-h2"><a href="#Method73">IsNegative</a></li>
+              <li class="sidebar-item-h2"><a href="#Method74">IsInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method75">IsNormal</a></li>
+              <li class="sidebar-item-h2"><a href="#Method76">IsSubnormal</a></li>
+              <li class="sidebar-item-h2"><a href="#Method77">IsNaN</a></li>
+              <li class="sidebar-item-h2"><a href="#Method78">IsRealNumber</a></li>
+              <li class="sidebar-item-h2"><a href="#Method79">IsFinite</a></li>
+              <li class="sidebar-item-h2"><a href="#Method80">IsInfinity</a></li>
+              <li class="sidebar-item-h2"><a href="#Method81">IsPositiveInfinity</a></li>
+              <li class="sidebar-item-h2"><a href="#Method82">IsNegativeInfinity</a></li>
+              <li class="sidebar-item-h2"><a href="#Method83">IsPow2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method84">CreateChecked</a></li>
+              <li class="sidebar-item-h2"><a href="#Method85">CreateSaturating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method86">CreateTruncating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method87">ConvertToInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method88">ConvertToIntegerNative</a></li>
+              <li class="sidebar-item-h2"><a href="#Method89">CompareTo</a></li>
+              <li class="sidebar-item-h2"><a href="#Method90">Equals</a></li>
+              <li class="sidebar-item-h2"><a href="#Method91">GetTypeCode</a></li>
+              <li class="sidebar-item-h2"><a href="#Method92">ToString</a></li>
+              <li class="sidebar-item-h2"><a href="#Method93">TryFormat</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Override">重写</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="./001001Object.html#Method04">GetHashCode</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">Double</h1>
+          <nav class="head-nav"><a class="fl" href="./001017Single.html">上一篇</a><a class="fr" href="./001019Decimal.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public readonly struct Double</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag struct-tag">结构体</span><span class="tag readonly-tag">只读</span></p>
+        </section>
+        <section>
+        <h2 id="Instruction">说明</h2>
+          <p><span class="inline-code">Double</span>（别名<span class="inline-code">double</span>）表示双精度浮点数，默认值为0，8字节，范围为-3.40282347E+38至3.40282347E+38。</p>
+          <p><span class="inline-code">Double</span>的64位中，0至51位表示尾数，52至62位表示指数，63位为符号。因为有些数字不能精确地被二进制表示，所以浮点数只能近似表示实数。</p>
+        </section>
+        <section>
+          <h2 id="Field">字段</h2>
+          <h3 id="Field01">NegativeZero</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double NegativeZero;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p><span class="inline-code">Double</span>类型的-0。</p>
+          <h3 id="Field02">Epsilon</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double Epsilon;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p>比0大的最小的<span class="inline-code">Double</span>，其值为4.94065645841247E-324。</p>
+          <h3 id="Field03">E</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double E;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p>常数e，其值为2.7182818284590451。</p>
+          <h3 id="Field04">Pi</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double Pi;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p>常数π，其值为3.1415926535897931。</p>
+          <h3 id="Field05">Tau</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double Tau;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p>常数τ，其值为6.2831853071795862。</p>
+          <h3 id="Field06">MinValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double MinValue;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p><span class="inline-code">Double</span>类型的最小值-1.7976931348623157E+308。</p>
+          <h3 id="Field07">MaxValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double MaxValue;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p><span class="inline-code">Double</span>类型的最大值1.7976931348623157E+308。</p>
+          <h3 id="Field08">PositiveInfinity</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double PositiveInfinity;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p>正无穷大。</p>
+          <h3 id="Field09">NegativeInfinity</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double NegativeInfinity;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p>负无穷大。</p>
+          <h3 id="Field10">NaN</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const double NaN;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p>非数字</p>
+        </section>
+        <section>
+          <h2 id="Method">方法</h2>
+          <h3 id="Method01">Parse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Parse(string s)
+public static double Parse(string s, IFormatProvider? provider)
+public static double Parse(string s, System.Globalization.NumberStyles style)
+public static double Parse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider)
+public static double Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
+public static double Parse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)
+public static double Parse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider)
+public static double Parse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将字符串（前面和后面可以有空格）转化为<span class="inline-code">Double</span>，转换失败时会抛出异常。</p>
+          <h3 id="Method02">TryParse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool TryParse(string s, out double result)
+public static bool TryParse(string s, IFormatProvider? provider, out double resul)
+public static bool TryParse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider, out double resul)
+public static bool TryParse(ReadOnlySpan<char> s, out double result)
+public static bool TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, out double resul)
+public static bool TryParse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style, IFormatProvider? provider, out double resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, out double result)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider, out double resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style, IFormatProvider? provider, out double resul)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>与<span class="inline-code">Parse</span>方法类型，将字符串（前面和后面可以有空格）转化为<span class="inline-code">Double</span>，但不会抛出异常。</p>
+          <h3 id="Method03">Sin</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Sin(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的正弦。</p>
+          <h3 id="Method04">Sinh</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Sinh(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的双曲正弦。</p>
+          <h3 id="Method05">SinPi</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double SinPi(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（half-revolutions）乘以π后的正弦。</p>
+          <h3 id="Method06">Asin</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Asin(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的反正弦。</p>
+          <h3 id="Method07">Asinh</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Asinh(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的双曲反正弦。</p>
+          <h3 id="Method08">AsinPi</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double AsinPi(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的反正弦，并将结果除以π。</p>
+          <h3 id="Method09">Cos</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Cos(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的余弦。</p>
+          <h3 id="Method10">Cosh</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Cosh(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的双曲余弦。</p>
+          <h3 id="Method11">CosPi</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double CosPi(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（half-revolutions）乘以π后的余弦。</p>
+          <h3 id="Method12">Acos</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Acos(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的反余弦。</p>
+          <h3 id="Method13">Acosh</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Acosh(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的双曲反余弦。</p>
+          <h3 id="Method14">AcosPi</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double AcosPi(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的反余弦，并将结果除以π。</p>
+          <h3 id="Method15">SinCos</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static (double Sin, double Cos) SinCos(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的正弦和余弦。</p>
+          <h3 id="Method16">SinCosPi</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static (double SinPi, double CosPi) SinCosPi(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（half-revolutions）乘以π后的正弦和余弦。</p>
+          <h3 id="Method17">Tan</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Tan(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的正切。</p>
+          <h3 id="Method18">Tanh</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Tanh(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的双曲正切。</p>
+          <h3 id="Method19">TanPi</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double TanPi(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（half-revolutions）乘以π后的正切。</p>
+          <h3 id="Method20">Atan</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Atan(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的反正切。</p>
+          <h3 id="Method21">Atanh</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Atanh(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的双曲反正切。</p>
+          <h3 id="Method22">AtanPi</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double AtanPi(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象（弧度制）的反正切，并将结果除以π。</p>
+          <h3 id="Method23">Atan2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Atan2(double y, double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取两个值的商（弧度制）的反正切。</p>
+          <h3 id="Method24">Atan2Pi</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Atan2Pi(double y, double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取两个值的商（弧度制）的反正切，并将结果除以π。</p>
+          <h3 id="Method25">Exp2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Exp2(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取2的指定次幂。</p>
+          <h3 id="Method26">Exp2M1</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Exp2M1(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取2的指定次幂，并将结果减1。</p>
+          <h3 id="Method27">Exp10</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Exp10(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取10的指定次幂。</p>
+          <h3 id="Method28">Exp10M1</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Exp10M1(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取10的指定次幂，并将结果减1。</p>
+          <h3 id="Method29">Exp</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Exp(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取e的指定次幂。</p>
+          <h3 id="Method30">ExpM1</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double ExpM1(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取e的指定次幂，并将结果减1。</p>
+          <h3 id="Method31">Pow</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Pow(double newBase, double power)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定底数的指定次幂。</p>
+          <h3 id="Method32">ScaleB</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double ScaleB(double x, int n)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取x * x的n次方。</p>
+          <h3 id="Method33">Log2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Log2(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的Log2。</p>
+          <h3 id="Method34">Log2P1</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Log2P1(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象+1的Log2。</p>
+          <h3 id="Method35">Log10</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Log10(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的Log10。</p>
+          <h3 id="Method36">Log10P1</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Log10P1(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象+1的Log10。</p>
+          <h3 id="Method37">Log</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Log(double value)
+public static double Log(double x, double newBase)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的LogE或指定底数的Log。</p>
+          <h3 id="Method38">LogP1</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double LogP1(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象+1的LogE。</p>
+          <h3 id="Method39">ILogB</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int ILogB(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的整数对数。</p>
+          <h3 id="Method40">Abs</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Abs(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的绝对值。</p>
+          <h3 id="Method41">Cbrt</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Cbrt(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的立方根。</p>
+          <h3 id="Method42">Sqrt</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Sqrt(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的平方根。</p>
+          <h3 id="Method43">RootN</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double RootN(double x, int n)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的n次方根。</p>
+          <h3 id="Method44">FusedMultiplyAdd</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double FusedMultiplyAdd(double left, double right, double addend)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取两值的乘积，并加上第三个值。</p>
+          <h3 id="Method45">MultiplyAddEstimate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double MultiplyAddEstimate(double left, double right, double addend)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取两值的乘积，并加上第三个值的估计值。</p>
+          <h3 id="Method46">ReciprocalEstimate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double ReciprocalEstimate(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的倒数的估计值。</p>
+          <h3 id="Method47">ReciprocalSqrtEstimate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double ReciprocalSqrtEstimate(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的倒数的平方根的估计值。</p>
+          <h3 id="Method48">Hypot</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Hypot(double x, double y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>给定表示直角三角形中两个较短的直角边，计算斜边。</p>
+          <h3 id="Method49">Ieee754Remainder</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Ieee754Remainder(double left, double right)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>按照IEEE 754的规定计算两个值的余数。</p>
+          <h3 id="Method50">Lerp</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Lerp(double value1, double value2, double amount)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>在两个值之间执行线性插值。</p>
+          <h3 id="Method51">Ceiling</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Ceiling(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取最小的比指定对象大的整数。</p>
+          <h3 id="Method52">Floor</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Floor(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取最大的比指定对象小的整数。</p>
+          <h3 id="Method53">BitIncrement</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double BitIncrement(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取最小的比指定对象大的值。</p>
+          <h3 id="Method54">BitDecrement</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double BitDecrement(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取最大的比指定对象小的值。</p>
+          <h3 id="Method55">Round</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Round(double x)
+public static double Round(double x, MidpointRounding mode)
+public static double Round(double x, int digits)
+public static double Round(double x, int digits, MidpointRounding mode)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>使用指定舍入模式（不指定则使用默认模式）将值四舍五入到最接近的整数或指定小数位数的浮点数。</p>
+          <h3 id="Method56">Truncate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Truncate(double x)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>截断值。</p>
+          <h3 id="Method57">DegreesToRadians</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double DegreesToRadians(double degrees)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将角度制转换为弧度制。</p>
+          <h3 id="Method58">RadiansToDegrees</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double RadiansToDegrees(double radians)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将弧度制转换为角度制。</p>
+          <h3 id="Method59">Clamp</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Clamp(double value, double min, double max)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象钳制到指定的最小值（可及）和最大值之间（可及）。</p>
+          <h3 id="Method60">Min</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Min(double x, double y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method61">MinMagnitude</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double MinMagnitude(double x, double y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method62">MinNumber</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double MinNumber(double x, double y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method63">MinMagnitudeNumber</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double MinMagnitudeNumber(double x, double y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method64">Max</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Max(double x, double y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method65">MaxMagnitude</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double MaxMagnitude(double x, double y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method66">MaxNumber</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double MaxNumber(double x, double y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method67">MaxMagnitudeNumber</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double MaxMagnitudeNumber(double x, double y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method68">Sign</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int Sign(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的符号。</p>
+          <h3 id="Method69">CopySign</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double CopySign(double value, double sign)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>返回一个值，此值的数值和符号分别来自两个参数。</p>
+          <h3 id="Method70">IsEvenInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsEvenInteger(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为偶数。</p>
+          <h3 id="Method71">IsOddInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsOddInteger(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为奇数。</p>
+          <h3 id="Method72">IsPositive</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsPositive(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为正数。</p>
+          <h3 id="Method73">IsNegative</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsNegative(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为负数。</p>
+          <h3 id="Method74">IsInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsInteger(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为整数。</p>
+          <h3 id="Method75">IsNormal</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsNormal(double f)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为规格数（表示常见的数，但不能表示0或非常接近0的数）。</p>
+          <h3 id="Method76">IsSubnormal</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsSubnormal(double f)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为非规格数（用于表示0或非常接近0的数）。</p>
+          <h3 id="Method77">IsNaN</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsNaN(double f)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为非数字。</p>
+          <h3 id="Method78">IsRealNumber</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsRealNumber(double f)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为实数（正/负无穷大也将返回<span class="inline-code">true</span>）。</p>
+          <h3 id="Method79">IsFinite</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsFinite(double f)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为有限值（0，规格数或非规格数）。</p>
+          <h3 id="Method80">IsInfinity</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsInfinity(double f)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为无限值。</p>
+          <h3 id="Method81">IsPositiveInfinity</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsPositiveInfinity(double f)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为正无穷大。</p>
+          <h3 id="Method82">IsNegativeInfinity</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsNegativeInfinity(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为负无穷大。</p>
+          <h3 id="Method83">IsPow2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsPow2(double value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为2的幂。</p>
+          <h3 id="Method84">CreateChecked</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double CreateChecked<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">Double</span>实例，溢出时会抛出异常。</p>
+          <h3 id="Method85">CreateSaturating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double CreateSaturating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">Double</span>实例，溢出时使用饱和算法进行范围限制。</p>
+          <h3 id="Method86">CreateTruncating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double CreateTruncating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">Double</span>实例，溢出时使用截断算法进行范围限制。</p>
+          <h3 id="Method87">ConvertToInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static TInteger ConvertToInteger<TInteger>(double value) where TInteger : System.Numerics.IBinaryInteger<TInteger></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>溢出时使用饱和算法将指定对象转换为指定整形。</p>
+          <h3 id="Method88">ConvertToIntegerNative</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static TInteger ConvertToIntegerNative<TInteger>(double value) where TInteger : System.Numerics.IBinaryInteger<TInteger><TInteger></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>溢出时使用平台特定的行为将指定对象转换为指定整形。</p>
+          <h3 id="Method89">CompareTo</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public int CompareTo(double value)
+public int CompareTo(object? value)</pre>
+          </div>
+          <p>比较当前实例与指定对象，并返回一个表明二者关系的整数：大于0表示当前实例大于指定对象，小于0则相反，等于0表示二者相等。需要注意的是，<span class="inline-code">CompareTo(Object)</span>的参数需要是<span class="inline-code">Double</span>类型或<span class="inline-code">null</span>，否则将会抛出异常。</p>
+          <p>因为不需要拆箱，<span class="inline-code">CompareTo(Double)</span>比<span class="inline-code">CompareTo(Object)</span>的性能更好。</p>
+          <h3 id="Method90">Equals</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool Equals(double obj)
+public override bool Equals(object? obj)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>判断当前实例与指定对象是否相等。</p>
+          <p>因为不需要拆箱，<span class="inline-code">Equals(Double)</span>比<span class="inline-code">Equals(Object)</span>的性能更好。</p>
+          <h3 id="Method91">GetTypeCode</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public TypeCode GetTypeCode()</pre>
+          </div>
+          <p>获取当前实例的<span class="inline-code">TypeCode</span>。</p>
+          <h3 id="Method92">ToString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public override string ToString()
+public override string ToString(string? format)
+public string ToString(IFormatProvider? provider)
+public override string ToString(string? format, IFormatProvider? provider)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>将当前实例转化为字符串。</p>
+          <h3 id="Method93">TryFormat</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)
+public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)</pre>
+          </div>
+          <p>尝试将当前实例的值的格式设置为提供的字符范围。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="./001017Single.html">上一篇</a><a class="fr" href="./001019Decimal.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UInt128</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">UInt128</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Constructor">构造函数</a></li>
+          <li class="sidebar-item-h1"><a href="#Property">属性</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Property01">Zero</a></li>
+              <li class="sidebar-item-h2"><a href="#Property02">One</a></li>
+              <li class="sidebar-item-h2"><a href="#Property03">MinValue</a></li>
+              <li class="sidebar-item-h2"><a href="#Property04">MaxValue</a></li>
+            </ol>
+          </li>
+          <li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method01">Parse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">TryParse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method03">DivRem</a></li>
+              <li class="sidebar-item-h2"><a href="#Method04">Log2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method05">Clamp</a></li>
+              <li class="sidebar-item-h2"><a href="#Method06">Min</a></li>
+              <li class="sidebar-item-h2"><a href="#Method07">Max</a></li>
+              <li class="sidebar-item-h2"><a href="#Method08">LeadingZeroCount</a></li>
+              <li class="sidebar-item-h2"><a href="#Method09">TrailingZeroCount</a></li>
+              <li class="sidebar-item-h2"><a href="#Method10">PopCount</a></li>
+              <li class="sidebar-item-h2"><a href="#Method11">RotateLeft</a></li>
+              <li class="sidebar-item-h2"><a href="#Method12">RotateRight</a></li>
+              <li class="sidebar-item-h2"><a href="#Method13">Sign</a></li>
+              <li class="sidebar-item-h2"><a href="#Method14">IsEvenInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method15">IsOddInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method16">IsPow2</a></li>
+              <li class="sidebar-item-h2"><a href="#Method17">CreateChecked</a></li>
+              <li class="sidebar-item-h2"><a href="#Method18">CreateSaturating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method19">CreateTruncating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method20">CompareTo</a></li>
+              <li class="sidebar-item-h2"><a href="#Method21">Equals</a></li>
+              <li class="sidebar-item-h2"><a href="#Method22">ToString</a></li>
+              <li class="sidebar-item-h2"><a href="#Method23">TryFormat</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Override">重写</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="./001001Object.html#Method04">GetHashCode</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">UInt128</h1>
+          <nav class="head-nav"><a class="fl" href="./001012Int64.html">上一篇</a><a class="fr" href="./001014Int128.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public readonly struct UInt128</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag struct-tag">结构体</span><span class="tag readonly-tag">只读</span></p>
+        </section>
+        <section>
+          <h2 id="Instruction">说明</h2>
+          <p><span class="inline-code">UInt128</span>表示128位无符号整数，默认值为0，16字节，范围为0到2<sup>128</sup>-1。</p>
+        </section>
+        <section>
+          <h2 id="Constructor">构造函数</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public UInt128(ulong upper, ulong lower)</pre>
+          </div>
+          <p>初始化<span class="inline-code">UInt128</span>实例。</p>
+        </section>
+        <section>
+          <h2 id="Property">属性</h2>
+          <h3 id="Property01">Zero</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 Zero { get; }</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p><span class="inline-code">UInt128</span>类型的值0。</p>
+          <h3 id="Property02">One</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 One { get; }</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p><span class="inline-code">UInt128</span>类型的值1。</p>
+          <h3 id="Property03">MinValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 MinValue { get; }</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p><span class="inline-code">UInt128</span>类型的最小值0。</p>
+          <h3 id="Property04">MaxValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 MaxValue { get; }</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p><span class="inline-code">UInt128</span>类型的最大值2<sup>128</sup>-1。</p>
+        </section>
+        <section>
+          <h2 id="Method">方法</h2>
+          <h3 id="Method01">Parse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 Parse(string s)
+public static UInt128 Parse(string s, IFormatProvider? provider)
+public static UInt128 Parse(string s, System.Globalization.NumberStyles style)
+public static UInt128 Parse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider)
+public static UInt128 Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
+public static UInt128 Parse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)
+public static UInt128 Parse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider)
+public static UInt128 Parse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将字符串（前面和后面可以有空格）转化为<span class="inline-code">UInt128</span>，转换失败时会抛出异常。</p>
+          <h3 id="Method02">TryParse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool TryParse(string s, out UInt128 result)
+public static bool TryParse(string s, IFormatProvider? provider, out UInt128 resul)
+public static bool TryParse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider, out UInt128 resul)
+public static bool TryParse(ReadOnlySpan<char> s, out UInt128 result)
+public static bool TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, out UInt128 resul)
+public static bool TryParse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style, IFormatProvider? provider, out UInt128 resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, out UInt128 result)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider, out UInt128 resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style, IFormatProvider? provider, out UInt128 resul)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>与<span class="inline-code">Parse</span>方法类型，将字符串（前面和后面可以有空格）转化为<span  class="inline-code">UInt128</span>，但不会抛出异常。</p>
+          <h3 id="Method03">DivRem</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static (UInt128 Quotient, UInt128 Remainder) DivRem(UInt128 left, UInt128 right)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取左数除以右数的商和余数。</p>
+          <h3 id="Method04">Log2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 Log2(UInt128 value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的Log2。</p>
+          <h3 id="Method05">Clamp</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 Clamp(UInt128 value, UInt128 min, UInt128 max)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象钳制到指定的最小值（可及）和最大值之间（可及）。</p>
+          <h3 id="Method06">Min</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 Min(UInt128 x, UInt128 y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method07">Max</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 Max(UInt128 x, UInt128 y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method08">LeadingZeroCount</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 LeadingZeroCount(UInt128 value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的前导0数量。</p>
+          <h3 id="Method09">TrailingZeroCount</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 TrailingZeroCount(UInt128 value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的后置0数量。</p>
+          <h3 id="Method10">PopCount</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 PopCount(UInt128 value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的位数。</p>
+          <h3 id="Method11">RotateLeft</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 RotateLeft(UInt128 value, int rotateAmount)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象向左旋转指定位数。</p>
+          <h3 id="Method12">RotateRight</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 RotateRight(UInt128 value, int rotateAmount)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象向右旋转指定位数。</p>
+          <h3 id="Method13">Sign</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int Sign(UInt128 value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的符号。</p>
+          <h3 id="Method14">IsEvenInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsEvenInteger(UInt128 value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为偶数。</p>
+          <h3 id="Method15">IsOddInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsOddInteger(UInt128 value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为奇数。</p>
+          <h3 id="Method16">IsPow2</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsPow2(UInt128 value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为2的幂。</p>
+          <h3 id="Method17">CreateChecked</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 CreateChecked<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">UInt128</span>实例，溢出时会抛出异常。</p>
+          <h3 id="Method18">CreateSaturating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 CreateSaturating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">UInt128</span>实例，溢出时使用饱和算法进行范围限制。</p>
+          <h3 id="Method19">CreateTruncating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static UInt128 CreateTruncating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">UInt128</span>实例，溢出时使用截断算法进行范围限制。</p>
+          <h3 id="Method20">CompareTo</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public int CompareTo(UInt128 value)
+public int CompareTo(object? value)</pre>
+          </div>
+          <p>比较当前实例与指定对象，并返回一个表明二者关系的整数：大于0表示当前实例大于指定对象，小于0则相反，等于0表示二者相等。需要注意的是，<span class="inline-code">CompareTo(Object)</span>的参数需要是<span class="inline-code">UInt128</span>类型或<span class="inline-code">null</span>，否则将会抛出异常。</p>
+          <p>因为不需要拆箱，<span class="inline-code">CompareTo(UInt128)</span>比<span class="inline-code">CompareTo(Object)</span>的性能更好。</p>
+          <h3 id="Method21">Equals</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool Equals(UInt128 obj)
+public override bool Equals(object? obj)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>判断当前实例与指定对象是否相等。</p>
+          <p>因为不需要拆箱，<span class="inline-code">Equals(UInt128)</span>比<span class="inline-code">Equals(Object)</span>的性能更好。</p>
+          <h3 id="Method22">ToString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public override string ToString()
+public override string ToString(string? format)
+public string ToString(IFormatProvider? provider)
+public override string ToString(string? format, IFormatProvider? provider)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>将当前实例转化为字符串。</p>
+          <h3 id="Method23">TryFormat</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)
+public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)</pre>
+          </div>
+          <p>尝试将当前实例的值的格式设置为提供的字符范围。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="./001012Int64.html">上一篇</a><a class="fr" href="./001014Int128.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

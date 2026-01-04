@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decimal</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">Decimal</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Field">字段</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Field01">Zero</a></li>
+              <li class="sidebar-item-h2"><a href="#Field02">One</a></li>
+              <li class="sidebar-item-h2"><a href="#Field03">MinusOne</a></li>
+              <li class="sidebar-item-h2"><a href="#Field04">MinValue</a></li>
+              <li class="sidebar-item-h2"><a href="#Field05">MaxValue</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Property">属性</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Property01">Scale</a></li>
+            </ol>
+          </li>
+          <li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method01">Parse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">TryParse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method03">Abs</a></li>
+              <li class="sidebar-item-h2"><a href="#Method04">Add</a></li>
+              <li class="sidebar-item-h2"><a href="#Method05">Subtract</a></li>
+              <li class="sidebar-item-h2"><a href="#Method06">Multiply</a></li>
+              <li class="sidebar-item-h2"><a href="#Method07">Divide</a></li>
+              <li class="sidebar-item-h2"><a href="#Method08">Remainder</a></li>
+              <li class="sidebar-item-h2"><a href="#Method09">Negate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method10">Ceiling</a></li>
+              <li class="sidebar-item-h2"><a href="#Method11">Floor</a></li>
+              <li class="sidebar-item-h2"><a href="#Method12">Round</a></li>
+              <li class="sidebar-item-h2"><a href="#Method13">Truncate</a></li>
+              <li class="sidebar-item-h2"><a href="#Method14">Clamp</a></li>
+              <li class="sidebar-item-h2"><a href="#Method15">Compare</a></li>
+              <li class="sidebar-item-h2"><a href="#Method16">Equals</a></li>
+              <li class="sidebar-item-h2"><a href="#Method17">Min</a></li>
+              <li class="sidebar-item-h2"><a href="#Method18">MinMagnitude</a></li>
+              <li class="sidebar-item-h2"><a href="#Method19">Max</a></li>
+              <li class="sidebar-item-h2"><a href="#Method20">MaxMagnitude</a></li>
+              <li class="sidebar-item-h2"><a href="#Method21">Sign</a></li>
+              <li class="sidebar-item-h2"><a href="#Method22">CopySign</a></li>
+              <li class="sidebar-item-h2"><a href="#Method23">GetBits</a></li>
+              <li class="sidebar-item-h2"><a href="#Method24">TryGetBits</a></li>
+              <li class="sidebar-item-h2"><a href="#Method25">IsCanonical</a></li>
+              <li class="sidebar-item-h2"><a href="#Method26">IsEvenInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method27">IsOddInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method28">IsPositive</a></li>
+              <li class="sidebar-item-h2"><a href="#Method29">IsNegative</a></li>
+              <li class="sidebar-item-h2"><a href="#Method30">IsInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method31">CreateChecked</a></li>
+              <li class="sidebar-item-h2"><a href="#Method32">CreateSaturating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method33">CreateTruncating</a></li>
+              <li class="sidebar-item-h2"><a href="#Method34">ConvertToInteger</a></li>
+              <li class="sidebar-item-h2"><a href="#Method35">ConvertToIntegerNative</a></li>
+              <li class="sidebar-item-h2"><a href="#Method36">FromOACurrency</a></li>
+              <li class="sidebar-item-h2"><a href="#Method37">ToOACurrency</a></li>
+              <li class="sidebar-item-h2"><a href="#Method38">ToByte</a></li>
+              <li class="sidebar-item-h2"><a href="#Method39">ToSByte</a></li>
+              <li class="sidebar-item-h2"><a href="#Method40">ToUInt16</a></li>
+              <li class="sidebar-item-h2"><a href="#Method41">ToInt16</a></li>
+              <li class="sidebar-item-h2"><a href="#Method42">ToUInt32</a></li>
+              <li class="sidebar-item-h2"><a href="#Method43">ToInt32</a></li>
+              <li class="sidebar-item-h2"><a href="#Method44">ToUInt64</a></li>
+              <li class="sidebar-item-h2"><a href="#Method45">ToInt64</a></li>
+              <li class="sidebar-item-h2"><a href="#Method46">ToSingle</a></li>
+              <li class="sidebar-item-h2"><a href="#Method47">ToDouble</a></li>
+              <li class="sidebar-item-h2"><a href="#Method48">CompareTo</a></li>
+              <li class="sidebar-item-h2"><a href="#Method49">Equals</a></li>
+              <li class="sidebar-item-h2"><a href="#Method50">GetTypeCode</a></li>
+              <li class="sidebar-item-h2"><a href="#Method51">ToString</a></li>
+              <li class="sidebar-item-h2"><a href="#Method52">TryFormat</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Override">重写</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="./001001Object.html#Method04">GetHashCode</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">Decimal</h1>
+          <nav class="head-nav"><a class="fl" href="./001018Double.html">上一篇</a><a class="fr" href="../003Exception/003001Exception.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public readonly struct Decimal</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag struct-tag">结构体</span><span class="tag readonly-tag">只读</span></p>
+        </section>
+        <section>
+          <h2 id="Instruction">说明</h2>
+          <p><span class="inline-code">Decimal</span>（别名<span class="inline-code">decimal</span>）表示十进制浮点数，默认值为0，16字节，适用于需要大量有效整数和小数且无四舍五入误差的财务计算，能最大限度地减少由于舍入引起的误差。</p>
+          <p><span class="inline-code">Decimal</span>由一个符号、一个数值（其中值中的每个数字的范围为0到9）和一个缩放因子组成，缩放因子指示分隔数值整数和小数部分的浮点小数点的位置。其128位由96位整数和一组32位标志组成，标志表示符号和缩放因子等，用于指定小数部分，因此其取值范围为(-2<sup>96</sup>~2<sup>96</sup>)/10<sup>0~28</sup>，即-(2<sup>96</sup>-1)为最小值，2<sup>96</sup>-1为最大值。</p>
+        </section>
+        <section>
+          <h2 id="Field">字段</h2>
+          <h3 id="Field01">Zero</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static readonly decimal Zero;</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span><span class="tag readonly-tag">只读</span></p>
+          <p><span class="inline-code">Decimal</span>类型的0。</p>
+          <h3 id="Field02">One</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static readonly decimal One;</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span><span class="tag readonly-tag">只读</span></p>
+          <p><span class="inline-code">Decimal</span>类型的1。</p>
+          <h3 id="Field03">MinusOne</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static readonly decimal MinusOne;</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span><span class="tag readonly-tag">只读</span></p>
+          <p><span class="inline-code">Decimal</span>类型的-1。</p>
+          <h3 id="Field04">MinValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const decimal MinValue;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p><span class="inline-code">Decimal</span>类型的最小值-(2<sup>96</sup>-1)。</p>
+          <h3 id="Field05">MaxValue</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public const decimal MaxValue;</pre>
+          </div>
+          <p><span class="tag const-tag">常量</span></p>
+          <p><span class="inline-code">Decimal</span>类型的最大值2<sup>96</sup>-1。</p>
+        </section>
+        <section>
+          <h2 id="Property">属性</h2>
+          <h3 id="Property01">Scale</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public byte Scale { get; }</pre>
+          </div>
+          <p>获取当前对象的缩放因子，表示小数的位数。</p>
+        </section>
+        <section>
+          <h2 id="Method">方法</h2>
+          <h3 id="Method01">Parse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Parse(string s)
+public static decimal Parse(string s, IFormatProvider? provider)
+public static decimal Parse(string s, System.Globalization.NumberStyles style)
+public static decimal Parse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider)
+public static decimal Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
+public static decimal Parse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)
+public static decimal Parse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider)
+public static decimal Parse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Integer, IFormatProvider? provider = default)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将字符串（前面和后面可以有空格）转化为<span class="inline-code">Decimal</span>，转换失败时会抛出异常。</p>
+          <h3 id="Method02">TryParse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool TryParse(string s, out decimal result)
+public static bool TryParse(string s, IFormatProvider? provider, out decimal resul)
+public static bool TryParse(string s, System.Globalization.NumberStyles style, IFormatProvider? provider, out decimal resul)
+public static bool TryParse(ReadOnlySpan<char> s, out decimal result)
+public static bool TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, out decimal resul)
+public static bool TryParse(ReadOnlySpan<char> s, System.Globalization.NumberStyles style, IFormatProvider? provider, out decimal resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, out decimal result)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider, out decimal resul)
+public static bool TryParse(ReadOnlySpan<byte> utf8Text, System.Globalization.NumberStyles style, IFormatProvider? provider, out decimal resul)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>与<span class="inline-code">Parse</span>方法类型，将字符串（前面和后面可以有空格）转化为<span class="inline-code">Decimal</span>，但不会抛出异常。</p>
+          <h3 id="Method03">Abs</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Abs(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的绝对值。</p>
+          <h3 id="Method04">Add</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Add(decimal d1, decimal d2)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取两数和。</p>
+          <h3 id="Method05">Subtract</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Subtract(decimal d1, decimal d2)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取两数差。</p>
+          <h3 id="Method06">Multiply</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Multiply(decimal d1, decimal d2)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取两数积。</p>
+          <h3 id="Method07">Divide</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Divide(decimal d1, decimal d2)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取两数商。</p>
+          <h3 id="Method08">Remainder</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Remainder(decimal d1, decimal d2)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取两数余数。</p>
+          <h3 id="Method09">Negate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Negate(decimal d)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的相反数。</p>
+          <h3 id="Method10">Ceiling</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Ceiling(decimal d)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取最小的比指定对象大的整数。</p>
+          <h3 id="Method11">Floor</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Floor(decimal d)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取最大的比指定对象小的整数。</p>
+          <h3 id="Method12">Round</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double Round(decimal x)
+public static double Round(decimal x, MidpointRounding mode)
+public static double Round(decimal x, int digits)
+public static double Round(decimal x, int digits, MidpointRounding mode)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>使用指定舍入模式（不指定则使用默认模式）将值四舍五入到最接近的整数或指定小数位数的浮点数。</p>
+          <h3 id="Method13">Truncate</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Truncate(decimal d)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>截断值。</p>
+          <h3 id="Method14">Clamp</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Clamp(decimal value, decimal min, decimal max)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象钳制到指定的最小值（可及）和最大值之间（可及）。</p>
+          <h3 id="Method15">Compare</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int Compare(decimal d1, decimal d2)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>比较两指定对象，并返回一个表明二者关系的整数：大于0表示d1大于d2，小于0则相反，等于0表示二者相等。</p>
+          <h3 id="Method16">Equals</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool Equals(decimal d1, decimal d2)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断两指定对象是否相等。</p>
+          <h3 id="Method17">Min</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Min(decimal x, decimal y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method18">MinMagnitude</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal MinMagnitude(decimal x, decimal y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较小的。</p>
+          <h3 id="Method19">Max</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal Max(decimal x, decimal y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method20">MaxMagnitude</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal MaxMagnitude(decimal x, decimal y)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取二者中较大的。</p>
+          <h3 id="Method21">Sign</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int Sign(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的符号。</p>
+          <h3 id="Method22">CopySign</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal CopySign(decimal value, decimal sign)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>返回一个值，此值的数值和符号分别来自两个参数。</p>
+          <h3 id="Method23">GetBits</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int[] GetBits(decimal d)
+public static int GetBits(decimal d, Span<int> destination)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>获取指定对象的二进制表示。</p>
+          <h3 id="Method24">TryGetBits</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool TryGetBits(decimal d, Span<int> destination, out int valuesWritten)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>尝试获取指定对象的二进制表示。</p>
+          <h3 id="Method25">IsCanonical</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsCanonical(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为规范表示。</p>
+          <h3 id="Method26">IsEvenInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsEvenInteger(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为偶数。</p>
+          <h3 id="Method27">IsOddInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsOddInteger(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为奇数。</p>
+          <h3 id="Method28">IsPositive</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsPositive(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为正数。</p>
+          <h3 id="Method29">IsNegative</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsNegative(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为负数。</p>
+          <h3 id="Method30">IsInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool IsInteger(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>判断指定对象是否为整数。</p>
+          <h3 id="Method31">CreateChecked</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal CreateChecked<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">Decimal</span>实例，溢出时会抛出异常。</p>
+          <h3 id="Method32">CreateSaturating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal CreateSaturating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">Decimal</span>实例，溢出时使用饱和算法进行范围限制。</p>
+          <h3 id="Method33">CreateTruncating</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal CreateTruncating<TOther>(TOther value) where TOther : System.Numerics.INumberBase<TOther></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>根据参数创建一个<span class="inline-code">Decimal</span>实例，溢出时使用截断算法进行范围限制。</p>
+          <h3 id="Method34">ConvertToInteger</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static TInteger ConvertToInteger<TInteger>(decimal value) where TInteger : System.Numerics.IBinaryInteger<TInteger></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>溢出时使用饱和算法将指定对象转换为指定整形。</p>
+          <h3 id="Method35">ConvertToIntegerNative</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static TInteger ConvertToIntegerNative<TInteger>(decimal value) where TInteger : System.Numerics.IBinaryInteger<TInteger><TInteger></pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>溢出时使用平台特定的行为将指定对象转换为指定整形。</p>
+          <h3 id="Method36">FromOACurrency</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static decimal FromOACurrency(long cy)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将包含OLE自动化货币值的<span class="inline-code">Int64</span>转换为等效的<span class="inline-code">Decimal</span>。</p>
+          <h3 id="Method37">ToOACurrency</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static long ToOACurrency(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将<span class="inline-code">Decimal</span>转换为等效的包含OLE自动化货币值的<span class="inline-code">Int64</span>。</p>
+          <h3 id="Method38">ToByte</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static byte ToByte(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">Byte</span>。</p>
+          <h3 id="Method39">ToSByte</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static sbyte ToSByte(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">SByte</span>。</p>
+          <h3 id="Method40">ToUInt16</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static ushort ToUInt16(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">UInt16</span>。</p>
+          <h3 id="Method41">ToInt16</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static short ToInt16(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">Int16</span>。</p>
+          <h3 id="Method42">ToUInt32</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static uint ToUInt32(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">UInt32</span>。</p>
+          <h3 id="Method43">ToInt32</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static int ToInt32(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">Int32</span>。</p>
+          <h3 id="Method44">ToUInt64</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static ulong ToUInt64(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">UInt64</span>。</p>
+          <h3 id="Method45">ToInt64</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static long ToInt64(decimal value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">Int64</span>。</p>
+          <h3 id="Method46">ToSingle</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static float ToSingle(decimal d)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">Single</span>。</p>
+          <h3 id="Method47">ToDouble</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static double ToDouble(decimal d)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将指定对象转换为<span class="inline-code">Double</span>。</p>
+          <h3 id="Method48">CompareTo</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public int CompareTo(decimal value)
+public int CompareTo(object? value)</pre>
+          </div>
+          <p>比较当前实例与指定对象，并返回一个表明二者关系的整数：大于0表示当前实例大于指定对象，小于0则相反，等于0表示二者相等。需要注意的是，<span class="inline-code">CompareTo(Object)</span>的参数需要是<span class="inline-code">Decimal</span>类型或<span class="inline-code">null</span>，否则将会抛出异常。</p>
+          <p>因为不需要拆箱，<span class="inline-code">CompareTo(Decimal)</span>比<span class="inline-code">CompareTo(Object)</span>的性能更好。</p>
+          <h3 id="Method49">Equals</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool Equals(decimal obj)
+public override bool Equals(object? obj)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>判断当前实例与指定对象是否相等。</p>
+          <p>因为不需要拆箱，<span class="inline-code">Equals(Decimal)</span>比<span class="inline-code">Equals(Object)</span>的性能更好。</p>
+          <h3 id="Method50">GetTypeCode</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public TypeCode GetTypeCode()</pre>
+          </div>
+          <p>获取当前实例的<span class="inline-code">TypeCode</span>。</p>
+          <h3 id="Method51">ToString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public override string ToString()
+public override string ToString(string? format)
+public string ToString(IFormatProvider? provider)
+public override string ToString(string? format, IFormatProvider? provider)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>将当前实例转化为字符串。</p>
+          <h3 id="Method52">TryFormat</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)
+public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = default)</pre>
+          </div>
+          <p>尝试将当前实例的值的格式设置为提供的字符范围。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="./001011UInt64.html">上一篇</a><a class="fr" href="../003Exception/003001Exception.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

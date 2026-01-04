@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean</title>
+    <link rel="stylesheet" href="../../CSS/css_initialize.css" />
+    <link rel="stylesheet" href="../../CSS/css_common.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="sidebar">
+        <ol class="sidebar-content">
+          <li class="sidebar-item-h1"><a href="#Title">Boolean</a></li>
+          <li class="sidebar-item-h1"><a href="#Dfinition">定义</a></li>
+          <li class="sidebar-item-h1"><a href="#Instruction">说明</a></li>
+          <li class="sidebar-item-h1"><a href="#Field">字段</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Field01">TrueString</a></li>
+              <li class="sidebar-item-h2"><a href="#Field02">FalseString</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Method">方法</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="#Method01">Parse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method02">TryParse</a></li>
+              <li class="sidebar-item-h2"><a href="#Method03">CompareTo</a></li>
+              <li class="sidebar-item-h2"><a href="#Method04">Equals</a></li>
+              <li class="sidebar-item-h2"><a href="#Method05">GetTypeCode</a></li>
+              <li class="sidebar-item-h2"><a href="#Method06">ToString</a></li>
+              <li class="sidebar-item-h2"><a href="#Method07">TryFormat</a></li>
+            </ol>
+          </li>
+          <li class="sidebar-item-h1"><a href="#Override">重写</a></li>
+          <li>
+            <ol>
+              <li class="sidebar-item-h2"><a href="./001001Object.html#Method04">GetHashCode</a></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="content">
+        <header>
+          <h1 id="Title">Boolean</h1>
+          <nav class="head-nav"><a class="fl" href="./001002ValueType.html">上一篇</a><a class="fr" href="./001004Char.html">下一篇</a></nav>
+        </header>
+        <section>
+          <h2 id="Dfinition">定义</h2>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public readonly struct Boolean</pre>
+          </div>
+          <p>命名空间：<a href="../System.html">System</a></p>
+          <p>程序集：System.Runtime.dll</p>
+          <p><span class="tag struct-tag">结构体</span><span class="tag readonly-tag">只读</span></p>
+        </section>
+        <section>
+          <h2 id="Instruction">说明</h2>
+          <p>布尔类型<span class="inline-code">Boolean</span>（别名<span class="inline-code">bool</span>）表示一个布尔值，可为<span class="inline-code">true</span>或<span class="inline-code">false</span>，默认值为<span class="inline-code">false</span>，1字节。</p>
+        </section>
+        <section>
+          <h2 id="Field">字段</h2>
+          <h3 id="Field01">TrueString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static readonly string TrueString;</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span><span class="tag readonly-tag">只读</span></p>
+          <p>此字段定义了<span class="inline-code">Boolean</span>值<span class="inline-code">true</span>的字符串表示形式，即<span class="inline-code">"True"</span>。</p>
+          <h3 id="Field02">FalseString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static readonly string FalseString;</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span><span class="tag readonly-tag">只读</span></p>
+          <p>此字段定义了<span class="inline-code">Boolean</span>值<span class="inline-code">false</span>的字符串表示形式，即<span class="inline-code">"False"</span>。</p>
+        </section>
+        <section>
+          <h2 id="Method">方法</h2>
+          <h3 id="Method01">Parse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool Parse(string value)
+public static bool Parse(ReadOnlySpan<char> value)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>将字符串转化为<span class="inline-code">Boolean</span>类型。需要注意的是，参数必须等效于<span class="inline-code">TrueString</span>或<span class="inline-code">FalseString</span>，不区分大小写，且前面和后面可以有空格，否则将会抛出异常。</p>
+          <h3 id="Method02">TryParse</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public static bool TryParse(string? value, out bool result)
+public static bool TryParse(ReadOnlySpan<char> value, out bool result)</pre>
+          </div>
+          <p><span class="tag static-tag">静态</span></p>
+          <p>与<span class="inline-code">Parse</span>方法类型，将字符串转化为<span class="inline-code">Boolean</span>类型，但不会抛出异常。</p>
+          <h3 id="Method03">CompareTo</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public int CompareTo(bool value)
+public int CompareTo(object? obj)</pre>
+          </div>
+          <p>比较当前实例与指定对象，并返回一个表明二者关系的整数：大于0表示当前实例大于指定对象，小于0则相反，等于0表示二者相等。需要注意的是，<span class="inline-code">CompareTo(Object)</span>的参数需要是<span class="inline-code">Boolean</span>类型或<span class="inline-code">null</span>，否则将会抛出异常。</p>
+          <p>因为不需要拆箱，<span class="inline-code">CompareTo(Boolean)</span>比<span class="inline-code">CompareTo(Object)</span>的性能更好。</p>
+          <h3 id="Method04">Equals</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool Equals(bool obj)
+public override bool Equals(object? obj)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>判断当前实例与指定对象是否相等。</p>
+          <p>因为不需要拆箱，<span class="inline-code">Equals(Boolean)</span>比<span class="inline-code">Equals(Object)</span>的性能更好。</p>
+          <h3 id="Method05">GetTypeCode</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public TypeCode GetTypeCode()</pre>
+          </div>
+          <p>获取当前实例的<span class="inline-code">TypeCode</span>。</p>
+          <h3 id="Method06">ToString</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public override string ToString()
+public string ToString(IFormatProvider? provider)</pre>
+          </div>
+          <p><span class="tag override-tag">重写</span></p>
+          <p>将当前实例转化为<span class="inline-code">TrueString</span>或<span class="inline-code">FalseString</span>的字符串。</p>
+          <h3 id="Method07">TryFormat</h3>
+          <div class="block-code">
+            <p>C#</p>
+            <pre>public bool TryFormat(Span<char> destination, out int charsWritten)</pre>
+          </div>
+          <p>尝试将当前实例的值的格式设置为提供的字符范围。</p>
+        </section>
+        <footer>
+          <nav class="foot-nav"><a class="fl" href="./001002ValueType.html">上一篇</a><a class="fr" href="./001004Char.html">下一篇</a></nav>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
